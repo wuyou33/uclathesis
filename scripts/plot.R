@@ -1,9 +1,9 @@
 library(ggplot2)
 library(reshape)
-library(extrafont)
+library(grid)
 
 
-setwd("/Users/akee/School/UCLA/01\ thesis/uclathesis/data")
+setwd("/Users/akee/School/UCLA/01\ thesis/uclathesis")
 
 full_width <- 5.5
 
@@ -12,7 +12,7 @@ full_width <- 5.5
 #                      4 PRBS input sequences                         #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
-data <- read.csv("raw/u.csv", header = FALSE)
+data <- read.csv("data/prbs_input_sequence.csv", header = FALSE)
 
 u1 <- data$V1
 u2 <- data$V2
