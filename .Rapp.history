@@ -199,19 +199,7 @@ font_import("GillSans")
 font_import(pattern="GillSans")
 font_import(pattern="Gill Sans")
 source('~/School/UCLA/01 thesis/uclathesis/data/plot.R', chdir = TRUE)
-source('~/School/UCLA/01 thesis/uclathesis/scripts/plot.R', chdir = TRUE)
-source('~/School/UCLA/01 thesis/uclathesis/scripts/plot.R', chdir = TRUE)
-full_width
-data
-u1
-u2
-u3
-u4
-k
-n
-df
-df.melted
-source('~/School/UCLA/01 thesis/uclathesis/scripts/plot.R')
-source('~/School/UCLA/01 thesis/uclathesis/scripts/plot.R')
-source('~/School/UCLA/01 thesis/uclathesis/scripts/plot.R')
-source('~/School/UCLA/01 thesis/uclathesis/scripts/plot.R')
+source("/Users/akee/School/UCLA/01 thesis/uclathesis/scripts/plot.R")
+source("/Users/akee/School/UCLA/01 thesis/uclathesis/scripts/plot.R")
+source("/Users/akee/School/UCLA/01 thesis/uclathesis/scripts/plot.R")
+source("/Users/akee/School/UCLA/01 thesis/uclathesis/scripts/plot.R")

@@ -12,27 +12,26 @@ full_width <- 5.5
 #                      4 PRBS input sequences                         #
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
-data <- read.csv("data/prbs_input_sequence.csv", header = FALSE)
+data <- read.csv("data/prbs_inputs.csv", header = FALSE)
 
-u1 <- data$V1
-u2 <- data$V2
-u3 <- data$V3
-u4 <- data$V4
-n <- seq_along(u1)
+pitch <- data$V1
+roll  <- data$V2
+yaw   <- data$V3
+k     <- seq_along(pitch)
 
 # recombine the individual measurements into a dataframe
-df <- data.frame(n,u1,u2,u3,u4)
+df <- data.frame(k,pitch,roll,yaw)
 
 # melt that shit
-df.melted <- melt(df, id = "n")
+df.melted <- melt(df, id = "k")
 
 # plot
 p <-
 	ggplot(df.melted) +
-	geom_step(aes(x = n, y = value)) +
+	geom_step(aes(x = k, y = value)) +
 	facet_grid(variable ~ .) +
-	ylab("Input") +
-	scale_y_continuous(breaks = seq(0,1,1)) +	# min, max, interval
+	ylab("r_k") +
+	scale_y_continuous(breaks = seq(-1,1,1)) +	# min, max, interval
 	scale_x_continuous(breaks = seq(0,100,25))+	# min, max, interval
 
 	theme(
