@@ -1,7 +1,6 @@
 import time, sys
 from threading import Thread
 
-sys.path.append("lib")
 import cflib
 from cflib.crazyflie import Crazyflie
 
@@ -23,7 +22,7 @@ class Main:
     def pulse_command(self):
         thrust_mult = 1
         thrust_step = 500
-	    thrust = 20000
+	thrust = 20000
         pitch = 0
         roll = 0
         yawrate = 0
@@ -36,7 +35,7 @@ class Main:
         self.crazyflie.commander.send_setpoint(0,0,0,0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
-	    time.sleep(0.1)
+	time.sleep(0.1)
         self.crazyflie.close_link()
 
 Main()

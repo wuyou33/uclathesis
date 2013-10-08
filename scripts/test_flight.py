@@ -8,9 +8,9 @@ from cfclient.utils.logconfigreader import LogVariable
 from cflib.crazyflie import Crazyflie
 
 logging.basicConfig(
-	level = logging.DEBUG
+	level = logging.DEBUG,
 	# format = '%(levelname)s: %(message)s',
-	# filename = 'data.txt'
+	filename = 'data.txt'
 	)
 
 class TestFlight:
@@ -64,16 +64,16 @@ class TestFlight:
 
 
 		# Since the connection is already established, we can start logging
-		self.log = self.crazyflie.log.create_log_packet(log_conf)
+		self.log_data = self.crazyflie.log.create_log_packet(log_conf)
 
-		if self.log is not None:
-			self.log.dataReceived.add_callback(self.log_data)
-			self.log.start()
+		if self.log_data is not None:
+			self.log_data.dataReceived.add_callback(self.write_log)
+			self.log_data.start()
 		else:
 			print('One or more log variables not found in TOC')
 
 
-	def log_data(self, data):
+	def write_log(self, data):
 		logging.info('Accelerometer: %.2f %.2f %.2f' %
 			(data['acc.x'], data['acc.y']. data['acc.z']))
 
