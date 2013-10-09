@@ -17,13 +17,14 @@ class Main:
     def connectSetupFinished(self, linkURI):
         # Start a separate thread to do the motor test.
         # Do not hijack the calling thread!
-        Thread(target=self.pulse_command).start()
+	print 'starting test...'
+        Thread(target=self.increasing_step).start()
 
-    def increasing_step(Self):
-        min_thrust          = 10000
-        max_thrust          = 30000
+    def increasing_step(self):
+        min_thrust          = 39000
+        max_thrust          = 40000     # Liftoff at 37000-38000
         thrust_increment    = 1000
-        thrust_hold_time    = 2 # sec
+        thrust_hold_time    = 1 # sec
         update_freq         = 10 # Hz
 
         pitch               = 0
@@ -36,8 +37,9 @@ class Main:
 
 
         while thrust <= max_thrust:
+	    print thrust
             self.crazyflie.commander.send_setpoint(
-                roll, pitch, yawrate, thrust)
+                roll, pitch, yaw_rate, thrust)
             time.sleep(ts)
             step += 1
             if step == thrust_hold_time*update_freq:
@@ -55,20 +57,20 @@ class Main:
     def pulse_command(self):
         thrust_mult = 1
         thrust_step = 500
-	    thrust = 20000
+	thrust = 20000
         pitch = 0
         roll = 0
         yawrate = 0
         while thrust >= 20000:
-	       self.crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
-            time.sleep(0.1)
-            if (thrust >= 25000):
-                thrust_mult = -1
-            thrust = thrust + (thrust_step * thrust_mult)
+		self.crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
+            	time.sleep(0.1)
+            	if (thrust >= 25000):
+                	thrust_mult = -1
+            	thrust = thrust + (thrust_step * thrust_mult)
         self.crazyflie.commander.send_setpoint(0,0,0,0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
-	    time.sleep(0.1)
+	time.sleep(0.1)
         self.crazyflie.close_link()
 
 
