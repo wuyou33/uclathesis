@@ -1,6 +1,7 @@
 import time
 import argparse
 import logging
+import csv
 from threading import Thread
 
 import cflib
@@ -31,7 +32,7 @@ if args.thrust_profile not in ['increasing_step', 'hover', 'prbs_hover', 'prbs_a
 
 
 # Set up logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 
 class TestFlight:
@@ -53,23 +54,23 @@ class TestFlight:
         # it receives data, which prints the data from the logging packet's
         # data dictionary as logging info.
 
-        # Set accelerometer logging config
-        accel_log_conf = LogConfig("Accel", 10)
+        # # Set accelerometer logging config
+        # accel_log_conf = LogConfig("Accel", 10)
 
-        accel_log_conf.addVariable(LogVariable("acc.x", "float"))
-        accel_log_conf.addVariable(LogVariable("acc.y", "float"))
-        accel_log_conf.addVariable(LogVariable("acc.z", "float"))
+        # accel_log_conf.addVariable(LogVariable("acc.x", "float"))
+        # accel_log_conf.addVariable(LogVariable("acc.y", "float"))
+        # accel_log_conf.addVariable(LogVariable("acc.z", "float"))
 
         
-        # Now that the connection is established, start logging
-        self.accel_log = self.crazyflie.log.create_log_packet(accel_log_conf)
+        # # Now that the connection is established, start logging
+        # self.accel_log = self.crazyflie.log.create_log_packet(accel_log_conf)
 
  
-        if self.accel_log is not None:
-            self.accel_log.dataReceived.add_callback(self.log_accel_data)
-            self.accel_log.start()
-        else:
-            print("acc.x/y/z not found in log TOC")
+        # if self.accel_log is not None:
+        #     self.accel_log.dataReceived.add_callback(self.log_accel_data)
+        #     self.accel_log.start()
+        # else:
+        #     print("acc.x/y/z not found in log TOC")
 
 
         # Call the requested thrust profile. 
@@ -77,6 +78,8 @@ class TestFlight:
         # Do not hijack the calling thread!
         if args.thrust_profile == 'increasing_step':
             Thread(target=self.increasing_step).start()
+        if args.thrust_profile == 'hover':
+            Thread(target=self.hover).start()
         if args.thrust_profile == 'prbs_hover':
             Thread(target=self.prbs_hover).start()
         if args.thrust_profile == 'prbs_asc':
@@ -91,18 +94,18 @@ class TestFlight:
 
     # THRUST PROFILES
     def increasing_step(self):
-        min_thrust          = 39000
-        max_thrust          = 40000     # Liftoff at 37000-38000
+        min_thrust          = 11000
+        max_thrust          = 45000     # Liftoff at 37000-38000
         thrust_increment    = 1000
         thrust_hold_time    = 1 # sec
-        update_freq         = 10 # Hz
+        command_freq        = 10 # Hz
 
         pitch               = 0
         roll                = 0
         yaw_rate            = 0
 
         thrust = min_thrust
-        ts = 1.0/update_freq
+        ts = 1.0/command_freq
         step = 0
 
 
@@ -112,9 +115,34 @@ class TestFlight:
                 roll, pitch, yaw_rate, thrust)
             time.sleep(ts)
             step += 1
-            if step == thrust_hold_time*update_freq:
+            if step == thrust_hold_time*command_freq:
                 thrust += thrust_increment
                 step = 0
+
+        self.crazyflie.commander.send_setpoint(0,0,0,0)
+        # Make sure that the last packet leaves before the link is closed
+        # since the message queue is not flushed before closing
+        time.sleep(0.1)
+        self.crazyflie.close_link()
+
+
+    def hover(self):
+        thrust              = 37500     # Liftoff at 37000-38000
+        thrust_hold_time    = 2 # sec
+        command_freq        = 10 # Hz
+
+        pitch               = 0
+        roll                = 0
+        yaw_rate            = 0
+
+        ts = 1.0/command_freq
+        step = 0
+
+        while step*ts <= thrust_hold_time:
+            self.crazyflie.commander.send_setpoint(
+                roll, pitch, yaw_rate, thrust)
+            time.sleep(ts)
+            step += 1
 
         self.crazyflie.commander.send_setpoint(0,0,0,0)
         # Make sure that the last packet leaves before the link is closed
