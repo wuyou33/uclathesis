@@ -21,11 +21,11 @@ crazyradio = 'radio://0/10/250K'
 parser = argparse.ArgumentParser(
     description='Execute a variety of test flights with the Bitcraze Crazyflie.')
 parser.add_argument('thrust_profile', metavar='thrust_profile', type=str,
-    help='Thrust profile to use for the test flight. Available options are: increasing_step, prbs_hover, prbs_asc, prbs_desc.')
+    help='Thrust profile to use for the test flight. Available options are: increasing_step, hover, prbs_hover, prbs_asc, prbs_desc.')
 args = parser.parse_args()
 
 # Make sure the requested thrust profile is valid
-if args.thrust_profile not in ['increasing_step', 'prbs_hover', 'prbs_asc', 'prbs_desc']:
+if args.thrust_profile not in ['increasing_step', 'hover', 'prbs_hover', 'prbs_asc', 'prbs_desc']:
     print 'Requested thrust profile not found. Check your spelling, fool!\nTry test_flight.py -h for a list of available thrust profiles.'
     raise SystemExit
 
@@ -123,13 +123,13 @@ class TestFlight:
         self.crazyflie.close_link()
 
     def prbs_hover(self):
-        break
+        pass
 
     def prbs_asc(self):
-        break
+        pass
 
     def prbs_desc(self):
-        break
+        pass
 
 
 TestFlight()
