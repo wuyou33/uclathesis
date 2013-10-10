@@ -1,10 +1,19 @@
 import time
+import argparse
 from threading import Thread
 
 import cflib
 from cflib.crazyflie import Crazyflie
 
-class Main:
+
+parser = argparse.ArgumentParser()
+parser.parse_args()
+
+
+
+
+
+class TestFlight:
     def __init__(self):
         self.crazyflie = Crazyflie()
         cflib.crtp.init_drivers()
@@ -19,6 +28,12 @@ class Main:
         # Do not hijack the calling thread!
 	print 'starting test...'
         Thread(target=self.increasing_step).start()
+
+
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
+    #           THRUST PROFILES                                               #
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
     def increasing_step(self):
         min_thrust          = 39000
@@ -54,26 +69,4 @@ class Main:
 
 
 
-    def pulse_command(self):
-        thrust_mult = 1
-        thrust_step = 500
-	thrust = 20000
-        pitch = 0
-        roll = 0
-        yawrate = 0
-        while thrust >= 20000:
-		self.crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
-            	time.sleep(0.1)
-            	if (thrust >= 25000):
-                	thrust_mult = -1
-            	thrust = thrust + (thrust_step * thrust_mult)
-        self.crazyflie.commander.send_setpoint(0,0,0,0)
-        # Make sure that the last packet leaves before the link is closed
-        # since the message queue is not flushed before closing
-	time.sleep(0.1)
-        self.crazyflie.close_link()
-
-
-
-
-Main()
+TestFlight()
