@@ -2,7 +2,7 @@ clear all
 close all
 clc
 
-signal_length   = 100;
+signal_length   = 15;
 num_signals     = 3; % Number of signals to generate
 min             = -1;
 max             = 1;
@@ -15,4 +15,4 @@ levels = [min, max];
 
 
 r = idinput(N, type, band, levels);
-csvwrite('../data/prbs_inputs.csv',r)
+csvwrite('../data/prbs_inputs_15.csv',r)
