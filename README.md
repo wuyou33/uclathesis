@@ -3,7 +3,7 @@ uclathesis
 
 Closed-Loop Subspace Identification of a Quadrotor. 
 
-Approved proposal can be found here: https://github.com/andykee/uclathesis-proposal
+Approved research proposal can be found here: https://github.com/andykee/uclathesis-proposal
 
 ###Folder description###
 ```
@@ -17,6 +17,3 @@ Approved proposal can be found here: https://github.com/andykee/uclathesis-propo
 /scripts              Scripts for data generation, analysis, and capture
     /test_flight      Python library for interfacing with the Crazyflie API to perform test flights
 ```
-
-
-
