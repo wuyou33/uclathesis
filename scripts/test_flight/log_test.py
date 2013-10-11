@@ -1,11 +1,11 @@
-import logging
+import time
  
 import cflib.crtp
 from cfclient.utils.logconfigreader import LogConfig
 from cfclient.utils.logconfigreader import LogVariable
 from cflib.crazyflie import Crazyflie
  
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
  
  
 class Main:
@@ -37,23 +37,45 @@ class Main:
         it receives data, which prints the data from the logging packet's
         data dictionary as logging info.
         """
-        # Set stabilizer logging config
-        stab_log_conf = LogConfig("stabilizer", 10)
-        stab_log_conf.addVariable(LogVariable("stabilizer.roll", "float"))
-        stab_log_conf.addVariable(LogVariable("stabilizer.pitch", "float"))
-        stab_log_conf.addVariable(LogVariable("stabilizer.yaw", "float"))
- 
+
+        period = 20
+
+        # Set gyro logging config
+        gyro_log_conf = LogConfig("gyro", period)
+        gyro_log_conf.addVariable(LogVariable("gyro.x", "float"))
+        gyro_log_conf.addVariable(LogVariable("gyro.y", "float"))
+        gyro_log_conf.addVariable(LogVariable("gyro.z", "float"))
+
+        # Set accelerometer logging config
+        acc_log_conf = LogConfig("acc", period)
+        acc_log_conf.addVariable(LogVariable("acc.x", "float"))
+        acc_log_conf.addVariable(LogVariable("acc.y", "float"))
+        acc_log_conf.addVariable(LogVariable("acc.z", "float"))
+
+
         # Now that the connection is established, start logging
-        self.stab_log = self.crazyflie.log.create_log_packet(stab_log_conf)
+        self.gyro_log = self.crazyflie.log.create_log_packet(gyro_log_conf)
+        self.acc_log = self.crazyflie.log.create_log_packet(acc_log_conf)
  
-        if self.stab_log is not None:
-            self.stab_log.data_received.add_callback(self.log_stab_data)
-            self.stab_log.start()
+        if self.gyro_log is not None:
+            self.gyro_log.data_received.add_callback(self.log_gyro_data)
+            self.gyro_log.start()
+        else:
+            print("gyro.x/y/z not found in log TOC")
+
+        if self.acc_log is not None:
+            self.acc_log.data_received.add_callback(self.log_acc_data)
+            self.acc_log.start()
         else:
             print("acc.x/y/z not found in log TOC")
+
+        
  
-    def log_stab_data(self, data):
-        logging.info("Stabilizer: Roll=%.2f, Pitch=%.2f, Yaw=%.2f" %
-                        (data["stabilizer.roll"], data["stabilizer.pitch"], data["stabilizer.yaw"]))
+        
+ 
+    def log_gyro_data(self, data):
+        print "Gyro: Time=%f x=%f, y=%f, z=%f" % (time.time(), data["gyro.x"], data["gyro.y"], data["gyro.z"])
+    def log_acc_data(self, data):
+        print "Acc: Time=%f x=%f, y=%f, z=%f" % (time.time(), data["acc.x"], data["acc.y"], data["acc.z"])
  
 Main()
