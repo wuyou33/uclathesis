@@ -1,7 +1,7 @@
 uclathesis
 ==========
 
-Closed-Loop Subspace Identification of a Quadrotor. 
+**Closed-Loop Subspace Identification of a Quadrotor.**
 
 Approved research proposal can be found here: https://github.com/andykee/uclathesis-proposal
 
