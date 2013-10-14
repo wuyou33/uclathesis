@@ -3,11 +3,11 @@ close all
 clc
 
 
-data_path = '../data/flight_test_data/raw/20131013181929_hover_40Hz/';
-motor_filename = '20131013181929_motor.csv';
-acc_filename = '20131013181929_acc.csv';
-gyro_filename = '20131013181929_gyro.csv';
-collection_freq = 40; % Hz
+data_path = '../data/raw_flight_test_data/';
+motor_filename = '20131013210336_100_motor.csv';
+acc_filename = '20131013210336_100_acc.csv';
+gyro_filename = '20131013210336_100_gyro.csv';
+collection_freq = 50; % Hz
 
 
 motor = csvread(strcat(data_path,motor_filename), 1, 0);
