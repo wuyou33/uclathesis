@@ -100,7 +100,7 @@ class TestFlight:
         self.gyro_writer = csv.writer(gyro_log_file)
         self.gyro_writer.writerow(['time','gyro.x','gyro.y','gyro.z'])
 
-        gyro_log_config = LogConfig('gyro', gyro_log_config)
+        gyro_log_config = LogConfig('gyro', gyro_log_period)
         gyro_log_config.addVariable(LogVariable('gyro.x', 'float'))
         gyro_log_config.addVariable(LogVariable('gyro.y', 'float'))
         gyro_log_config.addVariable(LogVariable('gyro.z', 'float'))
