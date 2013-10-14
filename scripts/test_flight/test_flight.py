@@ -31,9 +31,9 @@ class TestFlight:
 
     def connectSetupFinished(self, linkURI):
         log_timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-        self.motor_log_filename = str(log_timestamp) + '_motor.csv'
-        self.acc_log_filename = str(log_timestamp) + '_acc.csv'
-        self.gyro_log_filename = str(log_timestamp) + '_gyro.csv'
+        self.motor_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_motor.csv'
+        self.acc_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_acc.csv'
+        self.gyro_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_gyro.csv'
 
         Thread(target = self.motor_log).start()
         Thread(target = self.acc_log).start()
@@ -58,7 +58,7 @@ class TestFlight:
         self.motor_writer = csv.writer(motor_log_file)
         self.motor_writer.writerow(['time','m1','m2','m3','m4'])
 
-        motor_log_config = LogConfig('motor', motor_log_period)
+        motor_log_config = LogConfig('motor', 1000/log_freq)
         motor_log_config.addVariable(LogVariable('motor.m1', 'uint32_t'))
         motor_log_config.addVariable(LogVariable('motor.m2', 'uint32_t'))
         motor_log_config.addVariable(LogVariable('motor.m3', 'uint32_t'))
@@ -80,7 +80,7 @@ class TestFlight:
         self.acc_writer = csv.writer(acc_log_file)
         self.acc_writer.writerow(['time','acc.x','acc.y','acc.z'])
 
-        acc_log_config = LogConfig('acc', acc_log_period)
+        acc_log_config = LogConfig('acc', 1000/log_freq)
         acc_log_config.addVariable(LogVariable('acc.x', 'float'))
         acc_log_config.addVariable(LogVariable('acc.y', 'float'))
         acc_log_config.addVariable(LogVariable('acc.z', 'float'))
@@ -100,7 +100,7 @@ class TestFlight:
         self.gyro_writer = csv.writer(gyro_log_file)
         self.gyro_writer.writerow(['time','gyro.x','gyro.y','gyro.z'])
 
-        gyro_log_config = LogConfig('gyro', gyro_log_period)
+        gyro_log_config = LogConfig('gyro', 1000/log_freq)
         gyro_log_config.addVariable(LogVariable('gyro.x', 'float'))
         gyro_log_config.addVariable(LogVariable('gyro.y', 'float'))
         gyro_log_config.addVariable(LogVariable('gyro.z', 'float'))
