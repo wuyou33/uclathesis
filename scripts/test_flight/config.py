@@ -7,10 +7,7 @@ crazyradio = 'radio://0/10/2M'
 command_freq 				= 100 # Hz
 
 # Logging setup
-motor_log_period			= 25 # ms
-acc_log_period				= 25 # ms
-gyro_log_period				= 25 # ms
-
+log_freq					= 50 # Hz
 
 # Increasing step
 step_min_thrust          	= 30000
