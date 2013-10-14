@@ -1,9 +1,10 @@
 import time
+import datetime
 import argparse
 import logging
 import csv
-from threading import Thread
 import os.path
+from threading import Thread
 
 import cflib
 from cflib.crazyflie import Crazyflie
@@ -16,41 +17,27 @@ from config import *
 
 class TestFlight:
     def __init__(self):
+        self.log_data = []
+
         self.crazyflie = Crazyflie()
+
         cflib.crtp.init_drivers()
 
         self.crazyflie.open_link(crazyradio)
+
         # Set up the callback when connected
         self.crazyflie.connectSetupFinished.add_callback(
             self.connectSetupFinished)
 
     def connectSetupFinished(self, linkURI):
-        # Configure the logger to log accelerometer values and start recording.
- 
-        # The logging variables are added one after another to the logging
-        # configuration. Then the configuration is used to create a log packet
-        # which is cached on the Crazyflie. If the log packet is None, the
-        # program exits. Otherwise the logging packet receives a callback when
-        # it receives data, which prints the data from the logging packet's
-        # data dictionary as logging info.
+        log_timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+        self.motor_log_filename = str(log_timestamp) + '_motor.csv'
+        self.acc_log_filename = str(log_timestamp) + '_acc.csv'
+        self.gyro_log_filename = str(log_timestamp) + '_gyro.csv'
 
-        # # Set accelerometer logging config
-        # accel_log_conf = LogConfig("Accel", 10)
-
-        # accel_log_conf.addVariable(LogVariable("acc.x", "float"))
-        # accel_log_conf.addVariable(LogVariable("acc.y", "float"))
-        # accel_log_conf.addVariable(LogVariable("acc.z", "float"))
-
-        
-        # # Now that the connection is established, start logging
-        # self.accel_log = self.crazyflie.log.create_log_packet(accel_log_conf)
-
- 
-        # if self.accel_log is not None:
-        #     self.accel_log.dataReceived.add_callback(self.log_accel_data)
-        #     self.accel_log.start()
-        # else:
-        #     print("acc.x/y/z not found in log TOC")
+        Thread(target = self.motor_log).start()
+        Thread(target = self.acc_log).start()
+        Thread(target = self.gyro_log).start()
 
 
         # Call the requested thrust profile. 
@@ -63,12 +50,77 @@ class TestFlight:
         if args.thrust_profile == 'prbs':
             Thread(target=self.prbs).start()
 
-    def log_accel_data(self, data):
-        logging.info("Accelerometer: x=%.2f, y=%.2f, z=%.2f" %
-                        (data["acc.x"], data["acc.y"], data["acc.z"]))
+
+    # LOGGING METHODS
+    # - - - - - - - -
+    def motor_log(self):
+        motor_log_file = open(self.motor_log_filename, 'wb')
+        self.motor_writer = csv.writer(motor_log_file)
+        self.motor_writer.writerow(['time','m1','m2','m3','m4'])
+
+        motor_log_config = LogConfig('motor', motor_log_period)
+        motor_log_config.addVariable(LogVariable('motor.m1', 'uint32_t'))
+        motor_log_config.addVariable(LogVariable('motor.m2', 'uint32_t'))
+        motor_log_config.addVariable(LogVariable('motor.m3', 'uint32_t'))
+        motor_log_config.addVariable(LogVariable('motor.m4', 'uint32_t'))
+
+        self.motor_log = self.crazyflie.log.create_log_packet(motor_log_config)
+        if (self.motor_log is not None):
+            self.motor_log.data_received.add_callback(self.motor_data)
+            self.motor_log.error.add_callback(self.logging_error)
+            self.motor_log.start()
+        else:
+            logger.warning("Could not setup logconfiguration after connection!")
+    def motor_data(self, data):
+        self.motor_writer.writerow([time.time(), data['motor.m1'], data['motor.m2'], data['motor.m3'], data['motor.m4']])
+
+
+    def acc_log(self):
+        acc_log_file = open(self.acc_log_filename, 'wb')
+        self.acc_writer = csv.writer(acc_log_file)
+        self.acc_writer.writerow(['time','acc.x','acc.y','acc.z'])
+
+        acc_log_config = LogConfig('acc', acc_log_period)
+        acc_log_config.addVariable(LogVariable('acc.x', 'float'))
+        acc_log_config.addVariable(LogVariable('acc.y', 'float'))
+        acc_log_config.addVariable(LogVariable('acc.z', 'float'))
+
+        self.acc_log = self.crazyflie.log.create_log_packet(acc_log_config)
+        if (self.acc_log is not None):
+            self.acc_log.data_received.add_callback(self.acc_data)
+            self.acc_log.error.add_callback(self.logging_error)
+            self.acc_log.start()
+        else:
+            logger.warning("Could not setup logconfiguration after connection!")
+    def acc_data(self, data):
+        self.acc_writer.writerow([time.time(), data['acc.x'], data['acc.y'], data['acc.z']])
+
+    def gyro_log(self):
+        gyro_log_file = open(self.gyro_log_filename, 'wb')
+        self.gyro_writer = csv.writer(gyro_log_file)
+        self.gyro_writer.writerow(['time','gyro.x','gyro.y','gyro.z'])
+
+        gyro_log_config = LogConfig('gyro', gyro_log_config)
+        gyro_log_config.addVariable(LogVariable('gyro.x', 'float'))
+        gyro_log_config.addVariable(LogVariable('gyro.y', 'float'))
+        gyro_log_config.addVariable(LogVariable('gyro.z', 'float'))
+
+        self.gyro_log = self.crazyflie.log.create_log_packet(gyro_log_config)
+        if (self.gyro_log is not None):
+            self.gyro_log.data_received.add_callback(self.gyro_data)
+            self.gyro_log.error.add_callback(self.logging_error)
+            self.gyro_log.start()
+        else:
+            logger.warning("Could not setup logconfiguration after connection!")
+    def gyro_data(self, data):
+        self.gyro_writer.writerow([time.time(), data['gyro.x'], data['gyro.y'], data['gyro.z']])
+
+    def logging_error(self):
+        logger.warning("Callback of error in LogEntry :(")
 
 
     # THRUST PROFILES
+    # - - - - - - - -
     def increasing_step(self):
         thrust = step_min_thrust
         ts = 1.0/command_freq
@@ -97,15 +149,18 @@ class TestFlight:
         ts = 1.0/command_freq
         step = 0
 
+        pitch = 0
+        roll = 0
+        yaw_rate = 0
+
         # Check to see if the thrust has been specified from the command line
         try:
-            thrust = args.motor
+            thrust = int(args.motor)
         except:
-            thrust = hover_thrust
+            thrust = int(hover_thrust)
 
         while step*ts <= hover_time:
-            self.crazyflie.commander.send_setpoint(
-                0, 0, 0, thrust)
+            self.crazyflie.commander.send_setpoint(roll, pitch, yaw_rate, thrust)
             time.sleep(ts)
             step += 1
 
@@ -218,6 +273,6 @@ if __name__ == '__main__':
         raise SystemExit
 
     # Set up logging
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
 
     TestFlight()

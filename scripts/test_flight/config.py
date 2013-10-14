@@ -1,9 +1,14 @@
 # Crazyflie configuration
-crazyradio = 'radio://0/10/250K'
-
+#crazyradio = 'radio://0/10/250K'
+crazyradio = 'radio://0/10/1M'
 
 # General test flight configuration
-command_freq 				= 100 # Hz
+command_freq 				= 10 # Hz
+
+# Logging setup
+motor_log_period			= 50 # ms
+acc_log_period				= 50 # ms
+gyro_log_period				= 50 # ms
 
 
 # Increasing step
