@@ -49,6 +49,8 @@ class TestFlight:
             Thread(target=self.hover).start()
         if args.thrust_profile == 'prbs':
             Thread(target=self.prbs).start()
+        if args.thrust_profile == 'csv':
+            Thread(target=self.csv).start()
 
 
     # LOGGING METHODS
@@ -175,22 +177,18 @@ class TestFlight:
         u1 = []
         u2 = []
         u3 = []
+        u4 = []
 
         pitch = []
         roll = []
         yaw_rate = []
         thrust = []
 
-        prbs_pitch = []
-        prbs_roll = []
-        prbs_yaw_rate = []
-        prbs_thrust = []
-
         # Check to see if the thrust has been specified from the command line
         try:
-            thrust = args.motor
+            prbs_thrust = args.motor * 1.0
         except:
-            thrust = prbs_hover_thrust
+            prbs_thrust = prbs_hover_thrust * 1.0
 
         # Make sure an input file was supplied. If so, read it. Otherwise, exit
         try:
@@ -200,38 +198,26 @@ class TestFlight:
                     u1.append(int(row[0]))
                     u2.append(int(row[1]))
                     u3.append(int(row[2]))
+                    u4.append(int(row[3]))
         except:
             logging.error('PRBS sequence requires an input file be specified.')
             SystemExit
 
-        prbs_sequence_length = len(u1)
+        sequence_length = len(u1)
 
         ts = 1.0/command_freq
         step = 0
 
 
-        # build a pretest hover profile
-        for i in range(prbs_pretest_hover_time*command_freq):
-            pitch.append(0)
-            roll.append(0)
-            yaw_rate.append(0)
-            thrust.append(prbs_hover_thrust)
-            step += 1
-
         # build prbs input profile
-        for i in range(prbs_sequence_length):
+        for i in range(sequence_length):
             for j in range(prbs_scaling_factor):
-                prbs_pitch.append(u1[i]*prbs_max_pitch)
-                prbs_roll.append(u2[i]*prbs_max_roll)
-                prbs_yaw_rate.append(u3[i]*prbs_max_yaw_rate)
-                prbs_thrust.append(prbs_hover_thrust + 1000)
+                pitch.append(u1[i]*prbs_max_pitch)
+                roll.append(u2[i]*prbs_max_roll)
+                yaw_rate.append(u3[i]*prbs_max_yaw_rate)
+                thrust.append(u4[i]*prbs_thrust)
                 step += 1
 
-        # append prbs profile to end of pretest hover profile
-        pitch.extend(prbs_pitch)
-        roll.extend(prbs_roll)
-        yaw_rate.extend(prbs_yaw_rate)
-        thrust.extend(prbs_thrust)
 
         ts = 1.0/command_freq
         step = 0
@@ -250,8 +236,6 @@ class TestFlight:
         # since the message queue is not flushed before closing
         time.sleep(0.1)
         self.crazyflie.close_link()
-
-
 
 
 
