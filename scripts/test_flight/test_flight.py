@@ -32,10 +32,40 @@ class TestFlight:
     def connectSetupFinished(self, linkURI):
         log_timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 
-        flight_test_log(log_timestamp)
-        self.motor_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_motor.csv'
-        self.acc_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_acc.csv'
-        self.gyro_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_gyro.csv'
+        filename = str(log_timestamp) + '_config.txt'
+        f = open(filename, 'w')
+        f.write('RUN ID            = %s\n' % log_timestamp)
+        f.write('COMMAND FREQUENCY = %0i Hz\n' % command_freq)
+        f.write('LOGGING FREQUENCY = %0i Hz\n' % log_freq)
+        f.write('THRUST PROFILE    = %s\n' % args.thrust_profile)
+
+        if args.thrust_profile == 'hover':
+            try:
+                thrust = int(args.motor)
+            except:
+                thrust = int(hover_thrust)
+
+            f.write('THRUST            = %i\n' % thrust)
+            f.write('HOVER TIME        = %i sec\n' % hover_time)
+
+        if args.thrust_profile == 'prbs':
+            try:
+                thrust = int(args.motor)
+            except:
+                thrust = int(prbs_hover_thrust)
+
+            f.write('INPUT FILE        = %s\n' % args.file)
+            f.write('SCALING FACTOR    = %i\n' % prbs_scaling_factor)
+            f.write('MAX PITCH         = %i deg\n' % prbs_max_pitch)
+            f.write('MAX ROLL          = %i deg\n' % prbs_max_roll)
+            f.write('MAX YAW RATE      = %i deg/sec\n' % prbs_max_yaw_rate)
+            f.write('THRUST            = %i deg\n' % thrust)
+
+        f.close()
+
+        self.motor_log_filename = str(log_timestamp)+'_motor.csv'
+        self.acc_log_filename = str(log_timestamp)+'_acc.csv'
+        self.gyro_log_filename = str(log_timestamp)+'_gyro.csv'
 
         Thread(target = self.motor_log).start()
         Thread(target = self.acc_log).start()
@@ -119,39 +149,6 @@ class TestFlight:
 
     def logging_error(self):
         logger.warning("Callback of error in LogEntry :(")
-
-
-    def flight_test_log(timestamp):
-        filename = str(timestamp) + '_config.txt'
-        f = open(filename, 'w')
-        f.write(str(timestamp))
-        f.write('COMMAND FREQUENCY = %f Hz' % command_freq)
-        f.write('LOGGING FREQUENCY = %f Hz' % log_freq)
-        f.write('THRUST PROFILE    = %s' % args.thrust_profile)
-
-        if args.thrust_profile == 'hover':
-            try:
-                thrust = int(args.motor)
-            except:
-                thrust = int(hover_thrust)
-
-            f.write('THRUST            = %i' % thrust)
-            f.write('HOVER TIME        = %i sec' % hover_time)
-
-        if args.thrust_profile == 'prbs':
-            try:
-                thrust = int(args.motor)
-            except:
-                thrust = int(prbs_hover_thrust)
-
-            f.write('INPUT FILE         = %s' % args.file)
-            f.write('SCALING FACTOR     = %i' % prbs_scaling_factor)
-            f.write('MAX PITCH          = %i deg' % prbs_max_pitch)
-            f.write('MAX ROLL           = %i deg' % prbs_max_roll)
-            f.write('MAX YAW RATE       = %i deg/sec' % prbs_max_yaw_rate)
-            f.write('THRUST             = %i deg' % thrust)
-
-        f.close()
 
 
 
