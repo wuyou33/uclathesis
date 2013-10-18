@@ -2,19 +2,20 @@ clear all
 close all
 clc
 
+run_id = '20131017212836';
 
-data_path = '../data/raw_flight_test_data/';
-motor_filename = '20131013210336_50_motor.csv';
-acc_filename = '20131013210336_50_acc.csv';
-gyro_filename = '20131013210336_50_gyro.csv';
+output_data_path = '../data/raw_flight_test_data/';
+motor_filename = strcat(output_data_path, run_id, '/', run_id, '_motor.csv');
+acc_filename = strcat(output_data_path, run_id, '/', run_id, '_acc.csv');
+gyro_filename = strcat(output_data_path, run_id, '/', run_id, '_gyro.csv');
 collection_freq = 50; % Hz
 resample_freq = 50; % Hz
 interp_method = 'nearest';
 
 
-motor = csvread(strcat(data_path,motor_filename), 1, 0);
-acc = csvread(strcat(data_path,acc_filename), 1, 0);
-gyro = csvread(strcat(data_path,gyro_filename), 1, 0);
+motor = csvread(motor_filename, 1, 0);
+acc = csvread(acc_filename, 1, 0);
+gyro = csvread(gyro_filename, 1, 0);
 
 % Find the time of the first recorded measurement
 % Recompute all times relative to t_0
