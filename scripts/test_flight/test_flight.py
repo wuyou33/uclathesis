@@ -31,6 +31,8 @@ class TestFlight:
 
     def connectSetupFinished(self, linkURI):
         log_timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+
+        flight_test_log(log_timestamp)
         self.motor_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_motor.csv'
         self.acc_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_acc.csv'
         self.gyro_log_filename = str(log_timestamp)+'_'+str(log_freq)+'_gyro.csv'
@@ -40,7 +42,7 @@ class TestFlight:
         Thread(target = self.gyro_log).start()
 
 
-        # Call the requested thrust profile. 
+        # Call the requested thrust profile.
         # Start a separate thread to run test.
         # Do not hijack the calling thread!
         if args.thrust_profile == 'increasing_step':
@@ -49,8 +51,6 @@ class TestFlight:
             Thread(target=self.hover).start()
         if args.thrust_profile == 'prbs':
             Thread(target=self.prbs).start()
-        if args.thrust_profile == 'csv':
-            Thread(target=self.csv).start()
 
 
     # LOGGING METHODS
@@ -119,6 +119,40 @@ class TestFlight:
 
     def logging_error(self):
         logger.warning("Callback of error in LogEntry :(")
+
+
+    def flight_test_log(timestamp):
+        filename = str(timestamp) + '_config.txt'
+        f = open(filename, 'w')
+        f.write(str(timestamp))
+        f.write('COMMAND FREQUENCY = %f Hz' % command_freq)
+        f.write('LOGGING FREQUENCY = %f Hz' % log_freq)
+        f.write('THRUST PROFILE    = %s' % args.thrust_profile)
+
+        if args.thrust_profile == 'hover':
+            try:
+                thrust = int(args.motor)
+            except:
+                thrust = int(hover_thrust)
+
+            f.write('THRUST            = %i' % thrust)
+            f.write('HOVER TIME        = %i sec' % hover_time)
+
+        if args.thrust_profile == 'prbs':
+            try:
+                thrust = int(args.motor)
+            except:
+                thrust = int(prbs_hover_thrust)
+
+            f.write('INPUT FILE         = %s' % args.file)
+            f.write('SCALING FACTOR     = %i' % prbs_scaling_factor)
+            f.write('MAX PITCH          = %i deg' % prbs_max_pitch)
+            f.write('MAX ROLL           = %i deg' % prbs_max_roll)
+            f.write('MAX YAW RATE       = %i deg/sec' % prbs_max_yaw_rate)
+            f.write('THRUST             = %i deg' % thrust)
+
+        f.close()
+
 
 
     # THRUST PROFILES
@@ -224,9 +258,9 @@ class TestFlight:
 
         while step < len(pitch):
             self.crazyflie.commander.send_setpoint(
-                roll[step], 
-                pitch[step], 
-                yaw_rate[step], 
+                roll[step],
+                pitch[step],
+                yaw_rate[step],
                 thrust[step])
             time.sleep(ts)
             step += 1
