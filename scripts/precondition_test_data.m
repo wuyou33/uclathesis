@@ -7,7 +7,7 @@ run_id = '20131017212836';
 interp_method = 'nearest';
 collection_freq = 50; % Hz
 front_trim = 5; % number of measurements to trim off the front
-back_trim = 5; % number of measurements to trim off the back
+back_trim = 6; % number of measurements to trim off the back
 
 
 % Read the raw csv data in to matrices
@@ -45,8 +45,8 @@ gyro_z_i = interp1(gyro(:,1),gyro(:,4),uniform_t,interp_method);
 u = [motor_1_i; motor_2_i; motor_3_i; motor_4_i]';
 y = [acc_x_i; acc_y_i; acc_z_i; gyro_x_i; gyro_y_i; gyro_z_i]';
 
-y_trim = y(3:end-1, :);
-u_trim = u(3:end-1, :);
+y = y(3:end-1, :);
+u = u(3:end-1, :);
 
 % Save results to .mat file
 out_file = strcat('../data/flight_test_data/', run_id, '.mat');
