@@ -247,6 +247,36 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%         NOMENCLATURE PAGE                                            %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\if@nomen
+\def\@nomenclature{}
+\newcommand\nomenclature[1]{\@nomentrue\def\@nomenclature{#1}}
+
+\newcommand\@makenomenclatureheading{
+  {
+    \centering
+    \textsc{\large Nomenclature}
+    \vskip 12pt
+  }
+}
+
+
+\newcommand\@makenomenclature{
+   \if@nomen
+      \ColumnSaveHeading{\@makenomenclatureheading}
+      \par\pagestyle{plain}
+      \renewcommand\baselinestretch{\@spacing}\@normalsize
+      \noindent \normalsize \normalfont \@nomenclature
+      \vfill
+      \ColumnRestore
+   \fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %								       %
 %			      VITA PAGE				       %
 %								       %
@@ -515,7 +545,7 @@
   % NOTE:  This extra page makes the output non-conforming
   % to the RFTADP, unless you throw it away.
   \if@twoside
-    \typeout{Two-side detected.}    
+    \typeout{Two-side detected.}
     \pagebreak   % the back side of the title page
   \fi
   \@makecopyrightpage
@@ -525,6 +555,7 @@
   \tableofcontents
   \listoffigures
   \listoftables
+  \@makenomenclature
   \@makeacknowledgments
   \@makevitapage
   \newpage \pagenumbering{arabic}
