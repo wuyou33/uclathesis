@@ -13,7 +13,7 @@ where $x_k \in \mathbb{R}^n$ is the system state, $u_k \in \mathbb{R}^m$ is the 
 \end{subequations}
 where $A_K = A-KC$ and $B_K = B-KD$.
 
-The systems represented by (\ref{eq:innovation}) and (\ref{eq:process}) are equivalent from an input/output point of view, but because $A_K$ is guaranteed stable even if the original process matrix $A$ is unstable, the predictor form proves advantageous when considering unstable open-loop systems.
+The systems represented by (\ref{eq:innovation}) and (\ref{eq:process}) are equivalent from an input/output point of view, but because $A_K$ is guaranteed stable even if the original process matrix $A$ is unstable, the predictor form proves advantageous when considering unstable open-loop systems. We will use the state space model in innovation form to derive the general subspace algorithm for identifying combined deterministic-stochastic LTI systems but will rely on the prediction form of the model when considering identification of closed-loop systems.
 
 \section{Assumptions}
 
