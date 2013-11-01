@@ -1,16 +1,54 @@
 \chapter{Subspace Identification Methods}
+Subspace identification methods (SIM) provide an approach to identifing an unknown LTI system in its state space form using input/output data. Subspace methods rely on linear algebra techniques to extract the system matrices from the column space of the system's extended observability matrix. Considering the combined deterministic-stochastic LTI system introduced in the previous chapter, the subspace identification problem is: given a set of input and output data, estimate the system matrices $A$, $B$, $C$, and $D$ and the Kalman filter gain $K$ up to within a similarity transform. 
 
 
-\section{Subspace Identification}
 
-\subsection{General Subspace Identification Problem}
 
-\subsection{Geometric Tools}
-Matrices with Hankel structure
-Matrix Row/Column space
-Projections
+\subsection{Linear Algebra Tools}
 
-\subsection{Subspace Identification of Combined Deterministic-Stochastic Systems}
+\subsubsection*{Hankel Matrices}
+A Hankel matrix is a matrix $H \in \mathbb{R}^{m\times n}$ with constant skew-diagonals. In other words, the value of the $(i, j)^{\mbox{th}}$ entry of $H$ depends only on the sum $i + j$.
+\begin{equation*}
+H_{m,n} = \begin{bmatrix}
+h_1 & h_2 & \cdots & h_n\\
+h_2 & h_3 & \cdots & h_{n+1}\\
+\vdots & \vdots & \ddots & \vdots\\
+h_m & h_{m+1} & \cdots & h_{m+n-1}
+\end{bmatrix}
+\end{equation*}
+If each entry in the matrix is also a matrix, it is called a block Hankel matrix.
+
+
+\subsubsection*{Fundamental Matrix Subspaces}
+We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$. The dimension of the column space is called the rank. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
+
+
+\subsubsection*{Projections}
+
+
+\subsubsection*{Singular Value Decomposition}
+Any matrix $A \in \mathbb{R}^{m\times n}$ can be decomposed by a singular value decomposition (SVD) given by
+\begin{equation*}
+A = U\Sigma V^T
+\end{equation*}
+where $U \in \mathbb{R}^{m\times m}$ and $V \in \mathbb{R}^{n\times n}$ are orthogonal matrices and $\Sigma \in \mathbb{R}^{m\times n}$ is diagonal matrix of the singular values of $A$ ordered such that
+\begin{equation*}
+\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_k > 0
+\end{equation*}
+
+
+
+
+\section{Subspace Identification of Combined Deterministic-Stochastic Systems}
+Considering the combined deterministic-stochastic LTI system in innovation form
+\begin{subequations}
+\begin{equation}x_{k+1} = Ax_k + Bu_k + Ke_k\end{equation}
+\begin{equation}y_k = Cx_k + Du_k + e_k\end{equation}
+\end{subequations}
+
+
+
+A detailed derivation of this procedure follows
 
 
 \section{Closed-Loop Subspace Identification}
