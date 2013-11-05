@@ -15,7 +15,7 @@ clc
     u = randn(len,2);
 
 %   With noise added, the state space system equations become:
-%                  x_{k+1) = A x_k + B u_k + K e_k        
+%                  x_(k+1) = A x_k + B u_k + K e_k        
 %                    y_k   = C x_k + D u_k + e_k
 %                 cov(e_k) = R
 %                 

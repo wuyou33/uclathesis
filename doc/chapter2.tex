@@ -2,18 +2,18 @@
 Introduce concept of LTI system here
 \section{State Space Model}
 We will consider a combined deterministic-stochastic LTI system written in innovation form as
-\begin{subequations}\label{eq:innovation}
-\begin{equation}x_{k+1} = Ax_k + Bu_k + Ke_k\end{equation}
-\begin{equation}y_k = Cx_k + Du_k + e_k\end{equation}
+\begin{subequations}\label{eq:2_innovation}
+\begin{equation}x(k+1) = Ax(k) + Bu(k) + Ke(k)\end{equation}
+\begin{equation}y(k) = Cx(k) + Du(k) + e(k)\end{equation}
 \end{subequations}
-where $x_k \in \mathbb{R}^n$ is the system state, $u_k \in \mathbb{R}^m$ is the system input, $y_k \in \mathbb{R}^l$ is the system output, and $e_k \in \mathbb{R}^l$ is the innovation. $A$, $B$, $C$, and $D$ are the system matrices with appropriate dimensions and $K$ is the Kalman filter gain. The system represented in (\ref{eq:innovation}) can also be represented in predictor form as
-\begin{subequations}\label{eq:process}
-\begin{equation}x_{k+1} = A_Kx_k + B_Ku_k + Ky_k\end{equation}
-\begin{equation}y_k = Cx_k + Du_k + e_k\end{equation}
+where $x_k \in \mathbb{R}^n$ is the system state, $u_k \in \mathbb{R}^m$ is the system input, $y_k \in \mathbb{R}^l$ is the system output, and $e_k \in \mathbb{R}^l$ is the innovation. $A$, $B$, $C$, and $D$ are the system matrices with appropriate dimensions and $K$ is the Kalman filter gain. The system represented in (\ref{eq:2_innovation}) can also be represented in predictor form as
+\begin{subequations}\label{eq:2_process}
+\begin{equation}x(k+1) = A_Kx(k) + B_Ku(k) + Ky(k)\end{equation}
+\begin{equation}y(k) = Cx(k) + Du(k) + e(k)\end{equation}
 \end{subequations}
 where $A_K = A-KC$ and $B_K = B-KD$.
 
-The systems represented by (\ref{eq:innovation}) and (\ref{eq:process}) are equivalent from an input/output point of view, but because $A_K$ is guaranteed stable even if the original process matrix $A$ is unstable, the predictor form proves advantageous when considering unstable open-loop systems. We will use the state space model in innovation form to derive the general subspace algorithm for identifying combined deterministic-stochastic LTI systems but will rely on the prediction form of the model when considering identification of closed-loop systems.
+The systems represented by (\ref{eq:2_innovation}) and (\ref{eq:2_process}) are equivalent from an input/output point of view, but because $A_K$ is guaranteed stable even if the original process matrix $A$ is unstable, the predictor form proves advantageous when considering unstable open-loop systems. We will use the state space model in innovation form to derive the general subspace algorithm for identifying combined deterministic-stochastic LTI systems but will rely on the prediction form of the model when considering identification of closed-loop systems.
 
 \section{Assumptions}
 

@@ -1,57 +1,93 @@
 \chapter{Subspace Identification Methods}
 Subspace identification methods (SIM) provide an approach to identifing an unknown LTI system in its state space form using input/output data. Subspace methods rely on linear algebra techniques to extract the system matrices from the column space of the system's extended observability matrix. Considering the combined deterministic-stochastic LTI system introduced in the previous chapter, the subspace identification problem is: given a set of input and output data, estimate the system matrices $A$, $B$, $C$, and $D$ and the Kalman filter gain $K$ up to within a similarity transform. 
 
+!!!!!Give basic overview of the two steps here!
 
 
-
-\section{Linear Algebra Tools}
-
-\subsubsection*{Hankel Matrices}
-A Hankel matrix is a matrix $H \in \mathbb{R}^{m\times n}$ with constant skew-diagonals. In other words, the value of the $(i, j)^{\mbox{th}}$ entry of $H$ depends only on the sum $i + j$.
-\begin{equation*}
-H_{m,n} = \begin{bmatrix}
-h_1 & h_2 & \cdots & h_n\\
-h_2 & h_3 & \cdots & h_{n+1}\\
-\vdots & \vdots & \ddots & \vdots\\
-h_m & h_{m+1} & \cdots & h_{m+n-1}
-\end{bmatrix}
-\end{equation*}
-If each entry in the matrix is also a matrix, it is called a block Hankel matrix.
-
-
-\subsubsection*{Fundamental Matrix Subspaces}
-We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$. The dimension of the column space is called the rank. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
-
-
-\subsubsection*{Projections}
-
-
-\subsubsection*{Singular Value Decomposition}
-Any matrix $A \in \mathbb{R}^{m\times n}$ can be decomposed by a singular value decomposition (SVD) given by
-\begin{equation*}
-A = U\Sigma V^T
-\end{equation*}
-where $U \in \mathbb{R}^{m\times m}$ and $V \in \mathbb{R}^{n\times n}$ are orthogonal matrices and $\Sigma \in \mathbb{R}^{m\times n}$ is diagonal matrix of the singular values of $A$ ordered such that
-\begin{equation*}
-\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_k > 0
-\end{equation*}
-
-
-
-
-\section{Subspace Identification of Combined Deterministic-Stochastic Systems}
+\section{Open-Loop Subspace Identification}
 Considering the combined deterministic-stochastic LTI system in innovation form
-\begin{subequations}
-\begin{equation}x_{k+1} = Ax_k + Bu_k + Ke_k\end{equation}
-\begin{equation}y_k = Cx_k + Du_k + e_k\end{equation}
+\begin{subequations}\label{eq:3_innovation}
+\begin{equation}x(k+1) = Ax(k) + Bu(k) + Ke(k)\end{equation}
+\begin{equation}y(k) = Cx(k) + Du(k) + e(k)\end{equation}
 \end{subequations}
+we wish to estimate $A$, $B$, $C$, $D$, and $K$ to within a similarity transform using system input/output data. Based on the state space model in (\ref{eq:3_innovation}), an extended state space model can be formulated as
+\begin{equation}\label{eq:3_extended_state_space}
+Y_f = \Gamma_f X_k + H_f U_f + G_f E_f
+\end{equation}
+where the subscript $f$ denotes the future horizon. The extended observability matrix is
+\begin{equation}\label{eq:3_extended_observability}
+\Gamma_f = \begin{bmatrix}C\\ CA\\ \vdots\\ CA^{f-1}\end{bmatrix}
+\end{equation}
+and $H_f$ and $G_f$ are Toeplitz matrices of the Markov parameters of the deterministic and stochastic subsystems, respectively
+\begin{subequations}\label{eq:3_toeplitz}
+\begin{equation}
+H_f = \begin{bmatrix}
+D & 0 & 0 & \cdots & 0\\
+CB & D & 0 & \cdots & 0\\
+CAB & CB & D & \cdots & 0\\
+\vdots & \vdots  & \vdots & \ddots & \vdots\\
+CA^{f-2}B & CA^{f-3}B & CA^{f-4}B & \cdots & D
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+G_f = \begin{bmatrix}
+I & 0 & 0 & \cdots & 0\\
+CK & I & 0 & \cdots & 0\\
+CAK & CK & I & \cdots & 0\\
+\vdots & \vdots  & \vdots & \ddots & \vdots\\
+CA^{f-2}K & CA^{f-3}K & CA^{f-4}K & \cdots & I
+\end{bmatrix}
+\end{equation}
+\end{subequations}
+We arrange the input data in the following Hankel form:
+\begin{equation}\label{eq:3_input}
+U_f = \begin{bmatrix}
+u(k) & u(k+1) & \cdots & u(k+N-1)\\
+u(k+1) & u(k+2) & \cdots & u(k+N)\\
+\vdots & \vdots & \ddots & \vdots\\
+u(k+f-1) & u(k+f) & \cdots & u(k+f+N-2)
+\end{bmatrix}
+\end{equation}
+We similarly arrange the output data $Y_f$ and noise $E_f$ according to the same Hankel form.
 
+!!!!! Need to discuss past and future splitting !!!!!
 
+\begin{equation*}
+Z_p = \begin{bmatrix} U_p\\ Y_p\end{bmatrix}
+\end{equation*}
 
-A detailed derivation of this procedure follows
+\subsection{Estimation of the Extended Observability Matrix}
+Estimate $\Gamma_f$ from (\ref{eq:3_extended_state_space}) via MOESP: linear regression followed by an SVD to estimate EOM.
+
+First, eliminate $U_f$ by post-multiplying (\ref{eq:3_extended_state_space}) by $\Pi_{U_f}^\perp$ (eliminate the influence of the input) giving
+\begin{equation}
+Y_f\Pi_{U_f}^\perp = \Gamma_f X_k\Pi_{U_f}^\perp + G_f E_f\Pi_{U_f}^\perp
+\end{equation}
+Recalling $E_f$ is uncorrelated with $U_f$, 
+\begin{equation}
+Y_f\Pi_{U_f}^\perp = \Gamma_f X_k\Pi_{U_f}^\perp + G_f E_f
+\end{equation}
+Next we eliminate the influence of the noise term $E_f$. From Kalman filter theory, $E_f$ is uncorrelated with $Z_p$ (cite Qin overview paper on this one):
+\begin{equation*}
+\lim_{N\rightarrow\infty}\frac{1}{N}E_fZ_p^T =0
+\end{equation*}
+Thus multiplying (3.7) on the right by $Z_p$ gives
+\begin{equation}
+Y_f\Pi_{U_f}^\perp Z_p = \Gamma_f X_k\Pi_{U_f}^\perp Z_p
+\end{equation}
+
 
 
 \section{Closed-Loop Subspace Identification}
+
+Under open-loop conditions, $E_f$ is uncorrelated with $U_f$. That is,
+\begin{equation*}
+\lim_{N\rightarrow\infty}\frac{1}{N}E_fU_f^T =0
+\end{equation*}
+or 
+\begin{equation*}
+E_f \Pi_{U_f}^\perp = E_f(I-U_f^T(U_fU_f^T)^{-1}U_f) = E_f
+\end{equation*}
 
 \subsection{Identifying Systems Operating Under Feedback Control}
 

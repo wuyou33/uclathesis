@@ -5,15 +5,16 @@
 \contentsline {section}{\numberline {2.1}State Space Model}{4}
 \contentsline {section}{\numberline {2.2}Assumptions}{5}
 \contentsline {chapter}{\numberline {3}Subspace Identification Methods}{6}
-\contentsline {section}{\numberline {3.1}Linear Algebra Tools}{6}
-\contentsline {section}{\numberline {3.2}Subspace Identification of Combined Deterministic-Stochastic Systems}{7}
-\contentsline {section}{\numberline {3.3}Closed-Loop Subspace Identification}{8}
-\contentsline {subsection}{\numberline {3.3.1}Identifying Systems Operating Under Feedback Control}{8}
-\contentsline {subsection}{\numberline {3.3.2}Innovation Estimation Method}{8}
-\contentsline {subsection}{\numberline {3.3.3}Whitening Filter}{8}
-\contentsline {chapter}{\numberline {4}Experiments}{9}
-\contentsline {section}{\numberline {4.1}Experiment Design}{9}
-\contentsline {chapter}{\numberline {5}Results}{10}
-\contentsline {chapter}{\numberline {6}Conclusion}{11}
-\contentsline {section}{\numberline {6.1}Future Work}{11}
-\contentsline {chapter}{References}{12}
+\contentsline {section}{\numberline {3.1}Open-Loop Subspace Identification}{6}
+\contentsline {subsection}{\numberline {3.1.1}Estimation of the Extended Observability Matrix}{8}
+\contentsline {section}{\numberline {3.2}Closed-Loop Subspace Identification}{8}
+\contentsline {subsection}{\numberline {3.2.1}Identifying Systems Operating Under Feedback Control}{9}
+\contentsline {subsection}{\numberline {3.2.2}Innovation Estimation Method}{9}
+\contentsline {subsection}{\numberline {3.2.3}Whitening Filter}{9}
+\contentsline {chapter}{\numberline {4}Experiments}{10}
+\contentsline {section}{\numberline {4.1}Experiment Design}{10}
+\contentsline {chapter}{\numberline {5}Results}{11}
+\contentsline {chapter}{\numberline {6}Conclusion}{12}
+\contentsline {section}{\numberline {6.1}Future Work}{12}
+\contentsline {section}{\numberline {6.2}Linear Algebra Tools}{13}
+\contentsline {chapter}{References}{15}
