@@ -1,16 +1,20 @@
 \chapter{Subspace Identification Methods}
-Subspace identification methods (SIM) provide an approach to identifing an unknown LTI system in its state space form using input/output data. Subspace methods rely on linear algebra techniques to extract the system matrices from the column space of the system's extended observability matrix. Considering the combined deterministic-stochastic LTI system introduced in the previous chapter, the subspace identification problem is: given a set of input and output data, estimate the system matrices $A$, $B$, $C$, and $D$ and the Kalman filter gain $K$ up to within a similarity transform. 
+Subspace identification methods (SIM) provide an approach to identifing LTI systems in their state space form using input/output data. SIMs provide an attractive alternative to Prediction Error Methods (PEM) because of their ability to identify MIMO systems and their non-iterative solution nature, making them suitable for working with large data sets. Traditional SIMs include the canonical variate analysis (CVA) method proposed by Larimore \cite{}, the multi-variable output-error state space (MOESP) method proposed by Verhaegen \cite{}, and the numerical algorithms for subspace state space system identification (N4SID) method proposed by Van Overschee and De Moor \cite{}. A unifying theorem proposed by Van Overschee and De Moor \cite{van1995unifying} links these algorithms through the use of different weighting matrices for each method.  
 
-!!!!!Give basic overview of the two steps here!
+As described in Van Overschee and De Moor's unifying theorem, all SIMs follow the same general two step procedure. First, estimate the subspace spanned by the columns of the extended observability matrix ($\Gamma$) from input-output data $u_k$, $y_k$. The dimension of $\Gamma$ determines the order $n$ of the estimated system. The system order is determined and $\Gamma$ reduced accordingly. Second, the system matrices ($A$, $B$, $C$, $D$) are determined, either directly from the extended observability matrix or from the system's realized state sequence $X$.
 
+The general subspace identification problem is: given a set of input and output data, estimate the system matrices $A$, $B$, $C$, and $D$ and the Kalman filter gain $K$ to within a similarity transform.
 
 \section{Open-Loop Subspace Identification}
-Considering the combined deterministic-stochastic LTI system in innovation form
+When a system is operating in open-loop (i.e. no feedback), the input data is assumed to be independent of past noise. In this case, the traditional SIMs (MOESP, N4SID, CVA) can be applied without modification. 
+
+\subsection{Extended State Space Model}
+A combined deterministic-stochastic LTI system is given in its innovation form
 \begin{subequations}\label{eq:3_innovation}
 \begin{equation}x(k+1) = Ax(k) + Bu(k) + Ke(k)\end{equation}
 \begin{equation}y(k) = Cx(k) + Du(k) + e(k)\end{equation}
 \end{subequations}
-we wish to estimate $A$, $B$, $C$, $D$, and $K$ to within a similarity transform using system input/output data. Based on the state space model in (\ref{eq:3_innovation}), an extended state space model can be formulated as
+Based on the state space model in (\ref{eq:3_innovation}), an extended state space model can be formulated as
 \begin{equation}\label{eq:3_extended_state_space}
 Y_f = \Gamma_f X_k + H_f U_f + G_f E_f
 \end{equation}
@@ -39,6 +43,8 @@ CA^{f-2}K & CA^{f-3}K & CA^{f-4}K & \cdots & I
 \end{bmatrix}
 \end{equation}
 \end{subequations}
+
+\subsection{Input-Output Data}
 We arrange the input data in the following Hankel form:
 \begin{equation}\label{eq:3_input}
 U_f = \begin{bmatrix}
@@ -75,6 +81,10 @@ Thus multiplying (3.7) on the right by $Z_p$ gives
 \begin{equation}
 Y_f\Pi_{U_f}^\perp Z_p = \Gamma_f X_k\Pi_{U_f}^\perp Z_p
 \end{equation}
+
+
+\subsection{Determination of the System Matrices}
+
 
 
 
