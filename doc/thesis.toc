@@ -1,23 +1,28 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Related Work}{2}
 \contentsline {section}{\numberline {1.2}Motivation and Contributions}{2}
-\contentsline {chapter}{\numberline {2}Model and Assumptions}{4}
-\contentsline {section}{\numberline {2.1}State Space Model}{4}
-\contentsline {section}{\numberline {2.2}Assumptions}{5}
-\contentsline {chapter}{\numberline {3}Subspace Identification Methods}{6}
-\contentsline {section}{\numberline {3.1}Open-Loop Subspace Identification}{7}
-\contentsline {subsection}{\numberline {3.1.1}Extended State Space Model}{7}
-\contentsline {subsection}{\numberline {3.1.2}Input-Output Data}{9}
-\contentsline {subsection}{\numberline {3.1.3}Estimation of the Extended Observability Matrix}{9}
-\contentsline {subsection}{\numberline {3.1.4}Determination of the System Matrices}{10}
-\contentsline {section}{\numberline {3.2}Closed-Loop Subspace Identification}{10}
-\contentsline {subsection}{\numberline {3.2.1}Identifying Systems Operating Under Feedback Control}{10}
-\contentsline {subsection}{\numberline {3.2.2}Innovation Estimation Method}{10}
-\contentsline {subsection}{\numberline {3.2.3}Whitening Filter}{10}
-\contentsline {chapter}{\numberline {4}Experiments}{11}
-\contentsline {section}{\numberline {4.1}Experiment Design}{11}
-\contentsline {chapter}{\numberline {5}Results}{12}
-\contentsline {chapter}{\numberline {6}Conclusion}{13}
-\contentsline {section}{\numberline {6.1}Future Work}{13}
-\contentsline {section}{\numberline {6.2}Linear Algebra Tools}{14}
-\contentsline {chapter}{References}{16}
+\contentsline {chapter}{\numberline {2}Preliminaries}{4}
+\contentsline {section}{\numberline {2.1}Linear Algebra Tools}{4}
+\contentsline {subsection}{\numberline {2.1.1}Fundamental Matrix Subspaces}{4}
+\contentsline {subsection}{\numberline {2.1.2}Projections}{5}
+\contentsline {subsection}{\numberline {2.1.3}Singular Value Decomposition}{5}
+\contentsline {section}{\numberline {2.2}Linear Systems}{5}
+\contentsline {subsection}{\numberline {2.2.1}Linear Time-Invariant Systems}{5}
+\contentsline {subsection}{\numberline {2.2.2}Deterministic and Stochastic Systems}{5}
+\contentsline {subsection}{\numberline {2.2.3}State Space Representations}{5}
+\contentsline {section}{\numberline {2.3}Assumptions}{6}
+\contentsline {chapter}{\numberline {3}Subspace Identification Methods}{7}
+\contentsline {section}{\numberline {3.1}Open-Loop Subspace Identification}{8}
+\contentsline {subsection}{\numberline {3.1.1}Extended State Space Model}{8}
+\contentsline {subsection}{\numberline {3.1.2}Estimation of the Extended Observability Matrix}{10}
+\contentsline {subsection}{\numberline {3.1.3}Determination of the System Matrices}{13}
+\contentsline {section}{\numberline {3.2}Closed-Loop Subspace Identification}{13}
+\contentsline {subsection}{\numberline {3.2.1}Identifying Systems Operating Under Feedback Control}{13}
+\contentsline {subsection}{\numberline {3.2.2}Innovation Estimation Method}{13}
+\contentsline {subsection}{\numberline {3.2.3}Whitening Filter}{13}
+\contentsline {chapter}{\numberline {4}Experiments}{14}
+\contentsline {section}{\numberline {4.1}Experiment Design}{14}
+\contentsline {chapter}{\numberline {5}Results}{15}
+\contentsline {chapter}{\numberline {6}Conclusion}{16}
+\contentsline {section}{\numberline {6.1}Future Work}{16}
+\contentsline {chapter}{References}{17}

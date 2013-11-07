@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  5 NOV 2013 22:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  6 NOV 2013 22:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -136,14 +136,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
-))
+)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-)
+))
 (./prelim.tex) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
@@ -250,80 +250,78 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [4
-
-])
+))
 \tf@toc=\write3
 \openout3 = `thesis.toc'.
 
- [5]
+ [4
+
+]
 (./thesis.lof)
 \tf@lof=\write4
 \openout4 = `thesis.lof'.
 
- [6
+ [5
 
 ] (./thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
- [7
+ [6
 
-] [8] (./chapter1.tex
+] [7] (./chapter1.tex
 CHAPTER 1.
 [1
 
-] <../fig/prbs_input.pdf, id=41, 397.485pt x 252.945pt>
+] <../fig/prbs_input.pdf, id=38, 397.485pt x 252.945pt>
 File: ../fig/prbs_input.pdf Graphic file (type pdf)
 
 <use ../fig/prbs_input.pdf>
-Package pdftex.def Info: ../fig/prbs_input.pdf used on input line 14.
+Package pdftex.def Info: ../fig/prbs_input.pdf used on input line 13.
 (pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
 
-<../fig/closed_loop_block_diagram.pdf, id=42, 397.485pt x 180.675pt>
+<../fig/closed_loop_block_diagram.pdf, id=39, 397.485pt x 180.675pt>
 File: ../fig/closed_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/closed_loop_block_diagram.pdf>
 Package pdftex.def Info: ../fig/closed_loop_block_diagram.pdf used on input lin
-e 23.
+e 22.
 (pdftex.def)             Requested size: 397.48402pt x 180.67455pt.
 ) (./chapter2.tex [2 <../fig/prbs_input.pdf>] [3 <../fig/closed_loop_block_diag
 ram.pdf>]
 CHAPTER 2.
+[4
 
-Overfull \hbox (0.52374pt too wide) in paragraph at lines 16--17
+] [5]
+Overfull \hbox (0.52374pt too wide) in paragraph at lines 56--57
 []\OT1/cmr/m/n/12 The sys-tems rep-re-sented by (2.1[]) and (2.2[]) are equiv-a
 -lent from an in-put/output
  []
 
-[4
-
-]) (./chapter3.tex [5]
+) (./chapter3.tex [6]
 CHAPTER 3.
-[6
+[7
 
-] [7] [8] [9]) (./chapter4.tex [10]
+] [8] [9] [10] [11] [12]) (./chapter4.tex [13]
 CHAPTER 4.
-) (./chapter5.tex [11
+) (./chapter5.tex [14
 
 ]
 CHAPTER 5.
-) (./chapter6.tex [12
+) (./chapter6.tex [15
 
 ]
 CHAPTER 6.
-) (./appendixA.tex [13
+) (./thesis.bbl [16
 
-] [14
+] [17
 
-]) (./thesis.bbl [15] [16
-
-]) [17] (./thesis.aux) ) 
+]) [18] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 2458 strings out of 493610
- 32866 string characters out of 3142404
- 97732 words of memory out of 3000000
- 5691 multiletter control sequences out of 15000+200000
+ 2469 strings out of 493610
+ 33180 string characters out of 3142404
+ 97856 words of memory out of 3000000
+ 5705 multiletter control sequences out of 15000+200000
  10752 words of font info for 40 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  38i,9n,23p,1471b,214s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -340,7 +338,7 @@ cmsy10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on thesis.pdf (26 pages, 178346 bytes).
+Output written on thesis.pdf (26 pages, 186237 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  103 compressed objects within 2 object streams
