@@ -3,9 +3,9 @@ Subspace identification methods (SIM) provide an approach to identifing LTI syst
 
 Extensive work in both the theory and application of SIMs in the last 20 years has resulted in the development of a number of popular algorithms, including the canonical variate analysis (CVA) method proposed by Larimore \cite{larimore1990canonical}, the multi-variable output-error state space (MOESP) method proposed by Verhaegen \cite{verhaegen1992subspace}, and the numerical algorithms for subspace state space system identification (N4SID) proposed by Van Overschee and De Moor \cite{van1994n4sid}. A unifying theorem proposed by Van Overschee and De Moor \cite{van1995unifying} links these algorithms and provides a generalized approach to the subspace identification problem.  
 
-As described in Van Overschee and De Moor's unifying theorem, all SIMs follow the same general two step procedure. First, estimate the subspace spanned by the columns of the extended observability matrix ($\Gamma_s$) from input-output data $u_k$, $y_k$. The dimension of $\Gamma_s$ determines the order $n$ of the estimated system. The system order is determined and $\Gamma_s$ reduced accordingly. Second, the system matrices are determined, either directly from the extended observability matrix or from the realized state sequence $X_s$.
+As described in Van Overschee and De Moor's unifying theorem, all SIMs follow the same general two step procedure. First, estimate the subspace spanned by the columns of the extended observability matrix ($\Gamma_s$) from input-output data $u_k$, $y_k$. Because the dimension of $\Gamma_s$ determines the order $n$ of the estimated system, we reduce the order of the estimated subspace before proceeding. Second, the system matrices are determined, either directly from the extended observability matrix or from the realized state sequence $X_s$.
 
-Until recently, SIMs were unable to identify systems operating in the presence of feedback control (i.e. closed-loop). In the open-loop case, input data is uncorrelated with past noise. When a system is operating in closed-loop, the presence of feedback control causes the input to be correlated with past noise as the controller attempts to eliminate system disturbances \cite{qin2006overview}. The result is a system that is biased when identified using traditional SIMs. Several new approaches to identifying closed-loop systems by decoupling inputs from past noise thus removing any bias have been proposed, most notably the innovation estimation method (IEM) proposed by Qin and Ljung \cite{qin2003closed} and the whitening filter approach (WFA) proposed by Chiuso and Picci \cite{chiuso2005consistency}.
+Until recently, SIMs were unable to identify systems operating in the presence of feedback control (i.e. closed-loop). In the open-loop case, input data is uncorrelated with past noise. When a system is operating in closed-loop, the presence of feedback control causes the input to be correlated with past noise as the controller attempts to eliminate system disturbances \cite{qin2006overview}. The result is a system that is biased when identified using traditional SIMs. Several new approaches to identifying closed-loop systems by decoupling inputs from past noise (thus removing any bias) have been proposed, most notably the innovation estimation method (IEM) proposed by Qin and Ljung \cite{qin2003closed} and the whitening filter approach (WFA) proposed by Chiuso and Picci \cite{chiuso2005consistency}.
 
 
 \section{Open-Loop Subspace Identification}
@@ -67,7 +67,7 @@ We will leverage this structure of (\ref{eq:3_extended_state_space}) to identify
 
 
 \subsection{Estimation of the Extended Observability Matrix}\label{sec:estimation_of_the_extended_observability_matrix}
-Determination of the system matrices relies on an estimate of the column space of $\Gamma_f$. In order to estimate the column space of $\Gamma_f$ in (\ref{eq:3_extended_state_space}), we must eliminate the influence of the input and noise terms. The general procedure, as outlined in \cite{qin2006overview, verhaegen2007filtering} is as follows: First, we eliminate the influence of the input $U_f$ by post-multiplying (\ref{eq:3_extended_state_space}) by $\Pi_{U_f}^\perp$ where $\Pi_{U_f}^\perp$ is the orthogonal projection onto the column space of $U_f$ given by
+Determination of the system matrices relies on an estimate of the column space of $\Gamma_f$. In order to estimate the column space of $\Gamma_f$ in (\ref{eq:3_extended_state_space}), we must eliminate the influence of the input and noise terms. The general procedure, as outlined in \cite{qin2006overview, verhaegen2007filtering} is as follows: First, we eliminate the influence of the input $U_f$ by post-multiplying (\ref{eq:3_extended_state_space}) by $\Pi_{U_f}^\perp$ where $\Pi_{U_f}^\perp$ is an orthogonal projection onto the column space of $U_f$ given by
 \begin{equation*}
 \Pi_{U_f}^\perp = I - U_f^T(U_f U_f^T)^{-1}U_f
 \end{equation*}
@@ -99,7 +99,7 @@ Satisfying condition (\ref{eq:3_instrumental_a}) ensures that we can eliminate $
 \begin{equation}\label{eq:3_range}
 \mbox{range}\left(\lim_{N\rightarrow\infty} \frac{1}{N} Y_f\Pi_{U_f}^\perp Z^T\right) = \mbox{range}\left(\Gamma_f\right)
 \end{equation}
-From (\ref{eq:3_range}) we see that an SVD of the matrix $Y_f\Pi_{U_f}^\perp Z^T$  provides an estimate of the column space of $\Gamma_f$. All that remains is to identify a suitable instrumental variable matrix $Z$. As described in \cite{soderstrom1983instrumental, verhaegen2007filtering}, instrumental variable matrices are typically constructed from input-output data. Recalling that we partitioned our input and output data into ``past'' and ``future'' sets in Section \ref{sec:extended_state_space_model}, we will use the ``future'' input-output data to identify the system and the ``past'' input-output data as the instrumental variable matrix $Z$ to eliminate the influence of noise where
+From (\ref{eq:3_range}) we see that an SVD of the matrix $Y_f\Pi_{U_f}^\perp Z^T$  will provide an estimate of the column space of $\Gamma_f$. All that remains is to identify a suitable instrumental variable matrix $Z$. As described in \cite{soderstrom1983instrumental, verhaegen2007filtering}, instrumental variable matrices are typically constructed from input-output data. Recalling that we partitioned our input and output data into ``past'' and ``future'' sets in Section \ref{sec:extended_state_space_model}, we will use the ``future'' input-output data to identify the system and the ``past'' input-output data as the instrumental variable matrix $Z$ where
 \begin{equation*}
 Z_p = \begin{bmatrix}U_p\\ Y_p\end{bmatrix}
 \end{equation*}
@@ -109,27 +109,27 @@ Recalling that $E_f$ is uncorrelated with $U_f$ for open-loop systems, and enfor
 \end{equation*}
 which satisfies condition (\ref{eq:3_instrumental_a}). Jannson showed in \cite{jansson1997subspace} that if the input sequence is persistently exciting, the rank condition (\ref{eq:3_instrumental_b}) is satisfied. We will enforce the persistence of excitation criteria during experiment design to ensure $Z_p$ is a valid instrumental variable matrix.
 
-In the presence of noise, the matrix $Y_f\Pi_{U_f}^\perp Z^T$ is full rank while the true system order is smaller. We choose the order of the identified system by partitioning the SVD matrices into signal and noise blocks as follows:
+In the presence of noise, the matrix $Y_f\Pi_{U_f}^\perp Z^T$ is full rank while the true system order is smaller. We choose the order of the identified system by partitioning the SVD matrices as follows:
 \begin{equation*}
 Y_f\Pi_{U_f}^\perp Z^T = 
-\begin{bmatrix}U_s & U_n\end{bmatrix}
-\begin{bmatrix}S_s & 0\\ 0 & S_n\end{bmatrix}
-\begin{bmatrix}V_s^T & V_n^T\end{bmatrix}
+\begin{bmatrix}U_1 & U_2\end{bmatrix}
+\begin{bmatrix}S_1 & 0\\ 0 & S_2\end{bmatrix}
+\begin{bmatrix}V_1^T & V_2^T\end{bmatrix}
 \end{equation*}
-The reduced rank estimate of the extended observability matrix is then
+where the number of singular values $n$ in $S_1$ is equal to the system order and the remaining submatrices are scaled appropriately. The reduced rank estimate of the extended observability matrix is then
 \begin{equation}
-\hat{\Gamma}_f = U_s {S_s}^{1/2}
+\hat{\Gamma}_f = U_1 {S_1}^{1/2}
 \end{equation}
 
 \subsubsection*{Numerically Efficient Estimation of $\Gamma_f$ by LQ Factorization}
-In the common case where $N$ is large, the construction of the matrix $Y_f\Pi_{U_f}^\perp Z^T$ and the calculation of its SVD is computationally intensive. Verhaegen has shown in \cite{verhaegen1994identification} that from the following LQ factorization
+In the case where $N$ is large, the construction of the matrix $Y_f\Pi_{U_f}^\perp Z^T$ and the calculation of its SVD is computationally intensive. Verhaegen has shown in \cite{verhaegen1994identification} that from the following LQ factorization
 \begin{equation}\label{eq:3_lq}
 \begin{bmatrix}U_f\\ U_p\\ Y_p\\ Y_f\end{bmatrix} = 
 \begin{bmatrix}
-	R_{11} & 0 & 0 & 0\\
-	R_{21} & R_{22} & 0 & 0\\
-	R_{31} & R_{32} & R_{33} & 0\\
-	R_{41} & R_{42} & R_{43} & R_{44}
+	L_{11} & 0 & 0 & 0\\
+	L_{21} & L_{22} & 0 & 0\\
+	L_{31} & L_{32} & L_{33} & 0\\
+	L_{41} & L_{42} & L_{43} & L_{44}
 \end{bmatrix}
 \begin{bmatrix}Q_1\\ Q_2\\ Q_3\\ Q_4\end{bmatrix}
 \end{equation}
@@ -137,13 +137,26 @@ we have
 \begin{equation}\label{eq:3_range_lq}
 \mbox{range}\left(\lim_{N\rightarrow\infty} \frac{1}{\sqrt{N}} \begin{bmatrix}R_{42} & R_{43}\end{bmatrix}\right) = \mbox{range}\left(\Gamma_f\right)
 \end{equation}
-This shows an equivalency between (\ref{eq:3_range}) and (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ factorization (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}R_{42} & R_{43}\end{bmatrix}$, and reducing the system order as described above.
+This shows an equivalency between (\ref{eq:3_range}) and (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ factorization (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}R_{42} & R_{43}\end{bmatrix}$, and reducing the system order as described above. The remainder of this document assumes $\hat{\Gamma}_f$ is estimated via LQ factorization.
 
 
 \subsection{Determination of the System Matrices}
+We will exploit the structure of the extended observability matrix to recover the $A$ and $C$ matrices. The matrix $C$ can be read directly from the first block row of $\hat{\Gamma}_f$. In order to recover $A$, we define the following two matrices 
+\begin{equation}\label{eq:3_shifted_gamma}
+\hat{\overline{\Gamma}}_f = \begin{bmatrix}C\\ \vdots \\ CA^{f-2}\end{bmatrix}, \hspace{3em}
+\hat{\underline{\Gamma}}_f = \begin{bmatrix}CA\\ \vdots \\ CA^{f-1}\end{bmatrix}
+\end{equation}
+Inspecting the structure of $\hat{\overline{\Gamma}}_f$  and $\hat{\underline{\Gamma}}_f$, we see that $\hat{\overline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the last block row and $\hat{\underline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the first block row. The structure of (\ref{eq:3_shifted_gamma}) implies
+\begin{equation}
+\hat{\overline{\Gamma}}_f A = \hat{\underline{\Gamma}}_f
+\end{equation}
+which is linear in $A$ and can be solved by least squares.
 
-
-
+All that remains is to recover the $B$ and $D$ matrices. Verhaegen has shown in \cite{verhaegen1994identification} that given the LQ factorization in (\ref{eq:3_lq}), we have
+\begin{equation*}
+\begin{bmatrix}R_{31} & R_{42}\end{bmatrix} = 
+H_f \begin{bmatrix}R_{11} & R_{22}\end{bmatrix}
+\end{equation*}
 
 \section{Closed-Loop Subspace Identification}
 
