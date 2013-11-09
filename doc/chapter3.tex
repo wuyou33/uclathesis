@@ -5,11 +5,11 @@ Extensive work in both the theory and application of SIMs in the last 20 years h
 
 As described in Van Overschee and De Moor's unifying theorem, all SIMs follow the same general two step procedure. First, estimate the subspace spanned by the columns of the extended observability matrix ($\Gamma_s$) from input-output data $u_k$, $y_k$. Because the dimension of $\Gamma_s$ determines the order $n$ of the estimated system, we reduce the order of the estimated subspace before proceeding. Second, the system matrices are determined, either directly from the extended observability matrix or from the realized state sequence $X_s$.
 
-Until recently, SIMs were unable to identify systems operating in the presence of feedback control (i.e. closed-loop). In the open-loop case, input data is uncorrelated with past noise. When a system is operating in closed-loop, the presence of feedback control causes the input to be correlated with past noise as the controller attempts to eliminate system disturbances \cite{qin2006overview}. The result is a system that is biased when identified using traditional SIMs. Several new approaches to identifying closed-loop systems by decoupling inputs from past noise (thus removing any bias) have been proposed, most notably the innovation estimation method (IEM) proposed by Qin and Ljung \cite{qin2003closed} and the whitening filter approach (WFA) proposed by Chiuso and Picci \cite{chiuso2005consistency}.
 
-
-\section{Open-Loop Subspace Identification}
+\section{Subspace System Identification}
 When a system is operating in open-loop (i.e. no feedback), the input data is assumed to be independent of past noise. In this case, the traditional SIMs (MOESP, N4SID, CVA) can be used without modification. 
+
+GRAPHIC OF FLOW
 
 \subsection{Extended State Space Model}\label{sec:extended_state_space_model}
 Recalling the combined deterministic-stochastic LTI system is given in its innovation form as
@@ -34,9 +34,9 @@ u(2k-1) & u(2k) & \cdots & u(2k+N-2)
 \end{equation}
 where $p$ and $f$ denote past and future horizons, respectively. The input matrix is partitioned into these two overlapping ``past'' and ``future'' blocks to later construct an instrumental variable matrix used to eliminate the influence of noise. We delay the explanation of this procedure until it is needed in Section \ref{sec:estimation_of_the_extended_observability_matrix}. We construct similar matrices $Y_s$ and $E_s$ for the output and noise data.
 
-Based on the state space model in (\ref{eq:3_innovation}) and considering the future horizon, an extended state space model can be formulated as
+Based on the state space representation in Eq. (\ref{eq:3_innovation}) and considering the future horizon, an extended state space model can be formulated as
 \begin{equation}\label{eq:3_extended_state_space}
-Y_f = \Gamma_f X + H_f U_f + G_f E_f
+Y_f = \Gamma_f X_k + H_f U_f + G_f E_f
 \end{equation}
 The extended observability matrix is
 \begin{equation}\label{eq:3_extended_observability}
@@ -63,15 +63,15 @@ CA^{f-2}K & CA^{f-3}K & CA^{f-4}K & \cdots & I
 \end{bmatrix}
 \end{equation}
 \end{subequations}
-We will leverage this structure of (\ref{eq:3_extended_state_space}) to identify the unknown system matrices from known input-output data. In particular, we will estimate the column space of the extended observability matrix. Knowledge of this subspace is sufficient to then estimate the unknown system matrices. 
+We will leverage this structure of Eq. (\ref{eq:3_extended_state_space}) to identify the unknown system matrices from known input-output data. In particular, we will estimate the column space of the extended observability matrix. Knowledge of this subspace is sufficient to then estimate the unknown system matrices. 
 
 
 \subsection{Estimation of the Extended Observability Matrix}\label{sec:estimation_of_the_extended_observability_matrix}
-Determination of the system matrices relies on an estimate of the column space of $\Gamma_f$. In order to estimate the column space of $\Gamma_f$ in (\ref{eq:3_extended_state_space}), we must eliminate the influence of the input and noise terms. The general procedure, as outlined in \cite{qin2006overview, verhaegen2007filtering} is as follows: First, we eliminate the influence of the input $U_f$ by post-multiplying (\ref{eq:3_extended_state_space}) by $\Pi_{U_f}^\perp$ where $\Pi_{U_f}^\perp$ is an orthogonal projection onto the column space of $U_f$ given by
+Determination of the system matrices relies on an estimate of the column space of $\Gamma_f$. In order to estimate the column space of $\Gamma_f$ in Eq. (\ref{eq:3_extended_state_space}), we must eliminate the influence of the input and noise terms. The general procedure, as outlined in \cite{qin2006overview, verhaegen2007filtering} is as follows: First, we eliminate the influence of the input $U_f$ by post-multiplying Eq. (\ref{eq:3_extended_state_space}) by $\Pi_{U_f}^\perp$ where $\Pi_{U_f}^\perp$ is an orthogonal projection onto the column space of $U_f$ given by
 \begin{equation*}
 \Pi_{U_f}^\perp = I - U_f^T(U_f U_f^T)^{-1}U_f
 \end{equation*}
-By definition, $U_f\Pi_{U_f}^\perp = 0$ so (\ref{eq:3_extended_state_space}) becomes
+By definition, $U_f\Pi_{U_f}^\perp = 0$ so Eq. (\ref{eq:3_extended_state_space}) becomes
 \begin{equation}
 Y_f\Pi_{U_f}^\perp = \Gamma_f X_k\Pi_{U_f}^\perp + G_f E_f\Pi_{U_f}^\perp
 \end{equation}
@@ -91,15 +91,15 @@ Next we eliminate the influence of the noise $E_f$. In order to remove the influ
 \mbox{rank}\left(\lim_{N\rightarrow\infty} \frac{1}{N} X_k \Pi_{U_f}^\perp Z^T\right) = n
 \end{equation}
 \end{subequations}
-Satisfying condition (\ref{eq:3_instrumental_a}) ensures that we can eliminate $E_f$ by multiplying (\ref{eq:3_extended_state_space_noinput}) on the right by $Z^T$ and take the limit for $N\rightarrow\infty$:
+Satisfying condition (\ref{eq:3_instrumental_a}) ensures that we can eliminate $E_f$ by multiplying Eq. (\ref{eq:3_extended_state_space_noinput}) on the right by $Z^T$ and take the limit for $N\rightarrow\infty$:
 \begin{equation}\label{eq:3_extended_state_space_noinput_nonoise}
 \lim_{N\rightarrow\infty} \frac{1}{N}Y_f\Pi_{U_f}^\perp Z^T = \lim_{N\rightarrow\infty} \frac{1}{N}\Gamma_f X_k\Pi_{U_f}^\perp Z^T
 \end{equation}
- Satisfying condition (\ref{eq:3_instrumental_b}) ensures multiplication by $Z^T$ does not change the rank of the remaining term on the right hand side of  (\ref{eq:3_extended_state_space_noinput_nonoise}) so we have
+ Satisfying condition (\ref{eq:3_instrumental_b}) ensures multiplication by $Z^T$ does not change the rank of the remaining term on the right hand side of Eq. (\ref{eq:3_extended_state_space_noinput_nonoise}) so we have
 \begin{equation}\label{eq:3_range}
 \mbox{range}\left(\lim_{N\rightarrow\infty} \frac{1}{N} Y_f\Pi_{U_f}^\perp Z^T\right) = \mbox{range}\left(\Gamma_f\right)
 \end{equation}
-From (\ref{eq:3_range}) we see that an SVD of the matrix $Y_f\Pi_{U_f}^\perp Z^T$  will provide an estimate of the column space of $\Gamma_f$. All that remains is to identify a suitable instrumental variable matrix $Z$. As described in \cite{soderstrom1983instrumental, verhaegen2007filtering}, instrumental variable matrices are typically constructed from input-output data. Recalling that we partitioned our input and output data into ``past'' and ``future'' sets in Section \ref{sec:extended_state_space_model}, we will use the ``future'' input-output data to identify the system and the ``past'' input-output data as the instrumental variable matrix $Z$ where
+From Eq. (\ref{eq:3_range}) we see that an SVD of the matrix $Y_f\Pi_{U_f}^\perp Z^T$  will provide an estimate of the column space of $\Gamma_f$. All that remains is to identify a suitable instrumental variable matrix $Z$. As described in \cite{soderstrom1983instrumental, verhaegen2007filtering}, instrumental variable matrices are typically constructed from input-output data. Recalling that we partitioned our input and output data into ``past'' and ``future'' sets in Section \ref{sec:extended_state_space_model}, we will use the ``future'' input-output data to identify the system and the ``past'' input-output data as the instrumental variable matrix $Z$ where
 \begin{equation*}
 Z_p = \begin{bmatrix}U_p\\ Y_p\end{bmatrix}
 \end{equation*}
@@ -137,7 +137,7 @@ we have
 \begin{equation}\label{eq:3_range_lq}
 \mbox{range}\left(\lim_{N\rightarrow\infty} \frac{1}{\sqrt{N}} \begin{bmatrix}R_{42} & R_{43}\end{bmatrix}\right) = \mbox{range}\left(\Gamma_f\right)
 \end{equation}
-This shows an equivalency between (\ref{eq:3_range}) and (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ factorization (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}R_{42} & R_{43}\end{bmatrix}$, and reducing the system order as described above. The remainder of this document assumes $\hat{\Gamma}_f$ is estimated via LQ factorization.
+This shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ factorization in Eq. (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}R_{42} & R_{43}\end{bmatrix}$, and reducing the system order as described above. The remainder of this document assumes $\hat{\Gamma}_f$ is estimated via LQ factorization.
 
 
 \subsection{Determination of the System Matrices}
@@ -146,24 +146,127 @@ We will exploit the structure of the extended observability matrix to recover th
 \hat{\overline{\Gamma}}_f = \begin{bmatrix}C\\ \vdots \\ CA^{f-2}\end{bmatrix}, \hspace{3em}
 \hat{\underline{\Gamma}}_f = \begin{bmatrix}CA\\ \vdots \\ CA^{f-1}\end{bmatrix}
 \end{equation}
-Inspecting the structure of $\hat{\overline{\Gamma}}_f$  and $\hat{\underline{\Gamma}}_f$, we see that $\hat{\overline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the last block row and $\hat{\underline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the first block row. The structure of (\ref{eq:3_shifted_gamma}) implies
+Inspecting the structure of $\hat{\overline{\Gamma}}_f$  and $\hat{\underline{\Gamma}}_f$, we see that $\hat{\overline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the last block row and $\hat{\underline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the first block row. The structure of Eq. (\ref{eq:3_shifted_gamma}) implies
 \begin{equation}
 \hat{\overline{\Gamma}}_f A = \hat{\underline{\Gamma}}_f
 \end{equation}
 which is linear in $A$ and can be solved by least squares.
 
-All that remains is to recover the $B$ and $D$ matrices. Verhaegen has shown in \cite{verhaegen1994identification} that given the LQ factorization in (\ref{eq:3_lq}), we have
+All that remains is to recover the $B$ and $D$ matrices. Verhaegen has shown in \cite{verhaegen1994identification} that given the LQ factorization in Eq. (\ref{eq:3_lq}), we have
 \begin{equation*}
 \begin{bmatrix}R_{31} & R_{42}\end{bmatrix} = 
 H_f \begin{bmatrix}R_{11} & R_{22}\end{bmatrix}
 \end{equation*}
 
 \section{Closed-Loop Subspace Identification}
+In many real-world situations, it is either not practical or not possible to collect open-loop input and output data. An unstable system relying on some form of feedback control to operate safely is an example of such a case. It is well known that traditional subspace methods produce biased results in the presence of feedback. This is due to the correlation between the system input and past noise as the controller attempts to eliminate system disturbances \cite{qin2006overview}. As a result, we are not able to fully decouple the input and noise sequences when estimating the subspace of the extended observability matrix when applying traditional SIMs.
+\begin{figure}[htb!]
+	\centering
+	\includegraphics{../fig/closed_loop_block_diagram.pdf}
+	\caption{A block diagram of an LTI system operating under feedback control.}
+\end{figure}
+
+Recently, several new approaches to identifying closed-loop systems by decoupling inputs from past noise (thus removing any bias) have been proposed. Among these approaches are the Innovation Estimation Method (IEM) proposed by Qin and Ljung \cite{qin2003closed} and the Whitening Filter Approach (WFA) proposed by Chiuso and Picci \cite{chiuso2005consistency}. The IEM pre-estimates the innovation sequence $E_f$ row-wise via a high-order Auto-Regression model with eXogeneous inputs (ARX) algorithm, which is then used to estimate $\Gamma_f$ from Eq. (\ref{eq:3_extended_state_space}). The WFA partitions a modified version of the extended state space model row-wise and estimates $\Gamma_f$ through a multi-stage least squares followed by an SVD. It is worth noting that Chiuso and Picci concluded in \cite{chiuso2005consistency} that while all closed-loop subspace identification algorithms considered produce somewhat biased results in the presence of feed- back control, these algorithms are still able to provide significant improvements over traditional SIMs when identifying closed-loop systems.
+
+\subsection{Estimation of the Extended Observability Matrix by the Whitening Filter Approach}
+In order to describe the Whitening Filter Approach, we introduce the predictor form of the system:
+\begin{subequations}\label{eq:3_process}
+\begin{equation}x(k+1) = A_Kx(k) + B_Ku(k) + Ky(k)\end{equation}
+\begin{equation}y(k) = Cx(k) + Du(k) + e(k)\end{equation}
+\end{subequations}
+where $A_K = A-KC$ and $B_K = B-KD$. Because the input $u(k)$ is determined via feedback, we consider it to be correlated with past innovation $e(k)$. The state $x(k)$ of this form is the same as for the innovation form in Eq. (\ref{eq:2_innovation}), but because $A_K$ is guaranteed stable even if the original process matrix $A$ is unstable, the predictor form proves advantageous when considering open-loop unstable systems \cite{qin2006overview}.
+
+We are able to derive an expression for $X_k$ by iterating Eq. (\ref{eq:3_process})
+\begin{equation}\label{eq:3_state}
+X_k = L_p Z_p + A_K^p X_{k-p}
+\end{equation}
+where
+\begin{align*}
+X_k &= \begin{bmatrix} x(k) & x(k+1) & \cdots & x(k+N-1)\end{bmatrix}\\
+L_p &= \begin{bmatrix}L_p^y & L_p^u\end{bmatrix}\\
+L_p^u &= \begin{bmatrix}A_K^{p-1}B_K & A_K^{p-2}B_K & \cdots & B_K\end{bmatrix}\\
+L_p^y &= \begin{bmatrix}A_K^{p-1}K & A_K^{p-2}K & \cdots & K\end{bmatrix}\\
+Z_p &= \begin{bmatrix} Y_p^T & U_p^T\end{bmatrix}^T
+\end{align*}
+
+Based on the state space representation in Eq. (\ref{eq:3_process}), we construct the following modified state space model
+\begin{equation}\label{eq:3_modified_state_space_model}
+Y_f = \overline{\Gamma}_f X_k + \overline{H}_f U_f + \overline{G}_f Y_f + E_f
+\end{equation}
+with a modified extended observability matrix given by
+\begin{equation}\label{eq:3_updated_extended_observability}
+\overline{\Gamma}_f = \begin{bmatrix}C\\ CA_K\\ \vdots\\ CA_K^{f-1}\end{bmatrix}
+\end{equation}
+and Toeplitz matrices $\overline{H}_f$ and $\overline{G}_f$ given by
+\begin{subequations}\label{eq:3_updated_toeplitz}
+\begin{equation}
+\overline{H}_f = \begin{bmatrix}
+D & 0 & 0 & \cdots & 0\\
+CB_K & D & 0 & \cdots & 0\\
+CA_KB_K & CB_K & D & \cdots & 0\\
+\vdots & \vdots  & \vdots & \ddots & \vdots\\
+CA_K^{f-2}B_K & CA_K^{f-3}B_K & CA_K^{f-4}B_K & \cdots & D
+\end{bmatrix}
+\end{equation}
+\begin{equation}
+\overline{G}_f = \begin{bmatrix}
+0 & 0 & 0 & \cdots & 0\\
+CK & 0 & 0 & \cdots & 0\\
+CA_KK & CK & 0 & \cdots & 0\\
+\vdots & \vdots  & \vdots & \ddots & \vdots\\
+CA_K^{f-2}K & CA_K^{f-3}K & CA_K^{f-4}K & \cdots & 0
+\end{bmatrix}
+\end{equation}
+\end{subequations}
+
+Substituting Eq. (\ref{eq:3_state}) into Eq. (\ref{eq:3_modified_state_space_model}), we have
+\begin{equation}\label{eq:3_modified_state_space_model_with_state}
+Y_f = \overline{\Gamma}_f L_p Z_p + \overline{\Gamma}_f A_K^p X_{k-p} + \overline{H}_f U_f + \overline{G}_f Y_f + E_f
+\end{equation}
+If we assume that the eigenvalues of $A_K$ lie strictly within the unit circle, for a sufficiently large $p$, $A_K^p \approx 0$ so Eq. (\ref{eq:3_modified_state_space_model_with_state}) becomes
+\begin{equation}\label{eq:3_modified_state_space_model_with_state_no_AK}
+Y_f = \overline{\Gamma}_f L_p Z_p + \overline{H}_f U_f + \overline{G}_f Y_f + E_f
+\end{equation}
+Partitioning Eq. (\ref{eq:3_modified_state_space_model_with_state_no_AK}) row-wise, we have
+\begin{equation}\label{eq:3_partitioned_modified_state_space_model}
+Y_{fi} = \overline{\Gamma}_{fi} L_p Z_p + \overline{H}_{fi} U_{fi} + \overline{G}_{fi} Y_{fi} + E_{fi}
+\end{equation}
+where
+\begin{align*}
+\overline{\Gamma}_{fi} &= CA_K^{i-1}\\
+\overline{H}_{fi} &= \begin{bmatrix} CA_K^{i-2}B_K & CA_K^{i-3}B_K & \cdots & CB_K & D\end{bmatrix}\\
+\overline{G}_{fi} &= \begin{bmatrix} CA_K^{i-2}K & CA_K^{i-3}K & \cdots & CK & 0\end{bmatrix}
+\end{align*}
+
+Using least squares, we estimate $\overline{\Gamma}_{fi}L_p$ for $i = 1, 2, \dots, f$, which then forms $\widehat{\overline{\Gamma}_f L_p}$
 
 
 
-\subsection{Identifying Systems Operating Under Feedback Control}
 
-\subsection{Innovation Estimation Method}
 
-\subsection{Whitening Filter}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  7 NOV 2013 21:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  8 NOV 2013 19:31
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -279,52 +279,63 @@ File: ../fig/prbs_input.pdf Graphic file (type pdf)
 <use ../fig/prbs_input.pdf>
 Package pdftex.def Info: ../fig/prbs_input.pdf used on input line 13.
 (pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
+) (./chapter2.tex [2 <../fig/prbs_input.pdf>]
+CHAPTER 2.
+<../fig/lti_block_diagram.pdf, id=47, 397.485pt x 144.21077pt>
+File: ../fig/lti_block_diagram.pdf Graphic file (type pdf)
 
-<../fig/closed_loop_block_diagram.pdf, id=39, 397.485pt x 180.675pt>
+<use ../fig/lti_block_diagram.pdf>
+Package pdftex.def Info: ../fig/lti_block_diagram.pdf used on input line 13.
+(pdftex.def)             Requested size: 397.48402pt x 144.2104pt.
+ [3
+
+ <../fig/lti_block_diagram.pdf>] [4]
+Overfull \hbox (4.0487pt too wide) in paragraph at lines 50--53
+\OT1/cmr/m/n/12 to be the in-no-va-tion se-quence, we can rewrite the com-bined
+ deterministic-stochastic
+ []
+
+[5]) (./chapter3.tex [6]
+CHAPTER 3.
+[7
+
+] [8] [9] [10] [11] [12]
+<../fig/closed_loop_block_diagram.pdf, id=93, 397.485pt x 126.80775pt>
 File: ../fig/closed_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/closed_loop_block_diagram.pdf>
 Package pdftex.def Info: ../fig/closed_loop_block_diagram.pdf used on input lin
-e 22.
-(pdftex.def)             Requested size: 397.48402pt x 180.67455pt.
-) (./chapter2.tex [2 <../fig/prbs_input.pdf>] [3 <../fig/closed_loop_block_diag
-ram.pdf>]
-CHAPTER 2.
-[4
-
-] [5]
-Overfull \hbox (0.52374pt too wide) in paragraph at lines 56--57
-[]\OT1/cmr/m/n/12 The sys-tems rep-re-sented by (2.1[]) and (2.2[]) are equiv-a
--lent from an in-put/output
+e 165.
+(pdftex.def)             Requested size: 397.48402pt x 126.80743pt.
+ [13 <../fig/closed_loop_block_diagram.pdf>]
+Overfull \hbox (0.88223pt too wide) in paragraph at lines 171--171
+[]\OT1/cmr/bx/n/12 Estimation of the Ex-tended Ob-serv-abil-ity Ma-trix by the 
+Whiten-
  []
 
-) (./chapter3.tex [6]
-CHAPTER 3.
-[7
-
-] [8] [9] [10] [11] [12]) (./chapter4.tex [13] [14]
+[14] [15]) (./chapter4.tex [16]
 CHAPTER 4.
-) (./chapter5.tex [15
+) (./chapter5.tex [17
 
 ]
 CHAPTER 5.
-) (./chapter6.tex [16
+) (./chapter6.tex [18
 
 ]
 CHAPTER 6.
-) (./thesis.bbl [17
+) (./thesis.bbl [19
 
-] [18
+] [20
 
-]) [19] (./thesis.aux) ) 
+]) [21] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 2470 strings out of 493610
- 33200 string characters out of 3142404
- 97868 words of memory out of 3000000
- 5706 multiletter control sequences out of 15000+200000
+ 2486 strings out of 493610
+ 33672 string characters out of 3142404
+ 99989 words of memory out of 3000000
+ 5721 multiletter control sequences out of 15000+200000
  10752 words of font info for 40 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,9n,23p,1471b,214s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,14n,23p,1471b,214s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmcsc10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/a
@@ -338,10 +349,10 @@ cmsy10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on thesis.pdf (27 pages, 188395 bytes).
+Output written on thesis.pdf (29 pages, 207793 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 170 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
