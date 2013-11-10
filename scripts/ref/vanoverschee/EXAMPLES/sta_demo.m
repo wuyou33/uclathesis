@@ -1,3 +1,4 @@
+
 %
 % Demo file for Subspace identification
 %
@@ -27,6 +28,8 @@ pause
 
 clc
 echo on
+
+addpath '../SUBFUN'
 %
 %   Consider a multivariable fourth order system a,b,c,d
 %   with two inputs and two outputs:
