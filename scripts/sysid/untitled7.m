@@ -61,7 +61,9 @@ L43 = L(2*km+kp+1:2*km+2*kp,2*km+1:2*km+kp);
 % Prompt to setermine the system order
 sv = diag(SS);       % singular values
 figure(1)
-%semilogy(sv, 'k.')
+subplot(2,1,1)
+semilogy(sv, 'k.')
+subplot(2,1,2)
 plot(sv, 'k.')
 title('Singular Values'); xlabel('Order');
 n = input('      System order ? ');
@@ -94,5 +96,10 @@ DB = pinv(RR)*XX;
 D = DB(1:ydim,:);
 B = DB(ydim+1:size(DB,1),:);
 
-sys = ss(A,B,C,D,-1);
+Ts = 1/50;
+sys = ss(A,B,C,D,Ts);
+figure(1)
 impulse(sys)
+
+figure(2)
+pzmap(sys)

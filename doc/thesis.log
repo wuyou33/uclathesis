@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  8 NOV 2013 19:31
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  11 NOV 2013 23:20
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -143,8 +143,30 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip44
+\LTright=\skip45
+\LTpre=\skip46
+\LTpost=\skip47
+\LTchunksize=\count105
+\LTcapwidth=\dimen114
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count106
+\LT@rows=\count107
+\c@LT@tables=\count108
+\c@LT@chunks=\count109
+\LT@p@ftn=\toks20
 ))
-(./prelim.tex) (./thesis.aux)
+(./prelim.tex
+\@input{nomenclature.aux}
+\openout2 = `nomenclature.aux'.
+
+(./nomenclature.tex)) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -162,17 +184,17 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
-\scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count106
-\nofMParguments=\count107
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count108
-\MPscratchDim=\dimen115
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
-\everyMPtoPDFconversion=\toks21
+\scratchcounter=\count110
+\scratchdimen=\dimen115
+\scratchbox=\box32
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen116
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -224,6 +246,8 @@ e
 [0
 
 
+
+
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
 
@@ -250,92 +274,160 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-))
+) [4
+
+])
 \tf@toc=\write3
 \openout3 = `thesis.toc'.
 
- [4
-
-]
+ [5]
 (./thesis.lof)
 \tf@lof=\write4
 \openout4 = `thesis.lof'.
 
- [5
+ [6
 
 ] (./thesis.lot)
 \tf@lot=\write5
 \openout5 = `thesis.lot'.
 
- [6
+ [7
 
-] [7] (./chapter1.tex
+]
+Overfull \hbox (12.69963pt too wide) in alignment at lines 8--8
+ [] [] [] 
+ []
+
+
+Overfull \hbox (12.69963pt too wide) in alignment at lines 8--8
+ [] [] [] 
+ []
+
+[8] [9] (./chapter1.tex
 CHAPTER 1.
 [1
 
-] <../fig/prbs_input.pdf, id=38, 397.485pt x 252.945pt>
-File: ../fig/prbs_input.pdf Graphic file (type pdf)
+]
+Package epstopdf Info: Source file: <../fig/general_prbs.eps>
+(epstopdf)                    date: 2013-11-11 22:15:19
+(epstopdf)                    size: 8349 bytes
+(epstopdf)             Output file: <../fig/general_prbs-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-11-11 22:15:26
+(epstopdf)                    size: 5442 bytes
+(epstopdf)             Command: <epstopdf --outfile=../fig/general_prbs-eps-con
+verted-to.pdf ../fig/general_prbs.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
+ <../fig/general_prbs-eps-converted-to.pdf, id=46, 392.46625pt x 92.345pt>
+File: ../fig/general_prbs-eps-converted-to.pdf Graphic file (type pdf)
 
-<use ../fig/prbs_input.pdf>
-Package pdftex.def Info: ../fig/prbs_input.pdf used on input line 13.
-(pdftex.def)             Requested size: 397.48402pt x 252.94438pt.
-) (./chapter2.tex [2 <../fig/prbs_input.pdf>]
+<use ../fig/general_prbs-eps-converted-to.pdf>
+Package pdftex.def Info: ../fig/general_prbs-eps-converted-to.pdf used on input
+ line 13.
+(pdftex.def)             Requested size: 392.46527pt x 92.34476pt.
+Package epstopdf Info: Source file: <../fig/test_prbs.eps>
+(epstopdf)                    date: 2013-11-11 22:15:22
+(epstopdf)                    size: 12043 bytes
+(epstopdf)             Output file: <../fig/test_prbs-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-11-11 22:15:26
+(epstopdf)                    size: 8732 bytes
+(epstopdf)             Command: <epstopdf --outfile=../fig/test_prbs-eps-conver
+ted-to.pdf ../fig/test_prbs.eps>
+(epstopdf)             \includegraphics on input line 19.
+Package epstopdf Info: Output file is already uptodate.
+
+<../fig/test_prbs-eps-converted-to.pdf, id=47, 400.49625pt x 276.03125pt>
+File: ../fig/test_prbs-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ../fig/test_prbs-eps-converted-to.pdf>
+Package pdftex.def Info: ../fig/test_prbs-eps-converted-to.pdf used on input li
+ne 19.
+(pdftex.def)             Requested size: 400.49527pt x 276.03056pt.
+) (./chapter2.tex [2 <../fig/general_prbs-eps-converted-to.pdf>] [3 <../fig/tes
+t_prbs-eps-converted-to.pdf>]
 CHAPTER 2.
-<../fig/lti_block_diagram.pdf, id=47, 397.485pt x 144.21077pt>
+<../fig/lti_block_diagram.pdf, id=73, 397.485pt x 144.21077pt>
 File: ../fig/lti_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/lti_block_diagram.pdf>
 Package pdftex.def Info: ../fig/lti_block_diagram.pdf used on input line 13.
 (pdftex.def)             Requested size: 397.48402pt x 144.2104pt.
- [3
+ [4
 
- <../fig/lti_block_diagram.pdf>] [4]
+ <../fig/lti_block_diagram.pdf>] [5]
 Overfull \hbox (4.0487pt too wide) in paragraph at lines 50--53
 \OT1/cmr/m/n/12 to be the in-no-va-tion se-quence, we can rewrite the com-bined
  deterministic-stochastic
  []
 
-[5]) (./chapter3.tex [6]
+[6]) (./chapter3.tex [7]
 CHAPTER 3.
-[7
+[8
 
-] [8] [9] [10] [11] [12]
-<../fig/closed_loop_block_diagram.pdf, id=93, 397.485pt x 126.80775pt>
+] <../fig/sim_flow_diagram.pdf, id=100, 397.485pt x 208.44576pt>
+File: ../fig/sim_flow_diagram.pdf Graphic file (type pdf)
+
+<use ../fig/sim_flow_diagram.pdf>
+Package pdftex.def Info: ../fig/sim_flow_diagram.pdf used on input line 13.
+(pdftex.def)             Requested size: 397.48402pt x 208.44524pt.
+ [9 <../fig/sim_flow_diagram.pdf>] [10]
+[11] [12] [13] [14]
+<../fig/closed_loop_block_diagram.pdf, id=132, 397.485pt x 126.80775pt>
 File: ../fig/closed_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/closed_loop_block_diagram.pdf>
 Package pdftex.def Info: ../fig/closed_loop_block_diagram.pdf used on input lin
-e 165.
+e 212.
 (pdftex.def)             Requested size: 397.48402pt x 126.80743pt.
- [13 <../fig/closed_loop_block_diagram.pdf>]
-Overfull \hbox (0.88223pt too wide) in paragraph at lines 171--171
+ [15] [16 <../fig/closed_loop_block_diagram.pdf>]
+Overfull \hbox (0.88223pt too wide) in paragraph at lines 218--218
 []\OT1/cmr/bx/n/12 Estimation of the Ex-tended Ob-serv-abil-ity Ma-trix by the 
 Whiten-
  []
 
-[14] [15]) (./chapter4.tex [16]
+[17] [18]) (./chapter4.tex [19]
 CHAPTER 4.
-) (./chapter5.tex [17
+<../fig/crazyflie.jpg, id=157, 2616.77625pt x 1882.03125pt>
+File: ../fig/crazyflie.jpg Graphic file (type jpg)
+
+<use ../fig/crazyflie.jpg>
+Package pdftex.def Info: ../fig/crazyflie.jpg used on input line 6.
+(pdftex.def)             Requested size: 392.4995pt x 282.29251pt.
+
+<../fig/crazyflie_control_system_block_diagram.pdf, id=158, 397.485pt x 175.990
+5pt>
+File: ../fig/crazyflie_control_system_block_diagram.pdf Graphic file (type pdf)
+
+ <use ../fig/crazyflie_control_system_block_diagram.pdf>
+Package pdftex.def Info: ../fig/crazyflie_control_system_block_diagram.pdf used
+ on input line 16.
+(pdftex.def)             Requested size: 397.48402pt x 175.99005pt.
+) (./chapter5.tex
+[20
 
 ]
+Overfull \vbox (113.81473pt too high) has occurred while \output is active []
+
+
+[21 <../fig/crazyflie.jpg> <../fig/crazyflie_control_system_block_diagram.pdf>]
 CHAPTER 5.
-) (./chapter6.tex [18
+) (./chapter6.tex [22
 
 ]
 CHAPTER 6.
-) (./thesis.bbl [19
+) (./thesis.bbl [23
 
-] [20
+] [24
 
-]) [21] (./thesis.aux) ) 
+]) [25] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 2486 strings out of 493610
- 33672 string characters out of 3142404
- 99989 words of memory out of 3000000
- 5721 multiletter control sequences out of 15000+200000
+ 2606 strings out of 493610
+ 35668 string characters out of 3142404
+ 104083 words of memory out of 3000000
+ 5829 multiletter control sequences out of 15000+200000
  10752 words of font info for 40 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,14n,23p,1471b,214s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,14n,23p,1471b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmcsc10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/a
@@ -349,10 +441,10 @@ cmsy10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on thesis.pdf (29 pages, 207793 bytes).
+Output written on thesis.pdf (35 pages, 1182307 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 229 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

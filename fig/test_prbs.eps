@@ -1,0 +1,473 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: MATLAB, The Mathworks, Inc. Version 7.9.0.529 (R2009b). Operating System: Darwin 13.0.0 Darwin Kernel Version 13.0.0: Thu Sep 19 22:22:27 PDT 2013; root:xnu-2422.1.72~6/RELEASE_X86_64 x86_64.
+%%Title: ./test_prbs.eps
+%%CreationDate: 11/11/2013  22:15:22
+%%DocumentNeededFonts: AvantGarde-Book
+%%+ Helvetica
+%%+ AvantGarde-Demi
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%LanguageLevel: 2
+%%Pages: 1
+%%BoundingBox:     0     0   399   275
+%%EndComments
+
+%%BeginProlog
+% MathWorks dictionary
+/MathWorks 160 dict begin
+% definition operators
+/bdef {bind def} bind def
+/ldef {load def} bind def
+/xdef {exch def} bdef
+/xstore {exch store} bdef
+% operator abbreviations
+/c  /clip ldef
+/cc /concat ldef
+/cp /closepath ldef
+/gr /grestore ldef
+/gs /gsave ldef
+/mt /moveto ldef
+/np /newpath ldef
+/cm /currentmatrix ldef
+/sm /setmatrix ldef
+/rm /rmoveto ldef
+/rl /rlineto ldef
+/s {show newpath} bdef
+/sc {setcmykcolor} bdef
+/sr /setrgbcolor ldef
+/sg /setgray ldef
+/w /setlinewidth ldef
+/j /setlinejoin ldef
+/cap /setlinecap ldef
+/rc {rectclip} bdef
+/rf {rectfill} bdef
+% page state control
+/pgsv () def
+/bpage {/pgsv save def} bdef
+/epage {pgsv restore} bdef
+/bplot /gsave ldef
+/eplot {stroke grestore} bdef
+% orientation switch
+/portraitMode 0 def /landscapeMode 1 def /rotateMode 2 def
+% coordinate system mappings
+/dpi2point 0 def
+% font control
+/FontSize 0 def
+/FMS {/FontSize xstore findfont [FontSize 0 0 FontSize neg 0 0]
+  makefont setfont} bdef
+/reencode {exch dup where {pop load} {pop StandardEncoding} ifelse
+  exch dup 3 1 roll findfont dup length dict begin
+  { 1 index /FID ne {def}{pop pop} ifelse } forall
+  /Encoding exch def currentdict end definefont pop} bdef
+/isroman {findfont /CharStrings get /Agrave known} bdef
+/FMSR {3 1 roll 1 index dup isroman {reencode} {pop pop} ifelse
+  exch FMS} bdef
+/csm {1 dpi2point div -1 dpi2point div scale neg translate
+ dup landscapeMode eq {pop -90 rotate}
+  {rotateMode eq {90 rotate} if} ifelse} bdef
+% line types: solid, dotted, dashed, dotdash
+/SO { [] 0 setdash } bdef
+/DO { [.5 dpi2point mul 4 dpi2point mul] 0 setdash } bdef
+/DA { [6 dpi2point mul] 0 setdash } bdef
+/DD { [.5 dpi2point mul 4 dpi2point mul 6 dpi2point mul 4
+  dpi2point mul] 0 setdash } bdef
+% macros for lines and objects
+/L {lineto stroke} bdef
+/MP {3 1 roll moveto 1 sub {rlineto} repeat} bdef
+/AP {{rlineto} repeat} bdef
+/PDlw -1 def
+/W {/PDlw currentlinewidth def setlinewidth} def
+/PP {closepath eofill} bdef
+/DP {closepath stroke} bdef
+/MR {4 -2 roll moveto dup  0 exch rlineto exch 0 rlineto
+  neg 0 exch rlineto closepath} bdef
+/FR {MR stroke} bdef
+/PR {MR fill} bdef
+/L1i {{currentfile picstr readhexstring pop} image} bdef
+/tMatrix matrix def
+/MakeOval {newpath tMatrix currentmatrix pop translate scale
+0 0 1 0 360 arc tMatrix setmatrix} bdef
+/FO {MakeOval stroke} bdef
+/PO {MakeOval fill} bdef
+/PD {currentlinewidth 2 div 0 360 arc fill
+   PDlw -1 eq not {PDlw w /PDlw -1 def} if} def
+/FA {newpath tMatrix currentmatrix pop translate scale
+  0 0 1 5 -2 roll arc tMatrix setmatrix stroke} bdef
+/PA {newpath tMatrix currentmatrix pop	translate 0 0 moveto scale
+  0 0 1 5 -2 roll arc closepath tMatrix setmatrix fill} bdef
+/FAn {newpath tMatrix currentmatrix pop translate scale
+  0 0 1 5 -2 roll arcn tMatrix setmatrix stroke} bdef
+/PAn {newpath tMatrix currentmatrix pop translate 0 0 moveto scale
+  0 0 1 5 -2 roll arcn closepath tMatrix setmatrix fill} bdef
+/vradius 0 def /hradius 0 def /lry 0 def
+/lrx 0 def /uly 0 def /ulx 0 def /rad 0 def
+/MRR {/vradius xdef /hradius xdef /lry xdef /lrx xdef /uly xdef
+  /ulx xdef newpath tMatrix currentmatrix pop ulx hradius add uly
+  vradius add translate hradius vradius scale 0 0 1 180 270 arc 
+  tMatrix setmatrix lrx hradius sub uly vradius add translate
+  hradius vradius scale 0 0 1 270 360 arc tMatrix setmatrix
+  lrx hradius sub lry vradius sub translate hradius vradius scale
+  0 0 1 0 90 arc tMatrix setmatrix ulx hradius add lry vradius sub
+  translate hradius vradius scale 0 0 1 90 180 arc tMatrix setmatrix
+  closepath} bdef
+/FRR {MRR stroke } bdef
+/PRR {MRR fill } bdef
+/MlrRR {/lry xdef /lrx xdef /uly xdef /ulx xdef /rad lry uly sub 2 div def
+  newpath tMatrix currentmatrix pop ulx rad add uly rad add translate
+  rad rad scale 0 0 1 90 270 arc tMatrix setmatrix lrx rad sub lry rad
+  sub translate rad rad scale 0 0 1 270 90 arc tMatrix setmatrix
+  closepath} bdef
+/FlrRR {MlrRR stroke } bdef
+/PlrRR {MlrRR fill } bdef
+/MtbRR {/lry xdef /lrx xdef /uly xdef /ulx xdef /rad lrx ulx sub 2 div def
+  newpath tMatrix currentmatrix pop ulx rad add uly rad add translate
+  rad rad scale 0 0 1 180 360 arc tMatrix setmatrix lrx rad sub lry rad
+  sub translate rad rad scale 0 0 1 0 180 arc tMatrix setmatrix
+  closepath} bdef
+/FtbRR {MtbRR stroke } bdef
+/PtbRR {MtbRR fill } bdef
+/stri 6 array def /dtri 6 array def
+/smat 6 array def /dmat 6 array def
+/tmat1 6 array def /tmat2 6 array def /dif 3 array def
+/asub {/ind2 exch def /ind1 exch def dup dup
+  ind1 get exch ind2 get sub exch } bdef
+/tri_to_matrix {
+  2 0 asub 3 1 asub 4 0 asub 5 1 asub
+  dup 0 get exch 1 get 7 -1 roll astore } bdef
+/compute_transform {
+  dmat dtri tri_to_matrix tmat1 invertmatrix 
+  smat stri tri_to_matrix tmat2 concatmatrix } bdef
+/ds {stri astore pop} bdef
+/dt {dtri astore pop} bdef
+/db {2 copy /cols xdef /rows xdef mul dup 3 mul string
+  currentfile 
+  3 index 0 eq {/ASCIIHexDecode filter}
+  {/ASCII85Decode filter 3 index 2 eq {/RunLengthDecode filter} if }
+  ifelse exch readstring pop
+  dup 0 3 index getinterval /rbmap xdef
+  dup 2 index dup getinterval /gbmap xdef
+  1 index dup 2 mul exch getinterval /bbmap xdef pop pop}bdef
+/it {gs np dtri aload pop moveto lineto lineto cp c
+  cols rows 8 compute_transform 
+  rbmap gbmap bbmap true 3 colorimage gr}bdef
+/il {newpath moveto lineto stroke}bdef
+currentdict end def
+%%EndProlog
+
+%%BeginSetup
+MathWorks begin
+
+0 cap
+
+end
+%%EndSetup
+
+%%Page: 1 1
+%%BeginPageSetup
+%%PageBoundingBox:     0     0   399   275
+MathWorks begin
+bpage
+%%EndPageSetup
+
+%%BeginObject: obj1
+bplot
+
+/dpi2point 1.38889 def
+portraitMode 0000 0400 csm
+
+    0    18   555   381 rc
+87 dict begin %Colortable dictionary
+/c0 { 0.000000 0.000000 0.000000 sr} bdef
+/c1 { 1.000000 1.000000 1.000000 sr} bdef
+/c2 { 0.900000 0.000000 0.000000 sr} bdef
+/c3 { 0.000000 0.820000 0.000000 sr} bdef
+/c4 { 0.000000 0.000000 0.800000 sr} bdef
+/c5 { 0.910000 0.820000 0.320000 sr} bdef
+/c6 { 1.000000 0.260000 0.820000 sr} bdef
+/c7 { 0.000000 0.820000 0.820000 sr} bdef
+c0
+1 j
+1 sg
+   0    0  601  401 rf
+0.694444 w
+0 86 464 0 0 -86 79 116 4 MP
+PP
+-464 0 0 86 464 0 0 -86 79 116 5 MP stroke
+0.462963 w
+DO
+0.2 sg
+  79  108 mt  543  108 L
+ 543  108 mt  543  108 L
+  79   73 mt  543   73 L
+ 543   73 mt  543   73 L
+  79   37 mt  543   37 L
+ 543   37 mt  543   37 L
+SO
+0.694444 w
+  79  116 mt  543  116 L
+  79  116 mt   79   30 L
+ 119  116 mt  119  122 L
+%%IncludeResource: font AvantGarde-Book
+/AvantGarde-Book /ISOLatin1Encoding 12.5 FMSR
+
+ 113  137 mt 
+(20) s
+ 199  116 mt  199  122 L
+ 193  137 mt 
+(30) s
+ 279  116 mt  279  122 L
+ 273  137 mt 
+(40) s
+ 359  116 mt  359  122 L
+ 353  137 mt 
+(50) s
+ 439  116 mt  439  122 L
+ 433  137 mt 
+(60) s
+ 519  116 mt  519  122 L
+ 513  137 mt 
+(70) s
+  79  108 mt   72  108 L
+  47  112 mt 
+(-10) s
+  79   73 mt   72   73 L
+  65   77 mt 
+( ) s
+  79   37 mt   72   37 L
+  55   41 mt 
+(10) s
+gs 79 30 465 87 rc
+1.73611 w
+0.1 sg
+8 0 8 0 8 0 8 0 0 -71 8 0 0 71 8 0 
+8 0 8 0 8 0 0 -71 8 0 8 0 0 71 8 0 
+8 0 8 0 0 -71 8 0 0 71 8 0 0 -71 8 0 
+0 71 8 0 8 0 0 -71 8 0 8 0 8 0 8 0 
+0 71 8 0 0 -71 8 0 0 71 8 0 8 0 8 0 
+0 -71 8 0 8 0 8 0 0 71 8 0 8 0 0 -71 
+8 0 0 71 8 0 8 0 0 -71 8 0 0 71 8 0 
+0 -71 8 0 8 0 0 71 8 0 0 -71 8 0 8 0 
+8 0 0 71 8 0 0 -71 8 0 8 0 0 71 8 0 
+8 0 0 -71 8 0 8 0 0 71 8 0 0 -71 8 0 
+0 71 8 0 0 -71 8 0 0 71 8 0 0 -71 8 0 
+8 0 79 108 90 MP stroke
+gr
+
+1.73611 w
+0.1 sg
+0.2 sg
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+  17   98 mt  -90 rotate
+(pitch, u) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 9.72222 FMSR
+
+  23   54 mt  -90 rotate
+(1) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+  37   95 mt  -90 rotate
+(\(deg/s\)) s
+90 rotate
+0.694444 w
+1 sg
+0 86 464 0 0 -86 79 236 4 MP
+PP
+-464 0 0 86 464 0 0 -86 79 236 5 MP stroke
+0.462963 w
+DO
+0.2 sg
+  79  228 mt  543  228 L
+ 543  228 mt  543  228 L
+  79  193 mt  543  193 L
+ 543  193 mt  543  193 L
+  79  157 mt  543  157 L
+ 543  157 mt  543  157 L
+SO
+0.694444 w
+  79  236 mt  543  236 L
+  79  236 mt   79  150 L
+ 119  236 mt  119  242 L
+%%IncludeResource: font AvantGarde-Book
+/AvantGarde-Book /ISOLatin1Encoding 12.5 FMSR
+
+ 113  257 mt 
+(20) s
+ 199  236 mt  199  242 L
+ 193  257 mt 
+(30) s
+ 279  236 mt  279  242 L
+ 273  257 mt 
+(40) s
+ 359  236 mt  359  242 L
+ 353  257 mt 
+(50) s
+ 439  236 mt  439  242 L
+ 433  257 mt 
+(60) s
+ 519  236 mt  519  242 L
+ 513  257 mt 
+(70) s
+  79  228 mt   72  228 L
+  47  232 mt 
+(-10) s
+  79  193 mt   72  193 L
+  65  197 mt 
+( ) s
+  79  157 mt   72  157 L
+  55  161 mt 
+(10) s
+gs 79 150 465 87 rc
+1.73611 w
+0.1 sg
+8 0 8 0 0 71 8 0 0 -71 8 0 8 0 0 71 
+8 0 8 0 0 -71 8 0 8 0 0 71 8 0 0 -71 
+8 0 0 71 8 0 0 -71 8 0 0 71 8 0 0 -71 
+8 0 8 0 8 0 8 0 8 0 8 0 0 71 8 0 
+8 0 8 0 8 0 8 0 0 -71 8 0 0 71 8 0 
+8 0 8 0 8 0 0 -71 8 0 8 0 0 71 8 0 
+8 0 8 0 0 -71 8 0 0 71 8 0 0 -71 8 0 
+0 71 8 0 8 0 0 -71 8 0 8 0 8 0 8 0 
+0 71 8 0 0 -71 8 0 0 71 8 0 8 0 8 0 
+0 -71 8 0 8 0 8 0 0 71 8 0 8 0 0 -71 
+8 0 0 71 8 0 8 0 0 -71 8 0 79 228 87 MP stroke
+gr
+
+1.73611 w
+0.1 sg
+0.2 sg
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+  17  212 mt  -90 rotate
+(roll, u) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 9.72222 FMSR
+
+  23  181 mt  -90 rotate
+(2) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+  37  215 mt  -90 rotate
+(\(deg/s\)) s
+90 rotate
+0.694444 w
+1 sg
+0 86 464 0 0 -86 79 356 4 MP
+PP
+-464 0 0 86 464 0 0 -86 79 356 5 MP stroke
+0.462963 w
+DO
+0.2 sg
+  79  348 mt  543  348 L
+ 543  348 mt  543  348 L
+  79  313 mt  543  313 L
+ 543  313 mt  543  313 L
+  79  277 mt  543  277 L
+ 543  277 mt  543  277 L
+SO
+0.694444 w
+  79  356 mt  543  356 L
+  79  356 mt   79  270 L
+ 119  356 mt  119  362 L
+%%IncludeResource: font AvantGarde-Book
+/AvantGarde-Book /ISOLatin1Encoding 12.5 FMSR
+
+ 113  377 mt 
+(20) s
+ 199  356 mt  199  362 L
+ 193  377 mt 
+(30) s
+ 279  356 mt  279  362 L
+ 273  377 mt 
+(40) s
+ 359  356 mt  359  362 L
+ 353  377 mt 
+(50) s
+ 439  356 mt  439  362 L
+ 433  377 mt 
+(60) s
+ 519  356 mt  519  362 L
+ 513  377 mt 
+(70) s
+  79  348 mt   72  348 L
+  47  352 mt 
+(-50) s
+  79  313 mt   72  313 L
+  65  317 mt 
+( ) s
+  79  277 mt   72  277 L
+  55  281 mt 
+(50) s
+gs 79 270 465 87 rc
+1.73611 w
+0.1 sg
+8 0 8 0 0 71 8 0 0 -71 8 0 0 71 8 0 
+8 0 8 0 0 -71 8 0 8 0 8 0 0 71 8 0 
+8 0 0 -71 8 0 0 71 8 0 8 0 0 -71 8 0 
+0 71 8 0 0 -71 8 0 8 0 0 71 8 0 0 -71 
+8 0 8 0 8 0 0 71 8 0 0 -71 8 0 8 0 
+0 71 8 0 8 0 0 -71 8 0 8 0 0 71 8 0 
+0 -71 8 0 0 71 8 0 0 -71 8 0 0 71 8 0 
+0 -71 8 0 8 0 8 0 8 0 8 0 8 0 0 71 
+8 0 8 0 8 0 8 0 8 0 0 -71 8 0 0 71 
+8 0 8 0 8 0 8 0 0 -71 8 0 8 0 0 71 
+8 0 8 0 8 0 0 -71 8 0 0 71 8 0 79 277 88 MP stroke
+gr
+
+1.73611 w
+0.1 sg
+0.2 sg
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+ 306  393 mt 
+(k) s
+  15  349 mt  -90 rotate
+(yaw rate, u) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 9.72222 FMSR
+
+  21  283 mt  -90 rotate
+(3) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+  37  338 mt  -90 rotate
+(\(deg/s) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 9.72222 FMSR
+
+  31  298 mt  -90 rotate
+(2) s
+90 rotate
+%%IncludeResource: font AvantGarde-Demi
+/AvantGarde-Demi /ISOLatin1Encoding 12.5 FMSR
+
+  37  293 mt  -90 rotate
+(\)) s
+90 rotate
+0.694444 w
+
+end %%Color Dict
+
+eplot
+%%EndObject
+
+epage
+end
+
+showpage
+
+%%Trailer
+%%EOF
