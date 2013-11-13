@@ -2,12 +2,13 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).}}{2}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces A specific Pseudo-Random Binary Sequence (PRBS) used in testing CAPTION NEEDS MORE WORK HERE.}}{3}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{4}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{5}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification algorithm overview}}{9}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating under feedback control.}}{16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach}}{10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.}}{10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A block diagram of an LTI system operating under feedback control.}}{17}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor}}{21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie control system block diagram}}{21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor}}{22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie control system block diagram}}{22}
 \addvspace {10pt}
 \addvspace {10pt}

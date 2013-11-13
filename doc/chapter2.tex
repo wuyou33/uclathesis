@@ -1,5 +1,8 @@
 \chapter{Preliminaries}
 
+\section{Notation}
+Let $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letter $a$, $b$, $c$, $\dots$ and matrices by upper case letters $A$, $B$, $C$, $\dots$ Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse denoted by $A^\dagger$.
+
 \section{Linear Systems}
 \subsection{Linear Time-Invariant Systems}\label{sec:linear_time_invariant_systems}
 A discrete time state space representation of a linear dynamical system can be written as
@@ -55,21 +58,14 @@ to be the innovation sequence, we can rewrite the combined deterministic-stochas
 \end{subequations}
 We will use the state space model in its innovation form to explain the subspace algorithm for identifying combined deterministic-stochastic LTI systems.
 
+\subsection{Stability}
+
+
+\subsection{Controlability and Observability}
+
+
 
 \section{Linear Algebra Tools}
-
-\subsection{Hankel Matrices}
-A Hankel matrix is a matrix $H \in \mathbb{R}^{m\times n}$ with constant skew-diagonals. In other words, the value of the $(i, j)^{\mbox{th}}$ entry of $H$ depends only on the sum $i + j$.
-\begin{equation*}
-H_{m,n} = \begin{bmatrix}
-h_1 & h_2 & \cdots & h_n\\
-h_2 & h_3 & \cdots & h_{n+1}\\
-\vdots & \vdots & \ddots & \vdots\\
-h_m & h_{m+1} & \cdots & h_{m+n-1}
-\end{bmatrix}
-\end{equation*}
-If each entry in the matrix is also a matrix, it is called a block Hankel matrix.
-
 
 \subsection{Fundamental Matrix Subspaces}
 We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$. The dimension of the column space is called the rank. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
@@ -88,5 +84,37 @@ where $U \in \mathbb{R}^{m\times m}$ and $V \in \mathbb{R}^{n\times n}$ are orth
 \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_k > 0
 \end{equation*}
 
+
+\subsection{Hankel Matrices}
+A Hankel matrix is a matrix $A \in \mathbb{R}^{m\times n}$ with constant skew-diagonals:
+\begin{equation*}
+A_{m,n} = \begin{bmatrix}
+a_1 & a_2 & \cdots & a_n\\
+a_2 & a_3 & \cdots & a_{n+1}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_m & a_{m+1} & \cdots & a_{m+n-1}
+\end{bmatrix}
+\end{equation*}
+Hankel matrices can be constructed by setting the $i,j^{\mbox{th}}$ element of $A$ to
+\begin{equation*}
+A_{i,j} = A_{i-1, j+1}
+\end{equation*}
+If each entry in the matrix is also a matrix, the resulting matrix is called a block Hankel matrix:
+
+
+\subsection{Toeplitz Matrices}
+A Toeplitz matrix is a matrix $A\in\mathbb{R}^{m\times n}$ with constant diagonals. 
+\begin{equation*}
+A_{m,n} = \begin{bmatrix}
+a_1 & a_{-1} & \cdots & a_{-n+1}\\
+a_2 & a_1 & \ddots & \vdots\\
+\vdots & \ddots & \ddots & a_{-1}\\
+a_{m-1} & \cdots & a_2 & a_1
+\end{bmatrix}
+\end{equation*}
+Topelitz matrices can be constructed by setting he $i,j^{\mbox{th}}$ element of $A$ to
+\begin{equation*}
+A_{i,j} = A_{i+1, j+1}
+\end{equation*}
 
 \section{Quadrotor Rigid Body Dynamics}

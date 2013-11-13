@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  11 NOV 2013 23:20
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  12 NOV 2013 18:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -350,81 +350,89 @@ CHAPTER 2.
 File: ../fig/lti_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/lti_block_diagram.pdf>
-Package pdftex.def Info: ../fig/lti_block_diagram.pdf used on input line 13.
+Package pdftex.def Info: ../fig/lti_block_diagram.pdf used on input line 16.
 (pdftex.def)             Requested size: 397.48402pt x 144.2104pt.
  [4
 
- <../fig/lti_block_diagram.pdf>] [5]
-Overfull \hbox (4.0487pt too wide) in paragraph at lines 50--53
+] [5 <../fig/lti_block_diagram.pdf>]
+Overfull \hbox (4.0487pt too wide) in paragraph at lines 53--56
 \OT1/cmr/m/n/12 to be the in-no-va-tion se-quence, we can rewrite the com-bined
  deterministic-stochastic
  []
 
-[6]) (./chapter3.tex [7]
+[6] [7]) (./chapter3.tex [8]
 CHAPTER 3.
-[8
-
-] <../fig/sim_flow_diagram.pdf, id=100, 397.485pt x 208.44576pt>
+<../fig/sim_flow_diagram.pdf, id=100, 397.485pt x 208.44576pt>
 File: ../fig/sim_flow_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/sim_flow_diagram.pdf>
-Package pdftex.def Info: ../fig/sim_flow_diagram.pdf used on input line 13.
+Package pdftex.def Info: ../fig/sim_flow_diagram.pdf used on input line 9.
 (pdftex.def)             Requested size: 397.48402pt x 208.44524pt.
- [9 <../fig/sim_flow_diagram.pdf>] [10]
-[11] [12] [13] [14]
-<../fig/closed_loop_block_diagram.pdf, id=132, 397.485pt x 126.80775pt>
+ [9
+
+]
+<../fig/open_loop_block_diagram.pdf, id=105, 397.485pt x 80.9695pt>
+File: ../fig/open_loop_block_diagram.pdf Graphic file (type pdf)
+
+<use ../fig/open_loop_block_diagram.pdf>
+Package pdftex.def Info: ../fig/open_loop_block_diagram.pdf used on input line 
+17.
+(pdftex.def)             Requested size: 397.48402pt x 80.96928pt.
+ [10 <../fig/sim_flow_diagram.pdf> <../fig/open_loop_block_diagram.pdf>] [11] [
+12] [13] [14] [15] [16]
+<../fig/closed_loop_block_diagram.pdf, id=148, 397.485pt x 126.80775pt>
 File: ../fig/closed_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/closed_loop_block_diagram.pdf>
 Package pdftex.def Info: ../fig/closed_loop_block_diagram.pdf used on input lin
-e 212.
+e 218.
 (pdftex.def)             Requested size: 397.48402pt x 126.80743pt.
- [15] [16 <../fig/closed_loop_block_diagram.pdf>]
-Overfull \hbox (0.88223pt too wide) in paragraph at lines 218--218
+ [17 <../fig/closed_loop_block_diagram.pdf>]
+Overfull \hbox (0.88223pt too wide) in paragraph at lines 224--224
 []\OT1/cmr/bx/n/12 Estimation of the Ex-tended Ob-serv-abil-ity Ma-trix by the 
 Whiten-
  []
 
-[17] [18]) (./chapter4.tex [19]
+[18] [19]) (./chapter4.tex [20]
 CHAPTER 4.
-<../fig/crazyflie.jpg, id=157, 2616.77625pt x 1882.03125pt>
+<../fig/crazyflie.jpg, id=170, 2616.77625pt x 1882.03125pt>
 File: ../fig/crazyflie.jpg Graphic file (type jpg)
 
 <use ../fig/crazyflie.jpg>
 Package pdftex.def Info: ../fig/crazyflie.jpg used on input line 6.
 (pdftex.def)             Requested size: 392.4995pt x 282.29251pt.
 
-<../fig/crazyflie_control_system_block_diagram.pdf, id=158, 397.485pt x 175.990
+<../fig/crazyflie_control_system_block_diagram.pdf, id=171, 397.485pt x 175.990
 5pt>
 File: ../fig/crazyflie_control_system_block_diagram.pdf Graphic file (type pdf)
 
  <use ../fig/crazyflie_control_system_block_diagram.pdf>
 Package pdftex.def Info: ../fig/crazyflie_control_system_block_diagram.pdf used
- on input line 16.
+ on input line 14.
 (pdftex.def)             Requested size: 397.48402pt x 175.99005pt.
-) (./chapter5.tex
-[20
+ [21
 
 ]
-Overfull \vbox (113.81473pt too high) has occurred while \output is active []
+Overfull \vbox (35.69788pt too high) has occurred while \output is active []
 
 
-[21 <../fig/crazyflie.jpg> <../fig/crazyflie_control_system_block_diagram.pdf>]
+[22 <../fig/crazyflie.jpg> <../fig/crazyflie_control_system_block_diagram.pdf>]
+) (./chapter5.tex [23]
 CHAPTER 5.
-) (./chapter6.tex [22
+) (./chapter6.tex [24
 
 ]
 CHAPTER 6.
-) (./thesis.bbl [23
+) (./thesis.bbl [25
 
-] [24
+] [26
 
-]) [25] (./thesis.aux) ) 
+]) [27] (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 2606 strings out of 493610
- 35668 string characters out of 3142404
- 104083 words of memory out of 3000000
- 5829 multiletter control sequences out of 15000+200000
+ 2611 strings out of 493610
+ 35850 string characters out of 3142404
+ 104085 words of memory out of 3000000
+ 5833 multiletter control sequences out of 15000+200000
  10752 words of font info for 40 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  38i,14n,23p,1471b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -441,10 +449,10 @@ cmsy10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on thesis.pdf (35 pages, 1182307 bytes).
+Output written on thesis.pdf (37 pages, 1193309 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
