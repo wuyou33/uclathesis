@@ -4,7 +4,7 @@ clc
 
 load ../../data/flight_test_data/20131017212836.mat;
 
-L = 377;
+L = 300;
 J = 1;
 g = 0;
 Y = y;

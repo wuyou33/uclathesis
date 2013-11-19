@@ -5,9 +5,9 @@
 \contentsline {section}{\numberline {2.1}Notation}{4}
 \contentsline {section}{\numberline {2.2}Linear Systems}{4}
 \contentsline {subsection}{\numberline {2.2.1}Linear Time-Invariant Systems}{4}
-\contentsline {subsection}{\numberline {2.2.2}Combined Deterministic-Stochastic LTI Systems}{5}
-\contentsline {subsection}{\numberline {2.2.3}Stability}{7}
-\contentsline {subsection}{\numberline {2.2.4}Controlability and Observability}{7}
+\contentsline {subsection}{\numberline {2.2.2}Stability}{5}
+\contentsline {subsection}{\numberline {2.2.3}Observability and Controllability}{5}
+\contentsline {subsection}{\numberline {2.2.4}Combined Deterministic-Stochastic LTI Systems}{6}
 \contentsline {section}{\numberline {2.3}Linear Algebra Tools}{7}
 \contentsline {subsection}{\numberline {2.3.1}Fundamental Matrix Subspaces}{7}
 \contentsline {subsection}{\numberline {2.3.2}Projections}{7}
@@ -18,20 +18,20 @@
 \contentsline {chapter}{\numberline {3}Subspace Identification Methods}{9}
 \contentsline {section}{\numberline {3.1}Subspace System Identification}{10}
 \contentsline {subsection}{\numberline {3.1.1}Extended State Space Model}{11}
-\contentsline {subsection}{\numberline {3.1.2}Estimation of the Extended Observability Matrix}{12}
-\contentsline {subsection}{\numberline {3.1.3}Rank Reduction}{14}
+\contentsline {subsection}{\numberline {3.1.2}Estimation of the Extended Observability Matrix}{13}
+\contentsline {subsection}{\numberline {3.1.3}Rank Reduction}{15}
 \contentsline {subsection}{\numberline {3.1.4}Determination of the System Matrices}{15}
-\contentsline {subsection}{\numberline {3.1.5}Determination of the Kalman Filter Gain}{16}
-\contentsline {subsection}{\numberline {3.1.6}Numerical Efficiencies by LQ Factorization}{16}
+\contentsline {subsection}{\numberline {3.1.5}Numerical Efficiencies by LQ Factorization}{17}
 \contentsline {section}{\numberline {3.2}Closed-Loop Subspace Identification}{17}
-\contentsline {subsection}{\numberline {3.2.1}Estimation of the Extended Observability Matrix by the Whitening Filter Approach}{18}
-\contentsline {chapter}{\numberline {4}Approach}{21}
-\contentsline {section}{\numberline {4.1}Quadrotor Platform}{21}
-\contentsline {section}{\numberline {4.2}Experiment Design}{21}
-\contentsline {section}{\numberline {4.3}Data Collection}{22}
-\contentsline {section}{\numberline {4.4}Data Analysis}{22}
-\contentsline {section}{\numberline {4.5}Verification}{23}
-\contentsline {chapter}{\numberline {5}Results}{24}
-\contentsline {chapter}{\numberline {6}Conclusion}{25}
-\contentsline {section}{\numberline {6.1}Future Work}{25}
-\contentsline {chapter}{References}{26}
+\contentsline {subsection}{\numberline {3.2.1}Extended State Space Model}{19}
+\contentsline {subsection}{\numberline {3.2.2}Estimation of the Extended Observability Matrix with Innovation Estimation}{20}
+\contentsline {chapter}{\numberline {4}Approach}{25}
+\contentsline {section}{\numberline {4.1}Quadrotor Platform}{25}
+\contentsline {section}{\numberline {4.2}Experiment Design}{25}
+\contentsline {section}{\numberline {4.3}Data Collection}{26}
+\contentsline {section}{\numberline {4.4}Data Analysis}{26}
+\contentsline {section}{\numberline {4.5}Verification}{27}
+\contentsline {chapter}{\numberline {5}Results}{28}
+\contentsline {chapter}{\numberline {6}Conclusion}{29}
+\contentsline {section}{\numberline {6.1}Future Work}{29}
+\contentsline {chapter}{References}{30}
