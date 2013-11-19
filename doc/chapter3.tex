@@ -206,7 +206,7 @@ which is an overdetermined linear system in $B$ and $D$. We recover $B$ and $D$ 
 
 
 \subsection{Numerical Efficiencies by LQ Factorization}
-In the case where $N$ is large, the construction of the matrix $Y_f\Pi_{U_f}^\perp Z^T$ in Eq. (\ref{eq:3_range}) and the subsequent calculation of its SVD are computationally intensive. Verhaegen has shown in \cite{verhaegen1994identification} that from the following LQ factorization
+In the case where $N$ is large, the construction of the matrix $Y_f\Pi_{U_f}^\perp Z^T$ in Eq. (\ref{eq:3_range}) and the subsequent calculation of its SVD are computationally intensive. Verhaegen has shown in \cite{verhaegen1994identification} that from the following LQ decomposition
 \begin{equation}\label{eq:3_lq}
 \begin{bmatrix}U_f\\ U_p\\ Y_p\\ Y_f\end{bmatrix} = 
 \begin{bmatrix}
@@ -221,7 +221,7 @@ we have
 \begin{equation}\label{eq:3_range_lq}
 \mbox{range}\left(\lim_{N\rightarrow\infty} \frac{1}{\sqrt{N}} \begin{bmatrix}L_{42} & L_{43}\end{bmatrix}\right) = \mbox{range}\left(\Gamma_f\right)
 \end{equation}
-This shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ factorization in Eq. (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}L_{42} & L_{43}\end{bmatrix}$, and reducing the system order as described above.
+This shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ decomposition in Eq. (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}L_{42} & L_{43}\end{bmatrix}$, and reducing the system order as described above.
 
 
 
@@ -231,7 +231,7 @@ This shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq:3_rang
 
 
 
-\section{Closed-Loop Subspace Identification}
+\section{Closed-Loop Subspace Identification}\label{sec:closed-loop_subspace_identification}
 In many real-world situations, it is either not practical or not possible to collect open-loop input and output data. An unstable system relying on some form of feedback control to operate safely is an example of such a case. It is well known that traditional subspace methods produce biased results in the presence of feedback. This is due to the correlation between the system input and past noise as the controller attempts to eliminate system disturbances \cite{qin2006overview}, violating Assumption 4 introduced in the previous section. As a result, traditional SIMs are not albe to fully decouple the input and noise sequences when estimating the subspace of the extended observability matrix.
 \begin{figure}[htb!]
 	\centering

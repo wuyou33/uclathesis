@@ -1,7 +1,7 @@
 \chapter{Preliminaries}
 
 \section{Notation}
-Let $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letters $\{a$, $b$, $c$, $\dots\}$ and matrices by upper case letters $\{A$, $B$, $C$, $\dots\}$ Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse is denoted by $A^\dagger$.
+Let $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letters $\{a$, $b$, $c$, $\dots\}$ and matrices by upper case letters $\{A$, $B$, $C$, $\dots\}$. Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse is denoted by $A^\dagger$.
 
 \section{Linear Systems}
 \subsection{Linear Time-Invariant Systems}\label{sec:linear_time_invariant_systems}
@@ -73,8 +73,42 @@ We will use the state space model in its innovation form to describe the subspac
 We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
 
 
-\subsection{Projections}
+\subsection{Orthogonal Projections}
+The \textit{orthogonal projection} of the row space of $A$ onto the row space of $B$ is $A\Pi_B$, defined as
+\begin{equation*}
+A\Pi_B = AB^T(BB^T)^{-1}B
+\end{equation*}
+The projection of the row space of $A$ onto the orthogonal compliment of the row space of $B$ is $A\Pi_B^\perp$, defined as
+\begin{equation*}
+A\Pi_B^\perp = A\big(I-B^T(BB^T)^{-1}B\big)
+\end{equation*}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics{../fig/orthogonal_projection.pdf}
+	\caption{Orthogonal projections.}
+\end{figure}
 
+Additionally, we define the following properties of orthogonal projections:
+\begin{equation*}
+B\Pi_B = BB^T(BB^T)^{-1}B = B
+\end{equation*}
+\begin{equation*}
+B\Pi_B^\perp = B\big(I-B^T(BB^T)^{-1}B\big) = B-B = 0
+\end{equation*}
+
+When $B$ is large, computing its inverse and thus orthogonal projections onto its subspaces is computationally intensive. A more numerically efficient computation of of an orthogonal projection is achieved by LQ decomposition. From the LQ decomposition,
+\begin{equation*}
+\begin{bmatrix}B\\A\end{bmatrix} = 
+\begin{bmatrix}L_{11} & 0\\ L_{21} & L_{22}\end{bmatrix}
+\begin{bmatrix}Q_1\\ Q_2\end{bmatrix}
+\end{equation*}
+we have
+\begin{equation*}
+A\Pi_B = L_{21}Q_1
+\end{equation*}
+\begin{equation*}
+A\Pi_B^\perp = L_{22}Q_2
+\end{equation*}
 
 \subsection{Singular Value Decomposition}
 Any matrix $A \in \mathbb{R}^{m\times n}$ can be decomposed by a singular value decomposition (SVD) given by
@@ -83,15 +117,25 @@ A = U\Sigma V^T
 \end{equation*}
 where $U \in \mathbb{R}^{m\times m}$ and $V \in \mathbb{R}^{n\times n}$ are orthogonal matrices and $\Sigma \in \mathbb{R}^{m\times n}$ is diagonal matrix of the singular values $\sigma_i$ of $A$ ordered such that
 \begin{equation*}
-\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_k > 0
+\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r > 0
 \end{equation*}
 If we partition the matrices in the SVD as
 \begin{equation*}
-A = \begin{bmatrix}U_1 & \vline & U_2\end{bmatrix}
+A = \left[\begin{array}{c|c}
+U_1 & U_2
+\end{array}\right]
+\left[\begin{array}{c|c}
+\Sigma_r & 0 \\ \hline 0 & 0
+\end{array}\right]
+\left[\begin{array}{c}
+V_1^T \\ \hline V_2^T
+\end{array}\right]
 \end{equation*}
-then R(A) = R(U1)
-****
-
+a well known property of the SVD is that the vectors $U_1$ corresponding to the $r$ non-zero singular values of $A$ span the range of $A$. That is,
+\begin{equation*}
+\mbox{range}(U_1) = \mbox{range}(A)
+\end{equation*}
+We will later use this property to recover an estimate of the column space (range) of the extended observability matrix from input-output data.
 
 \subsection{Hankel Matrices}
 A Hankel matrix is a matrix $A \in \mathbb{R}^{m\times n}$ with constant skew-diagonals:
@@ -124,5 +168,3 @@ Topelitz matrices can be constructed by setting the $i,j^{\mbox{th}}$ element of
 \begin{equation*}
 A_{i,j} = A_{i+1, j+1}
 \end{equation*}
-
-\section{Quadrotor Rigid Body Dynamics}

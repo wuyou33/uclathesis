@@ -85,7 +85,7 @@ h = figure(1);
 
 subplot(3,1,1)
 s1 = stairs(x,u1);
-Ylabel = ylabel({'pitch, u_1';'(deg/s)'});
+Ylabel = ylabel({'pitch, \phi';'(deg)'});
 axis([15 len -1.2*max_pitch 1.2*max_pitch])
 set( gca,...
     'box'         , 'off', ...
@@ -104,7 +104,7 @@ set([Ylabel], ...
 
 subplot(3,1,2)
 s2 = stairs(x,u2);
-Ylabel = ylabel({'roll, u_2';'(deg/s)'});
+Ylabel = ylabel({'roll, \theta';'(deg)'});
 axis([15 len -1.2*max_roll 1.2*max_roll])
 set( gca,...
     'box'         , 'off', ...
@@ -124,7 +124,7 @@ set([Ylabel], ...
 subplot(3,1,3)
 s3 = stairs(x,u3);
 Xlabel = xlabel('k');
-Ylabel = ylabel({'yaw rate, u_3';'(deg/s^2)'});
+Ylabel = ylabel({'yaw rate, \psi';'(deg/s)'});
 axis([15 len -1.2*max_yaw 1.2*max_yaw])
 set( gca,...
     'box'         , 'off', ...
