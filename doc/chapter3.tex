@@ -19,7 +19,7 @@ First, we consider the identification of a combined deterministic-stochastic LTI
 \end{figure}
 We present an overview of the PO-MOESP subspace identification procedure, where ``PO'' indicates that both past input and output data is used when eliminating the influence of noise on the identified system. Before detailing the identification procedure, we introduce the following assumptions:\\
 \textbf{Assumption 1}: The matrix $A - KC$ is stable (i.e. its eigenvalues lie strictly within the unit circle).\\
-\textbf{Assumption 2}: The pair $(A,C)$ is observable and $(A, [B \quad K])$ is observable.\\
+\textbf{Assumption 2}: The pair $(A,C)$ is observable and $(A, [B \quad K])$ is controllable.\\
 \textbf{Assumption 3}: The innovation sequence $e(k)$ is zero-mean white noise.\\
 \textbf{Assumption 4}: The input sequence $u(k)$ and innovation sequence $e(k)$ are uncorrelated for all $k$.\\
 \textbf{Assumption 5}: The input sequence $u(k)$ is persistently exciting.
@@ -221,7 +221,7 @@ we have
 \begin{equation}\label{eq:3_range_lq}
 \mbox{range}\left(\lim_{N\rightarrow\infty} \frac{1}{\sqrt{N}} \begin{bmatrix}L_{42} & L_{43}\end{bmatrix}\right) = \mbox{range}\left(\Gamma_f\right)
 \end{equation}
-This shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ decomposition in Eq. (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}L_{42} & L_{43}\end{bmatrix}$, and reducing the system order as described above.
+This result shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq:3_range_lq}), therefore we can estimate the column space of $\hat{\Gamma}_f$ by computing the LQ decomposition in Eq. (\ref{eq:3_lq}), taking the SVD of the matrix $\begin{bmatrix}L_{42} & L_{43}\end{bmatrix}$, and reducing the system order as described above.
 
 
 
@@ -243,7 +243,7 @@ Recently, several new approaches to identifying closed-loop systems by decouplin
 
 We now present an overview of the IEM procedure to identify systems operating in closed loop. We assume the following to be true:\\
 \textbf{Assumption 1}: The matrix $A - KC$ is stable (i.e. its eigenvalues lie strictly within the unit circle).\\
-\textbf{Assumption 2}: The pair $(A,C)$ is observable and $(A, [B \quad K])$ is observable.\\
+\textbf{Assumption 2}: The pair $(A,C)$ is observable and $(A, [B \quad K])$ is controllable.\\
 \textbf{Assumption 3}: The innovation sequence $e(k)$ is zero-mean white noise.\\
 \textbf{Assumption 4}: The input sequence $u(k)$ is persistently exciting.
 
@@ -403,7 +403,7 @@ thus using Eqs. (\ref{eq:3_extended_state_space_row_state_simplified}) and (\ref
 Computing the least squares estimate of $\hat{\Gamma}_{fi}\hat{L}_z$ row by row using Eq. (\ref{eq:3_iem_ls}), we obtain an estimate of the full matrix $\hat{\Gamma}_f\hat{L}_p$
 \begin{equation*}
 \hat{\Gamma}_f \hat{L}_p = \begin{bmatrix}
-\hat{\Gamma}_{f1}\\ \hat{\Gamma}_{f2}\\ \vdots \\ \hat{\Gamma}_{ff}
+\hat{\Gamma}_{f1}\hat{L}_p\\ \hat{\Gamma}_{f2}\hat{L}_p\\ \vdots \\ \hat{\Gamma}_{ff}\hat{L}_p
 \end{bmatrix}
 \end{equation*}
 from which am estimate of the column space of the extended observability matrix can be obtained via an SVD where

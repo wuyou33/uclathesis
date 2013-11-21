@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Orthogonal Projections}{6}
 \contentsline {subsection}{\numberline {2.3.3}Singular Value Decomposition}{7}
 \contentsline {subsection}{\numberline {2.3.4}Hankel Matrices}{8}
-\contentsline {subsection}{\numberline {2.3.5}Toeplitz Matrices}{8}
+\contentsline {subsection}{\numberline {2.3.5}Toeplitz Matrices}{9}
 \contentsline {chapter}{\numberline {3}Subspace Identification Methods}{10}
 \contentsline {section}{\numberline {3.1}Subspace System Identification}{11}
 \contentsline {subsection}{\numberline {3.1.1}Extended State Space Model}{12}
@@ -29,11 +29,16 @@
 \contentsline {section}{\numberline {4.2}Experiment Design}{28}
 \contentsline {subsection}{\numberline {4.2.1}Input Design}{28}
 \contentsline {subsection}{\numberline {4.2.2}Data Collection}{30}
-\contentsline {section}{\numberline {4.3}Data Analysis}{30}
-\contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{30}
-\contentsline {subsection}{\numberline {4.3.2}Model Identification}{30}
-\contentsline {section}{\numberline {4.4}Verification}{30}
-\contentsline {chapter}{\numberline {5}Results}{31}
-\contentsline {chapter}{\numberline {6}Conclusion}{32}
-\contentsline {section}{\numberline {6.1}Future Work}{32}
-\contentsline {chapter}{References}{33}
+\contentsline {section}{\numberline {4.3}Data Analysis}{32}
+\contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{32}
+\contentsline {subsection}{\numberline {4.3.2}Model Identification}{33}
+\contentsline {section}{\numberline {4.4}Model Verification}{33}
+\contentsline {chapter}{\numberline {5}Results}{35}
+\contentsline {section}{\numberline {5.1}Identified Model Overview}{35}
+\contentsline {section}{\numberline {5.2}Model Pitch Dynamics}{35}
+\contentsline {section}{\numberline {5.3}Model Roll Dynamics}{35}
+\contentsline {section}{\numberline {5.4}Model Yaw Dynamics}{35}
+\contentsline {section}{\numberline {5.5}Model Coupled Dynamics}{35}
+\contentsline {chapter}{\numberline {6}Conclusion}{36}
+\contentsline {section}{\numberline {6.1}Future Work}{36}
+\contentsline {chapter}{References}{37}

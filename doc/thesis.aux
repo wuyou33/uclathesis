@@ -17,6 +17,15 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
+\citation{pounds2006modelling}
+\citation{kivrak2006design}
+\citation{bresciani2008modelling}
+\citation{domingues2009quadrotor}
+\citation{schreier2012modeling}
+\citation{abas2011parameter}
+\citation{chamberlain2011system}
+\citation{batmazdesign}
+\citation{ingebretsen2012system}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Related Work}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Motivation and Contributions}{2}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Preliminaries}{3}}
@@ -37,10 +46,10 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Linear Algebra Tools}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Fundamental Matrix Subspaces}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Orthogonal Projections}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections.}}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Singular Value Decomposition}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Hankel Matrices}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Toeplitz Matrices}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Toeplitz Matrices}{9}}
 \citation{larimore1990canonical}
 \citation{verhaegen1992subspace}
 \citation{van1994n4sid}
@@ -113,43 +122,62 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Input Design}{28}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).}}{29}}
 \newlabel{fig:general_prbs}{{4.3}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{29}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces PRBS Scaling Factors}}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{30}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Data Collection}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Data Analysis}{30}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{30}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Model Identification}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Verification}{30}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{31}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Logging configuration.}}{31}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Data Analysis}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{32}}
+\newlabel{fig:test_flight_profile}{{4.5}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Model Identification}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Model Verification}{33}}
+\newlabel{table:iem_overview}{{4.3.2}{34}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Overview of the Innovation Estimation Method}}{34}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{35}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Identified Model Overview}{35}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Model Pitch Dynamics}{35}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Model Roll Dynamics}{35}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Model Yaw Dynamics}{35}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Model Coupled Dynamics}{35}}
 \bibstyle{plain}
 \bibdata{references}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{32}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{36}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future Work}{32}}
-\bibcite{bitcraze}{1}
-\bibcite{bramwell2001bramwell}{2}
-\bibcite{chiuso2005consistency}{3}
-\bibcite{gupte2012survey}{4}
-\bibcite{hoffmann2007quadrotor}{5}
-\bibcite{jansson1997subspace}{6}
-\bibcite{kalman1960new}{7}
-\bibcite{katayama2005subspace}{8}
-\bibcite{kivrak2006design}{9}
-\bibcite{larimore1990canonical}{10}
-\bibcite{mellinger2010control}{11}
-\bibcite{michael2010grasp}{12}
-\bibcite{qin2006overview}{13}
-\bibcite{qin2003closed}{14}
-\bibcite{sarris2001survey}{15}
-\@writefile{toc}{\contentsline {chapter}{References}{33}}
-\bibcite{soderstrom1983instrumental}{16}
-\bibcite{valavanis2007advances}{17}
-\bibcite{van1994n4sid}{18}
-\bibcite{van1995unifying}{19}
-\bibcite{verhaegen1994identification}{20}
-\bibcite{verhaegen1992subspace}{21}
-\bibcite{verhaegen2007filtering}{22}
-\bibcite{viberg1995subspace}{23}
-\bibcite{wilson2005understanding}{24}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future Work}{36}}
+\bibcite{abas2011parameter}{1}
+\bibcite{batmazdesign}{2}
+\bibcite{bitcraze}{3}
+\bibcite{bramwell2001bramwell}{4}
+\bibcite{bresciani2008modelling}{5}
+\bibcite{chamberlain2011system}{6}
+\bibcite{chiuso2005consistency}{7}
+\bibcite{domingues2009quadrotor}{8}
+\bibcite{gupte2012survey}{9}
+\bibcite{hoffmann2007quadrotor}{10}
+\bibcite{ingebretsen2012system}{11}
+\bibcite{jansson1997subspace}{12}
+\bibcite{kalman1960new}{13}
+\bibcite{katayama2005subspace}{14}
+\bibcite{kivrak2006design}{15}
+\@writefile{toc}{\contentsline {chapter}{References}{37}}
+\bibcite{larimore1990canonical}{16}
+\bibcite{mellinger2010control}{17}
+\bibcite{michael2010grasp}{18}
+\bibcite{pounds2006modelling}{19}
+\bibcite{qin2006overview}{20}
+\bibcite{qin2003closed}{21}
+\bibcite{sarris2001survey}{22}
+\bibcite{schreier2012modeling}{23}
+\bibcite{soderstrom1983instrumental}{24}
+\bibcite{valavanis2007advances}{25}
+\bibcite{van1994n4sid}{26}
+\bibcite{van1995unifying}{27}
+\bibcite{verhaegen1994identification}{28}
+\bibcite{verhaegen1992subspace}{29}
+\bibcite{verhaegen2007filtering}{30}
+\bibcite{viberg1995subspace}{31}
+\bibcite{wilson2005understanding}{32}

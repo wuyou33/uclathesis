@@ -1,7 +1,7 @@
 \chapter{Preliminaries}
 
 \section{Notation}
-Let $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letters $\{a$, $b$, $c$, $\dots\}$ and matrices by upper case letters $\{A$, $B$, $C$, $\dots\}$. Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse is denoted by $A^\dagger$.
+We define $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letters $\{a$, $b$, $c$, $\dots\}$ and matrices by upper case letters $\{A$, $B$, $C$, $\dots\}$. Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse is denoted by $A^\dagger$.
 
 \section{Linear Systems}
 \subsection{Linear Time-Invariant Systems}\label{sec:linear_time_invariant_systems}
@@ -70,7 +70,7 @@ We will use the state space model in its innovation form to describe the subspac
 \section{Linear Algebra Tools}
 
 \subsection{Fundamental Matrix Subspaces}
-We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
+We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank of $A$. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
 
 
 \subsection{Orthogonal Projections}
@@ -85,7 +85,7 @@ A\Pi_B^\perp = A\big(I-B^T(BB^T)^{-1}B\big)
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/orthogonal_projection.pdf}
-	\caption{Orthogonal projections.}
+	\caption{Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}
 \end{figure}
 
 Additionally, we define the following properties of orthogonal projections:
@@ -96,7 +96,7 @@ B\Pi_B = BB^T(BB^T)^{-1}B = B
 B\Pi_B^\perp = B\big(I-B^T(BB^T)^{-1}B\big) = B-B = 0
 \end{equation*}
 
-When $B$ is large, computing its inverse and thus orthogonal projections onto its subspaces is computationally intensive. A more numerically efficient computation of of an orthogonal projection is achieved by LQ decomposition. From the LQ decomposition,
+When $B$ is large, computing its inverse and thus orthogonal projections onto its subspace is computationally intensive. A more numerically efficient computation of of an orthogonal projection is achieved by LQ decomposition. From the LQ decomposition,
 \begin{equation*}
 \begin{bmatrix}B\\A\end{bmatrix} = 
 \begin{bmatrix}L_{11} & 0\\ L_{21} & L_{22}\end{bmatrix}
