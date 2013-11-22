@@ -2,15 +2,18 @@ clear all
 close all
 clc
 
-load ../../data/flight_test_data/20131017212836.mat;
 
-L = 150;
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    
+
+% Load data
+[file,path] = uigetfile('*.mat','Select input-output data file', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
+load(strcat(path, file));
+
+L = input('Prediction horizon (recommend ~50% of data size): ');
 J = 1;
 g = 0;
 Y = y;
 U = u;
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    
 
 tic;
 % [A,C,B,K]=parsim_e(Y,U,L,g,J,n)
