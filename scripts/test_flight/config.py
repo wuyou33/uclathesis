@@ -4,10 +4,10 @@
 crazyradio = 'radio://0/10/2M'
 
 # General test flight configuration
-command_freq 				= 100 # Hz
+command_freq 				= 10 # Hz
 
 # Logging setup
-log_freq					= 50 # Hz
+log_freq					= 100 # Hz
 
 # Increasing step
 step_min_thrust          	= 30000
@@ -20,9 +20,9 @@ hover_thrust 				= 37500
 hover_time					= 2 # sec
 
 # PRBS
-prbs_scaling_factor 		= 10
+prbs_scaling_factor 		= 1
 prbs_pretest_hover_time  	= 2 # sec
-prbs_max_pitch           	= 25 # deg
+prbs_max_pitch           	= 20 # deg
 prbs_max_roll            	= prbs_max_pitch
-prbs_max_yaw_rate        	= 35 # deg/sec
-prbs_hover_thrust        	= 38500
+prbs_max_yaw_rate        	= 180 # deg/sec
+prbs_hover_thrust        	= 38000
