@@ -1,3 +1,16 @@
 \addvspace {10pt}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A figure caption}}{1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces A figure caption}}{2}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{7}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach}}{11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.}}{11}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A block diagram of an LTI system operating under feedback control.}}{19}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor}}{26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie stabilization and control system block diagram.}}{27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).}}{29}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{30}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{32}
+\addvspace {10pt}
+\addvspace {10pt}
