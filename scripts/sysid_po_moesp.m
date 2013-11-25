@@ -100,9 +100,12 @@ D = DB(1:ydim,:);
 B = DB(ydim+1:size(DB,1),:);
 
 Ts = 1/50;
-sys = ss(A,B,C,D,Ts);
-figure(1)
-impulse(sys)
+sys = idss(A,B,C,D);
+%sys = ss(A,B,C,D,Ts);
 
-figure(2)
-pzmap(sys)
+
+[out_file, out_path] = uiputfile('*.mat','Save Model As', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
+% Save results to .mat file
+test_data = strcat(path, file);
+sys_order = n;
+save(strcat(out_path, out_file), 'sys', 'sys_order', 'test_data')
