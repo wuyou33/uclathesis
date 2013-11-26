@@ -2,17 +2,14 @@ clear all
 close all
 clc
 
-Ts = 1;
+ts = 1/50;
 
 % Load model
 [model_file, model_path] = uigetfile('*.mat','Select model', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/');
 load(strcat(model_path, model_file));
 
 % set initial condition
-%sys.x0 = [0.1811; 0.0006; -0.0225; -0.2801; -0.9073];
-%sys.x0 = [1811; 0.0006; -0.0225; -0.2801; -0.9073];
-%sys.x0 = [10; 0; -1; -10; -100];
-%sys.ts = 1/50;
+sys.ts = 1/50;
 
 
 % Load verification data
@@ -22,7 +19,13 @@ u_ver = u;
 y_ver = y;
 clear u y
 
-y_sim = lsim(sys,u_ver);
+% build iddata object and estimate states
+ver_dat = iddata(y_ver,u_ver,ts);
+%x0est = findstates(sys,ver_dat);
+
+%sim_opt = simOptions('InitialCondition',x0est);
+
+y_sim = sim(sys,ver_dat.u);
 
 %[pitch_ver, roll_ver, yaw_ver] = complimentary_filter(y_ver);
 %[pitch_sim, roll_sim, yaw_sim] = complimentary_filter(y_sim);

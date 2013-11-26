@@ -3,7 +3,7 @@ close all
 clc
 
 Ts = 1/50;
-n = 6;
+n = 3;
 
 % Load data
 [file, path] = uigetfile('*.mat','Select input-output data file', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');

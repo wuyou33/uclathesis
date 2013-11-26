@@ -10,8 +10,10 @@ Ts = 1/50;
 [file, path] = uigetfile('*.mat','Select input-output data file', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
 load(strcat(path, file));
 
-L = input('Prediction horizon (recommend ~50% of data size): ');
-J = 1;
+%L = input('Prediction horizon (recommend ~50% of data size): ');
+%J = 1;
+L = 50;
+J = 50;
 g = 0;
 Y = y;
 U = u;
@@ -124,8 +126,7 @@ K=pinv(U1(1:L*ny,:))*OLC;
 D = zeros(ny, nu);
 
 %sys = ss(A,B,C,0,Ts);
-%sys = idss(A,B,C,D,K);
-sys = ss(A-K*C,B,C,D,Ts);
+sys = idss(A,B,C,D,K);
 
 [out_file, out_path] = uiputfile('*.mat','Save Model As', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
 % Save results to .mat file
