@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  26 NOV 2013 18:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  26 NOV 2013 18:06
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -459,28 +459,29 @@ l.6
 
 ]) (./chapter2.tex [2]
 CHAPTER 2.
-<../fig/lti_block_diagram.pdf, id=260, 397.485pt x 144.21077pt>
+[3
+
+] <../fig/lti_block_diagram.pdf, id=269, 397.485pt x 144.21077pt>
 File: ../fig/lti_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/lti_block_diagram.pdf>
-Package pdftex.def Info: ../fig/lti_block_diagram.pdf used on input line 16.
+Package pdftex.def Info: ../fig/lti_block_diagram.pdf used on input line 17.
 (pdftex.def)             Requested size: 397.48402pt x 144.2104pt.
- [3
-
-] [4 <../fig/lti_block_diagram.pdf>]
-Overfull \hbox (4.0487pt too wide) in paragraph at lines 62--65
+ [4 <../fig/lti_block_diagram.pdf>] [5]
+Overfull \hbox (4.0487pt too wide) in paragraph at lines 63--66
 \OT1/cmr/m/n/12 to be the in-no-va-tion se-quence, we can rewrite the com-bined
  deterministic-stochastic
  []
 
-[5] <../fig/orthogonal_projection.pdf, id=301, 397.485pt x 89.6675pt>
+[6] <../fig/orthogonal_projection.pdf, id=309, 397.485pt x 89.6675pt>
 File: ../fig/orthogonal_projection.pdf Graphic file (type pdf)
 
 <use ../fig/orthogonal_projection.pdf>
-Package pdftex.def Info: ../fig/orthogonal_projection.pdf used on input line 87
+Package pdftex.def Info: ../fig/orthogonal_projection.pdf used on input line 88
 .
 (pdftex.def)             Requested size: 397.48402pt x 89.66727pt.
- [6] [7 <../fig/orthogonal_projection.pdf>] [8]) (./chapter3.tex [9]
+ [7 <../fig/orthogonal_projection.pdf>]
+[8]) (./chapter3.tex [9]
 CHAPTER 3.
 <../fig/sim_flow_diagram.pdf, id=344, 397.485pt x 208.44576pt>
 File: ../fig/sim_flow_diagram.pdf Graphic file (type pdf)
@@ -629,7 +630,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
 Here is how much of TeX's memory you used:
  6393 strings out of 493610
  92933 string characters out of 3142404
- 194043 words of memory out of 3000000
+ 194421 words of memory out of 3000000
  9381 multiletter control sequences out of 15000+200000
  10752 words of font info for 40 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
@@ -646,7 +647,7 @@ l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
 exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (49 pages, 1259717 bytes).
+Output written on thesis.pdf (49 pages, 1259947 bytes).
 PDF statistics:
  759 PDF objects out of 1000 (max. 8388607)
  664 compressed objects within 7 object streams
