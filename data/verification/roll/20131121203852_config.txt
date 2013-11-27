@@ -1,0 +1,10 @@
+RUN ID            = 20131121203852
+COMMAND FREQUENCY = 10 Hz
+LOGGING FREQUENCY = 100 Hz
+THRUST PROFILE    = prbs
+INPUT FILE        = roll.csv
+SCALING FACTOR    = 1
+MAX PITCH         = 20 deg
+MAX ROLL          = 20 deg
+MAX YAW RATE      = 180 deg/sec
+THRUST            = 38000 deg
