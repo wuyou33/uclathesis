@@ -128,7 +128,7 @@ D = zeros(ny, nu);
 %sys = ss(A,B,C,0,Ts);
 sys = idss(A,B,C,D,K);
 
-[out_file, out_path] = uiputfile('*.mat','Save Model As', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
+[out_file, out_path] = uiputfile('*.mat','Save Model As', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/');
 % Save results to .mat file
 test_data = strcat(path, file);
 sys_order = n;

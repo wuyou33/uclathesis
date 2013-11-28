@@ -57,9 +57,9 @@ clear all
 close all
 clc
 
-max_pitch = 10;
-max_roll = 10;
-max_yaw = 50;
+max_pitch = 30;
+max_roll = 30;
+max_yaw = 180;
 
 
 data_dir = '/Users/akee/School/UCLA/01 thesis/uclathesis/data';

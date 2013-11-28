@@ -91,12 +91,6 @@ plot(y(:,6), 'r-')
 
 waitfor(fh);
 
-[pitch, roll, yaw] = complimentary_filter(y);
-clear y
-y(:,1) = pitch;
-y(:,2) = roll;
-y(:,3) = yaw;
-
 
 [out_file, out_path] = uiputfile('*.mat','Save Data As', acc_path);
 % Save results to .mat file
