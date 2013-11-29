@@ -6,24 +6,16 @@ Advances in MEMS sensors and light-weight high-powered lithium polymer batteries
 
 
 \section{Related Work}
-Developing accurate dynamical models of quadrotors for simulation plays an important role in their development, test, and continuing operational use. Quadrotors are dynamically unstable and their dynamics are highly nonlinear. Because they have only four independent inputs (motor speeds) to control six degrees of freedom (three translational and three rotational), quadrotors are underactuated systems. 
+Developing accurate dynamical models of quadrotors for simulation plays an important role in their development, test, and continuing operational use. Quadrotors are dynamically unstable and their dynamics are highly nonlinear. Because they have only four independent inputs (motor speeds) to control six degrees of freedom (three translational and three rotational), quadrotors are underactuated systems. Developing system models suitable for simulation from first principles is not commonly done due to the complexity of the resulting models and the difficulty of determining numerous unknown system parameters. Several groups have developed simple quadrotor models by directly measuring or estimating system parameters \cite{bresciani2008modelling, domingues2009quadrotor, kivrak2006design, pounds2006modelling, schreier2012modeling}, but these models are typically used to select initial controller gains during control system design, and model simulation results are generally not given. 
 
-Developing system models suitable for simulation from first principles is not commonly done due to the complexity of the resulting models and the difficulty of determining numerous unknown system parameters. Several groups have developed simple quadrotor models by directly measuring or estimating system parameters \cite{bresciani2008modelling, domingues2009quadrotor, kivrak2006design, pounds2006modelling, schreier2012modeling}, but these models are typically used to select initial controller gains during control system design, and model simulation results are generally not given. 
+Using prediction error techniques has proven to be viable approach to identifying quadrotor models from input-output data. In \cite{chamberlain2011system}, a system model is identified via an AutoRegressive model with external input (ARX) approach using output data measured by a Cortex 3D camera-based positioning system. NASA's System Identification Programs for Aircraft (SIDPAC) implementation of a least squares PEM is used to individually identify several dynamic modes of a quadcopter (lateral, longitudinal, heave, and yaw) in isolation in \cite{miller2011open} with output data measured by a Vicon motion capture system. Both cases showed good results when comparing predicted system output with measured system response. Model accuracy is boosted by the use of camera positioning systems to measure system position and attitude, which ensures the output data used for identification is free of measurement errors caused by accelerometer drift and vehicle vibrations. When camera positioning systems are not available, it is still possible to identify models using measurements taken by onboard accelerometers and gyroscopes.  A model developed using prediction error in \cite{lee2011attitude} gave good results when simulating pitch and roll dynamics but did not accurately model yaw dynamics.
 
-
-
-PEM (ARX family: \cite{chamberlain2011system})
-ARMAX \cite{schreurs2013open}
-\cite{miller2011open}
-\cite{lee2011attitude}
-
-N4SID in MATLAB (open loop) \cite{batmazdesign}
-
-
-
+Subspace identification techniques have also been shown to produce models which accurately describe quadrotor system dynamics. Motor dynamics were identified using numerical algorithms for subspace state space system identification (N4SID) in \cite{kis2011sensor} and the resulting model was used to simulate vehicle vertical acceleration. In \cite{batmazdesign}, N4SID was used to identify quadrotor roll dynamics from open-loop data collected by fixing all other vehicle degrees of freedom using a test bench setup. 
 
 
 \section{Motivation and Contributions}
+As subspace identification techniques continue to evolve, particularly in emerging areas of research including identifying systems in the presence of feedback control, demonstration of empirical results remains an important task. The motivation for the work presented here is to show empirical results from the development of dynamical models through subspace identification with innovation estimation. Specifically, we show that a six degree of freedom (6DOF) linear time-invariant (LTI) model of a quadrotor developed using innovation estimation provides an accurate representation of the dynamical system.
+
 
 
 

@@ -1,16 +1,16 @@
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{5}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{8}{figure.2.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{9}{figure.2.2}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach}}{12}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.}}{12}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A block diagram of an LTI system operating under feedback control.}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach}}{13}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.}}{13}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A block diagram of an LTI system operating under feedback control.}}{21}{figure.3.3}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor}}{27}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie stabilization and control system block diagram.}}{28}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).}}{30}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{31}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{33}{figure.4.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor}}{28}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie stabilization and control system block diagram.}}{29}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).}}{31}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{32}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{34}{figure.4.5}
 \addvspace {10pt}
 \addvspace {10pt}
