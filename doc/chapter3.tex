@@ -231,7 +231,7 @@ This result shows an equivalency between Eq. (\ref{eq:3_range}) and Eq. (\ref{eq
 
 
 
-\section{Closed-Loop Subspace Identification}\label{sec:closed-loop_subspace_identification}
+\section{Closed-Loop Subspace Identification with Innovation Estimation}\label{sec:closed-loop_subspace_identification}
 In many real-world situations, it is either not practical or not possible to collect open-loop input and output data. An unstable system relying on some form of feedback control to operate safely is an example of such a case. It is well known that traditional subspace methods produce biased results in the presence of feedback. This is due to the correlation between the system input and past noise as the controller attempts to eliminate system disturbances \cite{qin2006overview}, violating Assumption 4 introduced in the previous section. As a result, traditional SIMs are not albe to fully decouple the input and noise sequences when estimating the subspace of the extended observability matrix.
 \begin{figure}[htb!]
 	\centering

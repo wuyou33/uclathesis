@@ -13,4 +13,7 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{32}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{34}{figure.4.5}
 \addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}}{39}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{39}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Step response of the 8th order system model.}}{40}{figure.5.3}
 \addvspace {10pt}

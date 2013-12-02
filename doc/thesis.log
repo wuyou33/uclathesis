@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  29 NOV 2013 12:44
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  1 DEC 2013 16:59
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -306,6 +306,9 @@ LaTeX Warning: Label `sec:extended_state_space_model' multiply defined.
 
 LaTeX Warning: Label `eq:3_extended_state_space_row' multiply defined.
 
+
+LaTeX Warning: Label `eq:2_lti' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
@@ -461,7 +464,7 @@ l.6
 CHAPTER 2.
 [5
 
-] <../fig/lti_block_diagram.pdf, id=279, 397.485pt x 144.21077pt>
+] <../fig/lti_block_diagram.pdf, id=281, 397.485pt x 144.21077pt>
 File: ../fig/lti_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/lti_block_diagram.pdf>
@@ -473,7 +476,7 @@ Overfull \hbox (4.0487pt too wide) in paragraph at lines 63--66
  deterministic-stochastic
  []
 
-[8] <../fig/orthogonal_projection.pdf, id=320, 397.485pt x 89.6675pt>
+[8] <../fig/orthogonal_projection.pdf, id=323, 397.485pt x 89.6675pt>
 File: ../fig/orthogonal_projection.pdf Graphic file (type pdf)
 
 <use ../fig/orthogonal_projection.pdf>
@@ -483,7 +486,7 @@ Package pdftex.def Info: ../fig/orthogonal_projection.pdf used on input line 88
  [9 <../fig/orthogonal_projection.pdf>]
 [10]) (./chapter3.tex [11]
 CHAPTER 3.
-<../fig/sim_flow_diagram.pdf, id=354, 397.485pt x 208.44576pt>
+<../fig/sim_flow_diagram.pdf, id=357, 397.485pt x 208.44576pt>
 File: ../fig/sim_flow_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/sim_flow_diagram.pdf>
@@ -492,7 +495,7 @@ Package pdftex.def Info: ../fig/sim_flow_diagram.pdf used on input line 9.
  [12
 
 ]
-<../fig/open_loop_block_diagram.pdf, id=363, 397.485pt x 80.9695pt>
+<../fig/open_loop_block_diagram.pdf, id=366, 397.485pt x 80.9695pt>
 File: ../fig/open_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/open_loop_block_diagram.pdf>
@@ -501,7 +504,7 @@ Package pdftex.def Info: ../fig/open_loop_block_diagram.pdf used on input line
 (pdftex.def)             Requested size: 397.48402pt x 80.96928pt.
  [13 <../fig/sim_flow_diagram.pdf> <../fig/open_loop_block_diagram.pdf>] [14] [
 15] [16] [17] [18] [19]
-<../fig/closed_loop_block_diagram.pdf, id=472, 397.485pt x 126.80775pt>
+<../fig/closed_loop_block_diagram.pdf, id=475, 397.485pt x 126.80775pt>
 File: ../fig/closed_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/closed_loop_block_diagram.pdf>
@@ -511,7 +514,7 @@ e 238.
  [20] [21 <../fig/closed_loop_block_diagram.pdf>] [22] [23] [24] [25] [26]) (./
 chapter4.tex [27]
 CHAPTER 4.
-<../fig/crazyflie.jpg, id=558, 2616.77625pt x 1882.03125pt>
+<../fig/crazyflie.jpg, id=561, 2616.77625pt x 1882.03125pt>
 File: ../fig/crazyflie.jpg Graphic file (type jpg)
 
 <use ../fig/crazyflie.jpg>
@@ -520,7 +523,7 @@ Package pdftex.def Info: ../fig/crazyflie.jpg used on input line 6.
  [28
 
  <../fig/crazyflie.jpg>]
-<../fig/crazyflie_control_system_block_diagram.pdf, id=565, 397.485pt x 160.265
+<../fig/crazyflie_control_system_block_diagram.pdf, id=568, 397.485pt x 160.265
 76pt>
 File: ../fig/crazyflie_control_system_block_diagram.pdf Graphic file (type pdf)
 
@@ -540,7 +543,7 @@ verted-to.pdf ../fig/general_prbs.eps>
 (epstopdf)             \includegraphics on input line 35.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/general_prbs-eps-converted-to.pdf, id=586, 392.46625pt x 92.345pt>
+<../fig/general_prbs-eps-converted-to.pdf, id=589, 392.46625pt x 92.345pt>
 File: ../fig/general_prbs-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ../fig/general_prbs-eps-converted-to.pdf>
@@ -559,7 +562,7 @@ ted-to.pdf ../fig/test_prbs.eps>
 (epstopdf)             \includegraphics on input line 58.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/test_prbs-eps-converted-to.pdf, id=596, 396.48125pt x 276.03125pt>
+<../fig/test_prbs-eps-converted-to.pdf, id=599, 396.48125pt x 276.03125pt>
 File: ../fig/test_prbs-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ../fig/test_prbs-eps-converted-to.pdf>
@@ -577,7 +580,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
  []
 
 [32 <../fig/test_prbs-eps-converted-to.pdf>] [33]
-<../fig/test_flight_profile.pdf, id=633, 397.485pt x 102.71675pt>
+<../fig/test_flight_profile.pdf, id=636, 397.485pt x 102.71675pt>
 File: ../fig/test_flight_profile.pdf Graphic file (type pdf)
 
 <use ../fig/test_flight_profile.pdf>
@@ -599,28 +602,97 @@ Overfull \vbox (4.30817pt too high) has occurred while \output is active []
 
 [36]
 CHAPTER 5.
+[37
 
-Overfull \hbox (4.46368pt too wide) in paragraph at lines 6--6
+]
+Package epstopdf Info: Source file: <../fig/singular_values_parsim.eps>
+(epstopdf)                    date: 2013-11-30 09:50:42
+(epstopdf)                    size: 9591 bytes
+(epstopdf)             Output file: <../fig/singular_values_parsim-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2013-11-30 09:50:47
+(epstopdf)                    size: 12106 bytes
+(epstopdf)             Command: <epstopdf --outfile=../fig/singular_values_pars
+im-eps-converted-to.pdf ../fig/singular_values_parsim.eps>
+(epstopdf)             \includegraphics on input line 59.
+Package epstopdf Info: Output file is already uptodate.
+
+<../fig/singular_values_parsim-eps-converted-to.pdf, id=675, 413.545pt x 175.65
+625pt>
+File: ../fig/singular_values_parsim-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use ../fig/singular_values_parsim-eps-converted-to.pdf>
+Package pdftex.def Info: ../fig/singular_values_parsim-eps-converted-to.pdf use
+d on input line 59.
+(pdftex.def)             Requested size: 413.54398pt x 175.6558pt.
+Package epstopdf Info: Source file: <../fig/poles_parsim.eps>
+(epstopdf)                    date: 2013-11-30 09:50:16
+(epstopdf)                    size: 11689 bytes
+(epstopdf)             Output file: <../fig/poles_parsim-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-11-30 09:50:25
+(epstopdf)                    size: 8935 bytes
+(epstopdf)             Command: <epstopdf --outfile=../fig/poles_parsim-eps-con
+verted-to.pdf ../fig/poles_parsim.eps>
+(epstopdf)             \includegraphics on input line 65.
+Package epstopdf Info: Output file is already uptodate.
+
+<../fig/poles_parsim-eps-converted-to.pdf, id=676, 286.06876pt x 272.01625pt>
+File: ../fig/poles_parsim-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ../fig/poles_parsim-eps-converted-to.pdf>
+Package pdftex.def Info: ../fig/poles_parsim-eps-converted-to.pdf used on input
+ line 65.
+(pdftex.def)             Requested size: 286.06805pt x 272.01558pt.
+Package epstopdf Info: Source file: <../fig/step_resp_parsim.eps>
+(epstopdf)                    date: 2013-11-30 10:37:44
+(epstopdf)                    size: 47514 bytes
+(epstopdf)             Output file: <../fig/step_resp_parsim-eps-converted-to.p
+df>
+(epstopdf)                    date: 2013-11-30 10:37:50
+(epstopdf)                    size: 15834 bytes
+(epstopdf)             Command: <epstopdf --outfile=../fig/step_resp_parsim-eps
+-converted-to.pdf ../fig/step_resp_parsim.eps>
+(epstopdf)             \includegraphics on input line 73.
+Package epstopdf Info: Output file is already uptodate.
+
+<../fig/step_resp_parsim-eps-converted-to.pdf, id=678, 417.56pt x 514.92375pt>
+File: ../fig/step_resp_parsim-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ../fig/step_resp_parsim-eps-converted-to.pdf>
+Package pdftex.def Info: ../fig/step_resp_parsim-eps-converted-to.pdf used on i
+nput line 73.
+(pdftex.def)             Requested size: 417.55896pt x 514.92249pt.
+
+Overfull \hbox (2.00647pt too wide) in paragraph at lines 73--74
+ [][] 
+ []
+
+
+Overfull \hbox (4.46368pt too wide) in paragraph at lines 79--79
 []\OT1/cmr/bx/n/14.4 Evaluating Model Per-for-mance un-der Com-bined 6DOF
  []
 
-) (./chapter6.tex [37
+) (./chapter6.tex [38]
 
-]
+LaTeX Warning: Text page 39 contains only floats.
+
+[39 <../fig/singular_values_parsim-eps-converted-to.pdf> <../fig/poles_parsim-e
+ps-converted-to.pdf>] [40 <../fig/step_resp_parsim-eps-converted-to.pdf>]
+[41]
 CHAPTER 6.
-) (./thesis.bbl [38
+) (./thesis.bbl [42
 
-] [39
+] [43
 
-] [40])
+] [44])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 21.
- [41]
+ [45]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 21.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 21.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7823B9F5FA2049C5C7E5B74C6987C0C6;1638.
+(rerunfilecheck)             Checksum: 8028A86FFE2A8683E8063F63EEE198E2;1546.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -628,29 +700,31 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
  ) 
 Here is how much of TeX's memory you used:
- 6400 strings out of 493610
- 92986 string characters out of 3142404
- 194609 words of memory out of 3000000
- 9385 multiletter control sequences out of 15000+200000
- 10752 words of font info for 40 fonts, out of 3000000 for 9000
+ 6434 strings out of 493610
+ 93841 string characters out of 3142404
+ 194851 words of memory out of 3000000
+ 9407 multiletter control sequences out of 15000+200000
+ 12451 words of font info for 48 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  31i,14n,28p,1777b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
-/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
-exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
-xlive/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (51 pages, 1264345 bytes).
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
+ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (55 pages, 1314939 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 673 compressed objects within 7 object streams
- 206 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 834 PDF objects out of 1000 (max. 8388607)
+ 721 compressed objects within 8 object streams
+ 213 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

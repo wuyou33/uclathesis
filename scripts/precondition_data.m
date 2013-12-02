@@ -41,6 +41,7 @@ gyro_z_i = interp1(gyro(:,1),gyro(:,4),uniform_t,interp_method);
 u = [motor_1_i; motor_2_i; motor_3_i; motor_4_i]';
 y = [acc_x_i; acc_y_i; acc_z_i; gyro_x_i; gyro_y_i; gyro_z_i]';
 
+
 figure(1)
 subplot(3,1,1)
 plot(u(:,1), 'b-')

@@ -7,66 +7,11 @@ ts = 1/50;
 % Load model
 load('/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/20131017212836_63_39500/parsim-e_50_8.mat');
 
+
+fig_dir = '/Users/akee/School/UCLA/01 thesis/uclathesis/fig/';
+
 % set initial condition
 sys.ts = 1/50;
-
-
-%% Singular Values
-load('/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/20131017212836_63_39500/50_singular_values.mat')
-trim = 100;
-sv = sv(1:trim);
-h = figure(1);
-plot([8.6 8.6],[0 1.4], 'k:')
-hold on
-plot(sv, 'k.')
-Xlabel = xlabel('Singular Value');
-Ylabel = ylabel('Magnitude');
-
-set( gca,...
-    'box'         , 'off', ...
-    'TickDir'     , 'out'     , ...
-    'TickLength'  , [.015 .015] , ...
-    'FontName'    , 'AvantGarde', ...
-    'FontSize'    , 9, ...
-    'XColor'      , [.2 .2 .2], ...
-    'YColor'      , [.2 .2 .2]);
-
-set([Xlabel, Ylabel], ...
-    'FontName'    , 'AvantGarde', ...
-    'FontWeight'  , 'bold', ...
-    'FontSize'    , 9);
-
-%% Eigenvalues
-h = figure(1);
-plot(eig(sys.a), 'kx', 'MarkerSize', 10);
-axis([-1.1 1.1 -1.1 1.1])
-axis square
-hold on
-plot([0 0],[-1.1 1.1], 'k-')
-plot([-1.1 1.1],[0 0], 'k-')
-t = 0:0.001:2*pi;
-plot(sin(t),cos(t), 'k:')
-Xlabel = xlabel('Real');
-Ylabel = ylabel('Imaginary');
-
-set( gca,...
-    'box'         , 'on', ...
-    'TickDir'     , 'out'     , ...
-    'TickLength'  , [.015 .015] , ...
-    'FontName'    , 'AvantGarde', ...
-    'FontSize'    , 9, ...
-    'xTick'       , [-1:.25:1], ...
-    'yTick'       , [-1:.25:1], ...
-    'XColor'      , [.2 .2 .2], ...
-    'YColor'      , [.2 .2 .2]);
-
-set([Xlabel, Ylabel], ...
-    'FontName'    , 'AvantGarde', ...
-    'FontWeight'  , 'bold', ...
-    'FontSize'    , 9);
-
-
-
 
 %% PRBS-A data
 pitch_offset = -150;
@@ -408,3 +353,7 @@ subplot(3,1,3)
 plot(yaw_sim, 'b-')
 hold on
 plot(yaw, 'b--')
+
+
+
+

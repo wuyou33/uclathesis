@@ -1,4 +1,4 @@
-\chapter{Approach}
+\chapter{Approach}\label{approach}
 
 \section{Quadrotor Platform}
 Because the design and construction of a quadrotor is beyond the scope of  this project, we will use a commercially available vehicle called the Bitcraze Crazyflie \cite{bitcraze}. The Crazyflie, shown in Figure \ref{fig:quad} is a small, low cost, open-source quadrotor kit suitable for indoor flight. It measures 9 cm motor to motor and weighs 19 grams. A 170 mAh lithium-polymer battery powers the vehicle, providing 7 minutes of flight time. An onboard microcontroller is responsible for vehicle stabilization and control and reads sensor measurements from a three-axis accelerometer and a three-axis gyroscope.
@@ -93,11 +93,11 @@ Before identifying a system model, we must first preprocess the data to make it 
 	\label{fig:test_flight_profile}
 \end{figure}
 
-After extracting the usable segment of the collected data, it must be time normalized. SIMs require the input-output data to be uniformly sampled with data points aligning in time. Because the data we log is captured at slightly different times, we must normalize the sampling times. This is achieved by applying a zero-order hold and resampling the data at a uniform rate.
+After extracting the usable segment of the collected data, it must be time normalized. SIMs require the input-output data to be uniformly sampled with data points aligning in time. Because the data we log is captured at slightly different times, we must normalize the sampling times. This is achieved by applying a zero-order hold and resampling the data at a uniform rate of 50 Hz.
 
 
 \subsection{Model Identification}
-We identify a model of the unknown system by applying the general procedure outlined in Table \ref{table:iem_overview}. A \matlab script processes the data offline and presents results when the algorithm is complete. The only user input required is to determine the system order from a plot of the singular values of the extended observability matrix.
+We identify a model of the unknown system by applying the general procedure outlined in Table \ref{table:iem_overview}. A \matlab script processes the data offline and presents results when the algorithm is complete. The only user input required is to determine the system order from a plot of the singular values of the extended observability matrix. Selecting only the most significant singular values for inclusion in the model ensures the true system dynamics are captured while reducing the inclusion of noise.
 
 \begin{table}[!htb]\label{table:iem_overview}
 \centering
@@ -147,7 +147,7 @@ and form the matrix $\hat{\Gamma}_f \hat{L}_p$
 
 
 \section{Model Verification}
-Following identification, we verify the system model by simulating system response to an input sequence and comparing its output with data captured from the physical system using the same input sequence. In order to verify the correctness of the identified model and evaluate its overall performance, additional test flights using input sequences not used during identification are conducted. We capture additional input-output data individually isolating the pitch, roll, and yaw dynamics, as well as input-output data showing the coupled dynamics of the system and present a comparison of the real system with the identified model in the following section.
+Following identification, we verify the system model by simulating system response to an input sequence and comparing its output with data captured from the physical system using the same input sequence. In order to verify the correctness of the identified model and evaluate its overall performance, additional test flights using input sequences not used during identification are conducted. We capture additional input-output data individually exciting the pitch, roll, and yaw dynamics, as well as input-output data showing the coupled dynamics of the system and present a comparison of the real system with the identified model in Chapter \ref{results}.
 
 
 
