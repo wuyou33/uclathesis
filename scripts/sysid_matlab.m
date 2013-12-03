@@ -11,7 +11,8 @@ load(strcat(path, file));
 
 data = iddata(y,u,Ts);
 
-sys = n4sid(data,n,'N4Weight','MOESP');
+%sys = n4sid(data,n,'N4Weight','Auto');
+sys = n4sid(data,8,'N4Horizon',[20 27 27])        
 
 [out_file, out_path] = uiputfile('*.mat','Save Model As', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
 % Save results to .mat file

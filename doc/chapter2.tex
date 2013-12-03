@@ -1,24 +1,24 @@
 \chapter{Preliminaries}
-This document borrows many conepts, techniques, and results from linear algebra and linear systems theory. Because these topics are later presented without discussion, we present an overview them here. This overview is not intended to provide a comprehensive discussion of these topics, rather it serves to introduce the reader to the general topics and their usage specific to the context of this document.
+This document borrows many conepts, techniques, and results from linear algebra and linear systems theory. Because these topics are later presented without discussion, we present an overview them here. This overview is not intended to provide a comprehensive discussion of these topics, rather it serves to introduce the reader to the general topics as they are used in this document.
 
-\section{Notation}
+\section{Vector and Matrix Notation}
 We define $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letters $\{a$, $b$, $c$, $\dots\}$ and matrices by upper case letters $\{A$, $B$, $C$, $\dots\}$. Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse is denoted by $A^\dagger$.
 
 \section{Linear Systems}
 \subsection{Linear Time-Invariant Systems}\label{sec:linear_time_invariant_systems}
 A discrete time state space representation of a linear dynamical system can be written as
-\begin{subequations}\label{eq:2_lti}
+\begin{subequations}\label{eq:2_lti_state_space}
 \begin{equation}x(k+1) = Ax(k) + Bu(k)\end{equation}
 \begin{equation}y(k) = Cx(k) + Du(k)\end{equation}
 \end{subequations}
-where $x(k) \in \mathbb{R}^n$ is a vector of the states of the system, $u(k) \in \mathbb{R}^m$ is a vector of input signals, and $y(k) \in \mathbb{R}^l$ is a vector of output signals for $k \in \mathbb{Z}$. $A$, $B$, $C$, and $D$ are the system matrices with dimensions $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times m}$, $C\in\mathbb{R}^{l\times n}$, $D\in\mathbb{R}^{l\times m}$.
+where $x(k) \in \mathbb{R}^n$ is a vector of the states of the system, $u(k) \in \mathbb{R}^m$ is a vector of input signals, $y(k) \in \mathbb{R}^l$ is a vector of output signals, and  $k \in \mathbb{Z}$ is the time index. $A$, $B$, $C$, and $D$ are the system matrices with dimensions $A\in\mathbb{R}^{n\times n}$, $B\in\mathbb{R}^{n\times m}$, $C\in\mathbb{R}^{l\times n}$, $D\in\mathbb{R}^{l\times m}$.
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/lti_block_diagram.pdf}
-	\caption{A block diagram of the state space representation of an LTI system.}
+	\caption{A block diagram of the state space representation of a LTI system.}
 \end{figure}
 
-It is important to see that the system state is not unique. That is, there are different state space representations resulting in the same input-output behavior of the system. These differing states can be related by a similarity transform $T$ where $T$ is a real, nonsingular matrix:
+For any state space representation of a system, the state sequence is not unique. That is, there are different state space representations resulting in the same input-output behavior of the system. These differing states can be related by a similarity transform $T$ where $T$ is a real, nonsingular matrix:
 \begin{equation*}
 \tilde{x}(k) = T^{-1}x(k)
 \end{equation*}
@@ -46,7 +46,7 @@ The LTI system given by $A$, $B$, $C$, $D$ or equivalently the pair $(A,B)$ is s
 LTI systems $A$, $B$, $C$, $D$ in state space form which are both observable and controllable are said to be \textit{minimal}, meaning that the matrix $A$ has the smallest possible dimension.
 
 \subsection{Combined Deterministic-Stochastic LTI Systems}
-Section \ref{sec:linear_time_invariant_systems} considered the case of a purely deterministic system; that is, a system operating in a noise-free environment. In practice, this rarely happens so we will now consider the case of the combined deterministic-stochastic LTI system operating in the presence of process and measurement noise. We append \ref{eq:2_lti} as follows
+Section \ref{sec:linear_time_invariant_systems} considered the case of a purely deterministic LTI system; that is, a system operating in a noise-free environment. In practice, this rarely happens so we now consider the case of the combined deterministic-stochastic LTI system operating in the presence of process and measurement noise. We append Eq. \ref{eq:2_lti_state_space} as follows
 \begin{subequations}\label{eq:2_lti_noise}
 \begin{equation}x(k+1) = Ax(k) + Bu(k) + w(k)\end{equation}
 \begin{equation}y(k) = Cx(k) + Du(k) + v(k)\end{equation}
@@ -66,12 +66,11 @@ to be the innovation sequence, we can rewrite the combined deterministic-stochas
 \begin{equation}x(k+1) = Ax(k) + Bu(k) + Ke(k)\end{equation}
 \begin{equation}y(k) = Cx(k) + Du(k) + e(k)\end{equation}
 \end{subequations}
-We will use the state space model in its innovation form to describe the subspace algorithm for identifying both open and closed-loop combined deterministic-stochastic LTI systems.
 
 \section{Linear Algebra Tools}
 
 \subsection{Fundamental Matrix Subspaces}
-We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank of $A$. The row space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $A$.
+We require two of the fundamental matrix subspaces: the column space and the row space. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank of $A$. The row space of a matrix $B \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $B$.
 
 
 \subsection{Orthogonal Projections}
@@ -97,7 +96,7 @@ B\Pi_B = BB^T(BB^T)^{-1}B = B
 B\Pi_B^\perp = B\big(I-B^T(BB^T)^{-1}B\big) = B-B = 0
 \end{equation*}
 
-When $B$ is large, computing its inverse and thus orthogonal projections onto its subspace is computationally intensive. A more numerically efficient computation of of an orthogonal projection is achieved by LQ decomposition. From the LQ decomposition,
+When $B$ is large, computing its inverse and thus orthogonal projections onto its subspace is computationally intensive. A more numerically efficient computation of of an orthogonal projection is achieved by LQ decomposition. From the LQ decomposition
 \begin{equation*}
 \begin{bmatrix}B\\A\end{bmatrix} = 
 \begin{bmatrix}L_{11} & 0\\ L_{21} & L_{22}\end{bmatrix}
@@ -136,7 +135,6 @@ a well known property of the SVD is that the vectors $U_1$ corresponding to the 
 \begin{equation*}
 \mbox{range}(U_1) = \mbox{range}(A)
 \end{equation*}
-We will later use this property to recover an estimate of the column space (range) of the extended observability matrix from input-output data.
 
 \subsection{Hankel Matrices}
 A Hankel matrix is a matrix $A \in \mathbb{R}^{m\times n}$ with constant skew-diagonals:
@@ -169,11 +167,3 @@ Topelitz matrices can be constructed by setting the $i,j^{\mbox{th}}$ element of
 \begin{equation*}
 A_{i,j} = A_{i+1, j+1}
 \end{equation*}
-
-
-\section{Quadrotor Dynamics}
-chose + over x configuration due to non-coupled dynamics (graphic of this)
-
-derive translational and rotational dynamics (quickly) (graphic)
-
-table with expected response from each input to each output

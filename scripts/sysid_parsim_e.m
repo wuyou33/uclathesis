@@ -10,10 +10,8 @@ Ts = 1/50;
 [file, path] = uigetfile('*.mat','Select input-output data file', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
 load(strcat(path, file));
 
-%L = input('Prediction horizon (recommend ~50% of data size): ');
-%J = 1;
-L = 50;
-J = 50;
+L = 30;     % Prediction horizon
+J = 35;     % Past input used in predictor
 g = 0;
 Y = y;
 U = u;
@@ -28,10 +26,6 @@ tic;
 % g - g=0 for closed loop systems
 % J - Past horizon so that (A-KD)^J small
 % n - System order
-if nargin == 5; n = 1; end
-if nargin == 4; n = 1; J = L; end
-if nargin == 3; n = 1; J = L; g = 0; end
-if nargin == 2; n = 1; J = 1; g = 0; L=1; end
 [Ny,ny] = size(Y);
 if isempty(U)==1; U=zeros(Ny,1); end
 [Nu,nu] = size(U);
@@ -81,7 +75,7 @@ toc
 
 [U,S,V]=svd(OCds);
 
-% Prompt to setermine the system order
+% Prompt to determine the system order
 sv = diag(S);       % singular values
 figure(1)
 subplot(2,1,1)

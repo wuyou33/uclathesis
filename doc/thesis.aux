@@ -28,31 +28,32 @@
 \citation{michael2010grasp}
 \citation{qin2006overview}
 \citation{viberg1995subspace}
-\citation{katayama2005subspace}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
+\citation{katayama2005subspace}
 \citation{bresciani2008modelling}
 \citation{domingues2009quadrotor}
 \citation{kivrak2006design}
 \citation{pounds2006modelling}
 \citation{schreier2012modeling}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Quadrotor}}{2}{figure.1.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Related Work}{2}{section.1.1}}
 \citation{chamberlain2011system}
 \citation{miller2011open}
 \citation{lee2011attitude}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Related Work}{2}{section.1.1}}
 \citation{kis2011sensor}
 \citation{batmazdesign}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Motivation and Contributions}{3}{section.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Motivation and Contributions}{4}{section.1.2}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Preliminaries}{5}{chapter.2}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Notation}{5}{section.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Vector and Matrix Notation}{5}{section.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Linear Systems}{5}{section.2.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Linear Time-Invariant Systems}{5}{subsection.2.2.1}}
 \newlabel{sec:linear_time_invariant_systems}{{2.2.1}{5}{Linear Time-Invariant Systems\relax }{subsection.2.2.1}{}}
-\newlabel{eq:2_lti}{{2.1}{5}{Linear Time-Invariant Systems\relax }{equation.2.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{6}{figure.2.1}}
+\newlabel{eq:2_lti_state_space}{{2.1}{5}{Linear Time-Invariant Systems\relax }{equation.2.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of a LTI system.}}{6}{figure.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Stability}{7}{subsection.2.2.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Observability and Controllability}{7}{subsection.2.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Combined Deterministic-Stochastic LTI Systems}{7}{subsection.2.2.4}}
@@ -61,12 +62,11 @@
 \newlabel{eq:2_innovation}{{2.4}{8}{Combined Deterministic-Stochastic LTI Systems\relax }{equation.2.2.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Linear Algebra Tools}{8}{section.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Fundamental Matrix Subspaces}{8}{subsection.2.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Orthogonal Projections}{9}{subsection.2.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Orthogonal Projections}{8}{subsection.2.3.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{9}{figure.2.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Singular Value Decomposition}{10}{subsection.2.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Hankel Matrices}{10}{subsection.2.3.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Toeplitz Matrices}{11}{subsection.2.3.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Quadrotor Dynamics}{11}{section.2.4}}
 \citation{larimore1990canonical}
 \citation{verhaegen1992subspace}
 \citation{van1994n4sid}
@@ -79,6 +79,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.}}{13}{figure.3.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Extended State Space Model}{14}{subsection.3.1.1}}
 \newlabel{sec:extended_state_space_model}{{3.1.1}{14}{Extended State Space Model\relax }{subsection.3.1.1}{}}
+\newlabel{eq:3_extended-State_space_future_horizon}{{3.2b}{14}{Extended State Space Model\relax }{equation.3.1.2b}{}}
 \citation{qin2006overview}
 \citation{verhaegen2007filtering}
 \citation{verhaegen2007filtering}
@@ -163,15 +164,15 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{39}{figure.5.2}}
 \newlabel{fig:5_step}{{5.1}{40}{Identified Model Overview\relax }{figure.5.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Step response of the 8th order system model.}}{40}{figure.5.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Evaluating Model Performance under Combined 6DOF Dynamics}{41}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Comparison of Closed Loop Models Identified with PO-MOESP and IEM}{41}{section.5.3}}
-\bibstyle{plain}
-\bibdata{references}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{42}{chapter.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Time Domain Model Validation}{40}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Comparing Performance of PO-MOESP and IEM Algorithms on Closed-Loop Data}{41}{section.5.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{42}{chapter.6}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.1}Conclusion}{42}{subsection.6.0.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future Work}{42}{section.6.1}}
+\bibstyle{plain}
+\bibdata{references}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.1}Conclusions}{43}{subsection.6.0.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future Work}{43}{section.6.1}}
 \bibcite{batmazdesign}{1}
 \bibcite{bitcraze}{2}
 \bibcite{bramwell2001bramwell}{3}
@@ -187,7 +188,7 @@
 \bibcite{kis2011sensor}{13}
 \bibcite{kivrak2006design}{14}
 \bibcite{larimore1990canonical}{15}
-\@writefile{toc}{\contentsline {chapter}{References}{43}{chapter*.4}}
+\@writefile{toc}{\contentsline {chapter}{References}{44}{chapter*.4}}
 \bibcite{lee2011attitude}{16}
 \bibcite{mellinger2010control}{17}
 \bibcite{michael2010grasp}{18}

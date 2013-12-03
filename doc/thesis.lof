@@ -1,6 +1,7 @@
 \addvspace {10pt}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Quadrotor}}{2}{figure.1.1}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of an LTI system.}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of a LTI system.}}{6}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{9}{figure.2.2}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach}}{13}{figure.3.1}

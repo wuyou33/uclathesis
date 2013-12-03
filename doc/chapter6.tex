@@ -1,8 +1,31 @@
-\chapter{Conclusion}
+\chapter{Conclusions and Future Work}
+
+The problem of black-box model identification of the dynamics of a quadro- tor helicopter has been considered. In view of the open-loop instability of the quadrotor, closed-loop experiments have been carried out and a continuous- time subspace model identification approach capable of dealing with such experimental conditions has been adopted. Furthermore, a complete anal- ysis of the uncertainty associated with the identified model has been per- formed, using tools from the field of computational statistics. The results of the study show that the considered approach is an effective one as far as the characterisation of the local dynamics of the quadrotor is concerned and can also provide useful uncertainty information for the purpose of robust con- trol system design, both in the frequency-domain and in the time-domain.
 
 
-\subsection{Conclusion}
+In this thesis a rigid-body simulator capable of simulating aircraft be- haviour has been developed and used to investigate the least squares method of system identification. Simulations confirms several methods for correcting sensor data for systematic errors. Wind vanes can be cor- rected for local winds caused by angular velocity and non-linear filters can estimate biases in gyro measurments under the conditions simulated. Non-linear observers have also been proposed to replace wind vanes and pitot-static tube, and simulations indicate that they might be useful for estimating the angle of attack, sideslip angle and dynamic pressure, pro- vided that there is no wind or gust during flying. This would simplify the instrumental setup and provide a faster and cheaper way of gathering data for system identification. UAV control systems mighh already have the necessary hardware and logging capabilities to provide a useful data set for model building. Ordinary least squares method for identification of aircraft dynamics is not ideal since the solution is expected to be biased due to unlinearities even when assuming white sensor noise. Despite this, under the circumstances simulated biases are relative small and it can be argued that the results are useful. At least for initial estimation. Coeffi- cient of determination has been applied to explain how well the identified model is able to account for the variations of the measured data. Some issues concerning the validity of these coefficients when used on noisy data have been discussed.
+
+As a result of the modeling, simulation, flight testing, and validation processes on a one-third scale Yak-54 platform documented in this thesis, the following conclusions can be made:
+
+\subsection{Conclusions}
 
 
 
 \section{Future Work}
+Based on the results presented as a result of this research, 
+
+investigate methods to optimize the selection of L and J in PARSIM E algorithm
+
+
+(above is mine)
+
+
+
+
+
+suggestions can be made to extend the scope of this research work. These suggestions are:
+
+
+Optimize input sequences
+
+Thus, it can be considered as future work to...
