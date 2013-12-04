@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  3 DEC 2013 00:26
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  4 DEC 2013 07:11
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -421,17 +421,17 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 \openout4 = `thesis.toc'.
 
  [5]
-(./thesis.lof)
+(./thesis.lof [6
+
+])
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [6
-
-] (./thesis.lot)
+ [7] (./thesis.lot)
 \tf@lot=\write6
 \openout6 = `thesis.lot'.
 
- [7
+ [8
 
 ]
 Overfull \hbox (12.69963pt too wide) in alignment at lines 8--8
@@ -448,9 +448,9 @@ Overfull \hbox (12.69963pt too wide) in alignment at lines 8--8
  [] [] [] 
  []
 
-[8] [9] (./chapter1.tex
+[9] [10] (./chapter1.tex
 CHAPTER 1.
-<../fig/quad.pdf, id=216, 397.485pt x 151.56525pt>
+<../fig/quad.pdf, id=228, 397.485pt x 151.56525pt>
 File: ../fig/quad.pdf Graphic file (type pdf)
  <use ../fig/quad.pdf>
 Package pdftex.def Info: ../fig/quad.pdf used on input line 6.
@@ -464,7 +464,7 @@ l.12
 
 ] [2 <../fig/quad.pdf>] [3]) (./chapter2.tex [4]
 CHAPTER 2.
-<../fig/lti_block_diagram.pdf, id=282, 397.485pt x 144.21077pt>
+<../fig/lti_block_diagram.pdf, id=297, 397.485pt x 144.21077pt>
 File: ../fig/lti_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/lti_block_diagram.pdf>
@@ -479,7 +479,7 @@ Overfull \hbox (4.0487pt too wide) in paragraph at lines 63--66
  deterministic-stochastic
  []
 
-[8] <../fig/orthogonal_projection.pdf, id=332, 397.485pt x 89.6675pt>
+[8] <../fig/orthogonal_projection.pdf, id=347, 397.485pt x 89.6675pt>
 File: ../fig/orthogonal_projection.pdf Graphic file (type pdf)
 
 <use ../fig/orthogonal_projection.pdf>
@@ -489,7 +489,7 @@ Package pdftex.def Info: ../fig/orthogonal_projection.pdf used on input line 87
  [9 <../fig/orthogonal_projection.pdf>]
 [10]) (./chapter3.tex [11]
 CHAPTER 3.
-<../fig/sim_flow_diagram.pdf, id=365, 397.485pt x 208.44576pt>
+<../fig/sim_flow_diagram.pdf, id=379, 397.485pt x 208.44576pt>
 File: ../fig/sim_flow_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/sim_flow_diagram.pdf>
@@ -498,7 +498,7 @@ Package pdftex.def Info: ../fig/sim_flow_diagram.pdf used on input line 9.
  [12
 
 ]
-<../fig/open_loop_block_diagram.pdf, id=374, 397.485pt x 80.9695pt>
+<../fig/open_loop_block_diagram.pdf, id=388, 397.485pt x 80.9695pt>
 File: ../fig/open_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/open_loop_block_diagram.pdf>
@@ -507,7 +507,7 @@ Package pdftex.def Info: ../fig/open_loop_block_diagram.pdf used on input line
 (pdftex.def)             Requested size: 397.48402pt x 80.96928pt.
  [13 <../fig/sim_flow_diagram.pdf> <../fig/open_loop_block_diagram.pdf>] [14] [
 15] [16] [17] [18] [19]
-<../fig/closed_loop_block_diagram.pdf, id=485, 397.485pt x 126.80775pt>
+<../fig/closed_loop_block_diagram.pdf, id=499, 397.485pt x 126.80775pt>
 File: ../fig/closed_loop_block_diagram.pdf Graphic file (type pdf)
 
 <use ../fig/closed_loop_block_diagram.pdf>
@@ -517,7 +517,7 @@ e 238.
  [20] [21 <../fig/closed_loop_block_diagram.pdf>] [22] [23] [24] [25] [26]) (./
 chapter4.tex [27]
 CHAPTER 4.
-<../fig/crazyflie.jpg, id=571, 2616.77625pt x 1882.03125pt>
+<../fig/crazyflie.jpg, id=585, 2616.77625pt x 1882.03125pt>
 File: ../fig/crazyflie.jpg Graphic file (type jpg)
 
 <use ../fig/crazyflie.jpg>
@@ -526,7 +526,7 @@ Package pdftex.def Info: ../fig/crazyflie.jpg used on input line 6.
  [28
 
  <../fig/crazyflie.jpg>]
-<../fig/crazyflie_control_system_block_diagram.pdf, id=578, 397.485pt x 160.265
+<../fig/crazyflie_control_system_block_diagram.pdf, id=592, 397.485pt x 160.265
 76pt>
 File: ../fig/crazyflie_control_system_block_diagram.pdf Graphic file (type pdf)
 
@@ -546,7 +546,7 @@ verted-to.pdf ../fig/general_prbs.eps>
 (epstopdf)             \includegraphics on input line 35.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/general_prbs-eps-converted-to.pdf, id=599, 392.46625pt x 92.345pt>
+<../fig/general_prbs-eps-converted-to.pdf, id=613, 392.46625pt x 92.345pt>
 File: ../fig/general_prbs-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ../fig/general_prbs-eps-converted-to.pdf>
@@ -565,7 +565,7 @@ ted-to.pdf ../fig/test_prbs.eps>
 (epstopdf)             \includegraphics on input line 58.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/test_prbs-eps-converted-to.pdf, id=609, 396.48125pt x 276.03125pt>
+<../fig/test_prbs-eps-converted-to.pdf, id=623, 396.48125pt x 276.03125pt>
 File: ../fig/test_prbs-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ../fig/test_prbs-eps-converted-to.pdf>
@@ -583,14 +583,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--77
  []
 
 [32 <../fig/test_prbs-eps-converted-to.pdf>] [33]
-<../fig/test_flight_profile.pdf, id=646, 397.485pt x 102.71675pt>
+<../fig/test_flight_profile.pdf, id=660, 397.485pt x 102.71675pt>
 File: ../fig/test_flight_profile.pdf Graphic file (type pdf)
 
 <use ../fig/test_flight_profile.pdf>
 Package pdftex.def Info: ../fig/test_flight_profile.pdf used on input line 91.
 (pdftex.def)             Requested size: 397.48402pt x 102.71649pt.
  [34 <../fig/test_flight_profile.pdf>]
-Underfull \hbox (badness 1033) in paragraph at lines 145--145
+Underfull \hbox (badness 1033) in paragraph at lines 149--149
 []\OT1/cmr/m/n/12 Estimate the un-known co-ef-fi-cient ma-tri-ces row-wise thro
 ugh least
  []
@@ -617,17 +617,36 @@ d-to.pdf>
 (epstopdf)                    size: 12106 bytes
 (epstopdf)             Command: <epstopdf --outfile=../fig/singular_values_pars
 im-eps-converted-to.pdf ../fig/singular_values_parsim.eps>
-(epstopdf)             \includegraphics on input line 59.
+(epstopdf)             \includegraphics on input line 63.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/singular_values_parsim-eps-converted-to.pdf, id=686, 413.545pt x 175.65
+<../fig/singular_values_parsim-eps-converted-to.pdf, id=701, 413.545pt x 175.65
 625pt>
 File: ../fig/singular_values_parsim-eps-converted-to.pdf Graphic file (type pdf
 )
  <use ../fig/singular_values_parsim-eps-converted-to.pdf>
 Package pdftex.def Info: ../fig/singular_values_parsim-eps-converted-to.pdf use
-d on input line 59.
+d on input line 63.
 (pdftex.def)             Requested size: 413.54398pt x 175.6558pt.
+Package epstopdf Info: Source file: <../fig/poles_parsim_all.eps>
+(epstopdf)                    date: 2013-12-04 07:08:10
+(epstopdf)                    size: 13108 bytes
+(epstopdf)             Output file: <../fig/poles_parsim_all-eps-converted-to.p
+df>
+(epstopdf)                    date: 2013-12-04 07:09:45
+(epstopdf)                    size: 10098 bytes
+(epstopdf)             Command: <epstopdf --outfile=../fig/poles_parsim_all-eps
+-converted-to.pdf ../fig/poles_parsim_all.eps>
+(epstopdf)             \includegraphics on input line 70.
+Package epstopdf Info: Output file is already uptodate.
+
+<../fig/poles_parsim_all-eps-converted-to.pdf, id=702, 286.06876pt x 272.01625p
+t>
+File: ../fig/poles_parsim_all-eps-converted-to.pdf Graphic file (type pdf)
+ <use ../fig/poles_parsim_all-eps-converted-to.pdf>
+Package pdftex.def Info: ../fig/poles_parsim_all-eps-converted-to.pdf used on i
+nput line 70.
+(pdftex.def)             Requested size: 286.06805pt x 272.01558pt.
 Package epstopdf Info: Source file: <../fig/poles_parsim.eps>
 (epstopdf)                    date: 2013-11-30 09:50:16
 (epstopdf)                    size: 11689 bytes
@@ -636,15 +655,15 @@ Package epstopdf Info: Source file: <../fig/poles_parsim.eps>
 (epstopdf)                    size: 8935 bytes
 (epstopdf)             Command: <epstopdf --outfile=../fig/poles_parsim-eps-con
 verted-to.pdf ../fig/poles_parsim.eps>
-(epstopdf)             \includegraphics on input line 65.
+(epstopdf)             \includegraphics on input line 76.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/poles_parsim-eps-converted-to.pdf, id=687, 286.06876pt x 272.01625pt>
+<../fig/poles_parsim-eps-converted-to.pdf, id=703, 286.06876pt x 272.01625pt>
 File: ../fig/poles_parsim-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ../fig/poles_parsim-eps-converted-to.pdf>
 Package pdftex.def Info: ../fig/poles_parsim-eps-converted-to.pdf used on input
- line 65.
+ line 76.
 (pdftex.def)             Requested size: 286.06805pt x 272.01558pt.
 Package epstopdf Info: Source file: <../fig/step_resp_parsim.eps>
 (epstopdf)                    date: 2013-11-30 10:37:44
@@ -655,18 +674,18 @@ df>
 (epstopdf)                    size: 15834 bytes
 (epstopdf)             Command: <epstopdf --outfile=../fig/step_resp_parsim-eps
 -converted-to.pdf ../fig/step_resp_parsim.eps>
-(epstopdf)             \includegraphics on input line 73.
+(epstopdf)             \includegraphics on input line 84.
 Package epstopdf Info: Output file is already uptodate.
 
-<../fig/step_resp_parsim-eps-converted-to.pdf, id=689, 417.56pt x 514.92375pt>
+<../fig/step_resp_parsim-eps-converted-to.pdf, id=705, 417.56pt x 514.92375pt>
 File: ../fig/step_resp_parsim-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ../fig/step_resp_parsim-eps-converted-to.pdf>
 Package pdftex.def Info: ../fig/step_resp_parsim-eps-converted-to.pdf used on i
-nput line 73.
+nput line 84.
 (pdftex.def)             Requested size: 417.55896pt x 514.92249pt.
 
-Overfull \hbox (2.00647pt too wide) in paragraph at lines 73--74
+Overfull \hbox (2.00647pt too wide) in paragraph at lines 84--85
  [][] 
  []
 
@@ -674,9 +693,9 @@ Overfull \hbox (2.00647pt too wide) in paragraph at lines 73--74
 
 LaTeX Warning: Text page 39 contains only floats.
 
-[39 <../fig/singular_values_parsim-eps-converted-to.pdf> <../fig/poles_parsim-e
-ps-converted-to.pdf>]) (./chapter6.tex [40 <../fig/step_resp_parsim-eps-convert
-ed-to.pdf>] [41]
+[39 <../fig/singular_values_parsim-eps-converted-to.pdf> <../fig/poles_parsim_a
+ll-eps-converted-to.pdf>]) (./chapter6.tex [40 <../fig/poles_parsim-eps-convert
+ed-to.pdf>] [41 <../fig/step_resp_parsim-eps-converted-to.pdf>]
 CHAPTER 6.
 [42
 
@@ -690,7 +709,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 21.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 21.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 49D1729DFB9C4ECF73C022D86D1D3FBF;1494.
+(rerunfilecheck)             Checksum: BD5F6FB5D2B9EBE2E6119A5ED635A540;1533.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -698,10 +717,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
  ) 
 Here is how much of TeX's memory you used:
- 6441 strings out of 493610
- 93999 string characters out of 3142404
- 194940 words of memory out of 3000000
- 9413 multiletter control sequences out of 15000+200000
+ 6449 strings out of 493610
+ 94246 string characters out of 3142404
+ 195936 words of memory out of 3000000
+ 9417 multiletter control sequences out of 15000+200000
  12451 words of font info for 48 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  31i,14n,28p,1587b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -719,10 +738,10 @@ exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (56 pages, 1330101 bytes).
+Output written on thesis.pdf (57 pages, 1341035 bytes).
 PDF statistics:
- 849 PDF objects out of 1000 (max. 8388607)
- 732 compressed objects within 8 object streams
- 214 named destinations out of 1000 (max. 500000)
- 247 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 879 PDF objects out of 1000 (max. 8388607)
+ 757 compressed objects within 8 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 

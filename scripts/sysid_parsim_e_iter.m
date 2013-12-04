@@ -14,7 +14,7 @@ clear all
 close all
 clc
 
-for L = 10:1:45
+for L = 43:1:45     % 10:1:45
     for J = 50:1:70
 
 n = 8;          % system order

@@ -1,5 +1,9 @@
 \chapter{Closed-Loop Subspace Identification of a Quadrotor}\label{results}
 
+Results section should follow the methods section
+
+Make sure you interpret the results too, don't just present them!
+
 \section{Identified Model Overview}
 Through application of the Innovation Estimation Method as outlined in Chapter \ref{approach}, we developed an 8th order LTI model of a quadrotor from experimentally gathered closed-loop input-output data. In its state space form, the model is given by
 \begin{subequations}\label{eq:2_lti}
@@ -58,6 +62,13 @@ The resulting model takes four motor inputs and produces accelerations for three
 	\centering
 	\includegraphics{../fig/singular_values_parsim.eps}
 	\caption{A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}
+\end{figure}
+
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics{../fig/poles_parsim_all.eps}
+	\caption{Quadrotor test flight profile showing the portion of the test flight data used for system identification.}
 \end{figure}
 
 \begin{figure}[htb!]

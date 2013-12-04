@@ -1,5 +1,5 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Related Work}{2}{section.1.1}
+\contentsline {section}{\numberline {1.1}Related Work}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Motivation and Contributions}{4}{section.1.2}
 \contentsline {chapter}{\numberline {2}Preliminaries}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Vector and Matrix Notation}{5}{section.2.1}
@@ -26,17 +26,18 @@
 \contentsline {subsection}{\numberline {3.2.2}Estimation of the Extended Observability Matrix with Innovation Estimation}{23}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}Approach}{28}{chapter.4}
 \contentsline {section}{\numberline {4.1}Quadrotor Platform}{28}{section.4.1}
-\contentsline {section}{\numberline {4.2}Experiment Design}{30}{section.4.2}
+\contentsline {section}{\numberline {4.2}Experimental Collection of Closed-Loop Input-Output Data}{30}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Input Design}{30}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Data Collection}{32}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Data Analysis}{34}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{34}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Model Identification}{35}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Past and Future Time Horizon Selection}{35}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Model Identification}{35}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}Model Verification}{35}{section.4.4}
 \contentsline {chapter}{\numberline {5}Closed-Loop Subspace Identification of a Quadrotor}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Identified Model Overview}{37}{section.5.1}
 \contentsline {section}{\numberline {5.2}Time Domain Model Validation}{40}{section.5.2}
-\contentsline {section}{\numberline {5.3}Comparing Performance of PO-MOESP and IEM Algorithms on Closed-Loop Data}{41}{section.5.3}
+\contentsline {section}{\numberline {5.3}Comparing Performance of PO-MOESP and IEM Algorithms on Closed-Loop Data}{40}{section.5.3}
 \contentsline {chapter}{\numberline {6}Conclusions and Future Work}{42}{chapter.6}
 \contentsline {subsection}{\numberline {6.0.1}Conclusions}{43}{subsection.6.0.1}
 \contentsline {section}{\numberline {6.1}Future Work}{43}{section.6.1}
