@@ -116,9 +116,9 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%								       %
-%			    SIGNATURE PAGE			       %
-%								       %
+%								                                                       %
+%			    SIGNATURE PAGE			                                         %
+%								                                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % The following definitions for "\chair" and "\member" allow for one or
@@ -192,9 +192,9 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%								       %
-%			   DEDICATION PAGE			       %
-%								       %
+%								                                                       %
+%			   DEDICATION PAGE			                                         %
+%								                                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newif\if@dedication
@@ -465,9 +465,9 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%								       %
-%			    ABSTRACT PAGE			       %
-%								       %
+%								                                                       %
+%			    ABSTRACT PAGE			                                           %
+%								                                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newif\if@abstract
@@ -501,7 +501,7 @@
             Professor \@chairA, Co-chair \\
             Professor \@chairB, Co-chair \\
          \else\ifnum\c@chairs>0
-            Professor \@chairA, Chair \\
+            Professor \@chairA, Advisor \\
          \else\typeout{No committee chair.}
          \fi\fi\fi
       \end{center}
@@ -550,7 +550,7 @@
   \fi
   \@makecopyrightpage
   \@makeabstractpage{\@doublespacing}
-  \@makesignaturepage
+  %\@makesignaturepage
   \@makededication
   \tableofcontents
   \listoffigures

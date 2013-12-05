@@ -96,12 +96,8 @@ Before identifying a system model, we must first preprocess the data to make it 
 After extracting the usable segment of the collected data, it must be time normalized. SIMs require the input-output data to be uniformly sampled with data points aligning in time. Because the Crazyflie logging framework does not guarantee data is measured and logged simultaneously, we normalize the sampling times by applying a zero-order hold and resampling the data at a uniform rate of 50 Hz.
 
 
-\subsection{Past and Future Time Horizon Selection}
-
-
-
 \subsection{Model Identification}
-We identify a model of the unknown system by applying the general procedure outlined in Table \ref{table:iem_overview}. A \matlab script processes the data offline and presents results when the algorithm is complete. The only user input required is to determine the system order from a plot of the singular values of the extended observability matrix. Selecting only the most significant singular values for inclusion in the model ensures the true system dynamics are captured while reducing the inclusion of noise.
+We identify a model of the unknown system by applying the general procedure outlined in Table \ref{table:iem_overview}. A \matlab script processes the data offline and presents results when the algorithm is complete. Before identifying a model, selection of system order and past and future horizons are made. The system order is determined from a plot of the singular values of the extended observability matrix and past and future horizon values are selected as described in Section \ref{sec:past_and_future_horizon_selection}.
 
 \begin{table}[!htb]\label{table:iem_overview}
 \centering
@@ -148,6 +144,12 @@ and form the matrix $\hat{\Gamma}_f \hat{L}_p$
 \end{enumerate}
 \end{minipage}}
 \end{table}
+
+
+\subsection{Past and Future Horizon Selection}\label{sec:past_and_future_horizon_selection}
+For SIMs with some form of pre-estimation (such as the pre-estimation of the innovation sequence in the IEM algorithm), past and future time horizons for the estimation step are selected when working with a finite number of data samples. The main purpose of the past horizon is to ensure that $A_K^p \approx 0$ in Eq. (\ref{eq:3_extended_state_space_row_state}). Care must be taken when selecting the past horizon to avoid over-fitting \cite{van2013closed}. The past and future horizons have a significant impact on the resulting identified model's stability and performance and limited guidance exists to help with their precise selection.
+
+We experimentally determine past and future horizon values by identifying a number of system models with varying the past and future horizons, first in coarse increments and later in finer increments. By evaluating the set of models identified over a range of coarsely spaced horizons, we are able to narrow the time horizon window and evaluate a smaller set of models identified  over a range of finely spaced horizons, eventually settling on the best model.
 
 
 \section{Model Verification}

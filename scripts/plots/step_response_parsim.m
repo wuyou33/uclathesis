@@ -4,12 +4,14 @@ clear all
 close all
 clc
 
+linewidth = 1.5;
+
 ts = 1/50;
 fig_dir = '/Users/akee/School/UCLA/01 thesis/uclathesis/fig/';
 fig_name = 'step_resp_parsim.eps';
 
 % Load model
-load('/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/20131017212836_63_39500/parsim-e_50_8.mat');
+load('/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/20131017212836_63_39500/parsim_1663_8.mat');
 
 % set initial condition
 sys.ts = 1/50;
@@ -44,7 +46,7 @@ u4y6 = st(:,6,4);
 
 h = figure(1);
 subplot(6,4,1)
-plot(t,u1y1, 'k-')
+plot(t,u1y1, 'k-', 'LineWidth', linewidth)
 t1 = title({'From u_1';' '}, 'Color', [.2 .2 .2]);
 x1 = xlabel('Time');
 y1 = ylabel('To  y_1');
@@ -64,7 +66,7 @@ set( gca,...
 
 
 subplot(6,4,2)
-plot(t,u2y1, 'k-')
+plot(t,u2y1, 'k-', 'LineWidth', linewidth)
 t2 = title({'From u_2';' '}, 'Color', [.2 .2 .2]);
 x2 = xlabel('Time');
 set( gca,...
@@ -83,7 +85,7 @@ set( gca,...
 
 
 subplot(6,4,3)
-plot(t,u3y1, 'k-')
+plot(t,u3y1, 'k-', 'LineWidth', linewidth)
 t3 = title({'From u_3';' '}, 'Color', [.2 .2 .2]);
 x3 = xlabel('Time');
 set( gca,...
@@ -102,7 +104,7 @@ set( gca,...
 
 
 subplot(6,4,4)
-plot(t,u4y1, 'k-')
+plot(t,u4y1, 'k-', 'LineWidth', linewidth)
 t4 = title({'From u_4';' '});
 x4 = xlabel('Time');
 set( gca,...
@@ -121,7 +123,7 @@ set( gca,...
 
 
 subplot(6,4,5)
-plot(t,u1y2, 'k-')
+plot(t,u1y2, 'k-', 'LineWidth', linewidth)
 y5 = ylabel('To  y_2');
 x5 = xlabel('Time');
 set( gca,...
@@ -140,7 +142,7 @@ set( gca,...
 
 
 subplot(6,4,6)
-plot(t,u2y2, 'k-')
+plot(t,u2y2, 'k-', 'LineWidth', linewidth)
 x6 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -158,7 +160,7 @@ set( gca,...
 
 
 subplot(6,4,7)
-plot(t,u3y2, 'k-')
+plot(t,u3y2, 'k-', 'LineWidth', linewidth)
 x7 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -176,7 +178,7 @@ set( gca,...
 
 
 subplot(6,4,8)
-plot(t,u4y2, 'k-')
+plot(t,u4y2, 'k-', 'LineWidth', linewidth)
 x8 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -194,7 +196,7 @@ set( gca,...
 
 
 subplot(6,4,9)
-plot(t,u1y3, 'k-')
+plot(t,u1y3, 'k-', 'LineWidth', linewidth)
 y9 = ylabel('To  y_3');
 x9 = xlabel('Time');
 set( gca,...
@@ -213,7 +215,7 @@ set( gca,...
 
 
 subplot(6,4,10)
-plot(t,u2y3, 'k-')
+plot(t,u2y3, 'k-', 'LineWidth', linewidth)
 x10 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -231,7 +233,7 @@ set( gca,...
 
 
 subplot(6,4,11)
-plot(t,u3y3, 'k-')
+plot(t,u3y3, 'k-', 'LineWidth', linewidth)
 x11 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -249,7 +251,7 @@ set( gca,...
 
 
 subplot(6,4,12)
-plot(t,u4y3, 'k-')
+plot(t,u4y3, 'k-', 'LineWidth', linewidth)
 x12 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -267,7 +269,7 @@ set( gca,...
 
 
 subplot(6,4,13)
-plot(t,u1y4, 'k-')
+plot(t,u1y4, 'k-', 'LineWidth', linewidth)
 y13 = ylabel('To  y_4');
 x13 = xlabel('Time');
 set( gca,...
@@ -286,7 +288,7 @@ set( gca,...
 
 
 subplot(6,4,14)
-plot(t,u2y4, 'k-')
+plot(t,u2y4, 'k-', 'LineWidth', linewidth)
 x14 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -304,7 +306,7 @@ set( gca,...
 
 
 subplot(6,4,15)
-plot(t,u3y4, 'k-')
+plot(t,u3y4, 'k-', 'LineWidth', linewidth)
 x15 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -322,7 +324,7 @@ set( gca,...
 
 
 subplot(6,4,16)
-plot(t,u4y4, 'k-')
+plot(t,u4y4, 'k-', 'LineWidth', linewidth)
 x16 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -340,7 +342,7 @@ set( gca,...
 
 
 subplot(6,4,17)
-plot(t,u1y5, 'k-')
+plot(t,u1y5, 'k-', 'LineWidth', linewidth)
 y17 = ylabel('To  y_5');
 x17 = xlabel('Time');
 set( gca,...
@@ -359,7 +361,7 @@ set( gca,...
 
 
 subplot(6,4,18)
-plot(t,u2y5, 'k-')
+plot(t,u2y5, 'k-', 'LineWidth', linewidth)
 x18 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -377,7 +379,7 @@ set( gca,...
 
 
 subplot(6,4,19)
-plot(t,u3y5, 'k-')
+plot(t,u3y5, 'k-', 'LineWidth', linewidth)
 x19 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -395,7 +397,7 @@ set( gca,...
 
 
 subplot(6,4,20)
-plot(t,u4y5, 'k-')
+plot(t,u4y5, 'k-', 'LineWidth', linewidth)
 x20 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -413,7 +415,7 @@ set( gca,...
 
 
 subplot(6,4,21)
-plot(t,u1y6, 'k-')
+plot(t,u1y6, 'k-', 'LineWidth', linewidth)
 y21 = ylabel('To  y_6');
 x21 = xlabel('Time');
 set( gca,...
@@ -432,7 +434,7 @@ set( gca,...
 
 
 subplot(6,4,22)
-plot(t,u2y6, 'k-')
+plot(t,u2y6, 'k-', 'LineWidth', linewidth)
 x22 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -450,7 +452,7 @@ set( gca,...
 
 
 subplot(6,4,23)
-plot(t,u3y6, 'k-')
+plot(t,u3y6, 'k-', 'LineWidth', linewidth)
 x23 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...
@@ -468,7 +470,7 @@ set( gca,...
 
 
 subplot(6,4,24)
-plot(t,u4y6, 'k-')
+plot(t,u4y6, 'k-', 'LineWidth', linewidth)
 x24 = xlabel('Time');
 set( gca,...
     'box'         , 'off', ...

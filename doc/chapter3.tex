@@ -148,7 +148,7 @@ Y_f\Pi_{U_f}^\perp Z_p^T =
 \begin{bmatrix}S_1 & 0\\ 0 & S_2\end{bmatrix}
 \begin{bmatrix}V_1^T & V_2^T\end{bmatrix}
 \end{equation*}
-where the number of singular values $n$ in $S_1$ is equal to the system order and the remaining submatrices are scaled appropriately. The reduced rank estimate of the extended observability matrix is then
+where the number of singular values $n$ in $S_1$ is equal to the system order and the remaining submatrices are scaled appropriately. Selecting only the most significant singular values for inclusion in the estimate ensures the true system dynamics are captured while reducing the inclusion of noise. The reduced rank estimate of the extended observability matrix is then
 \begin{equation}
 \hat{\Gamma}_f = U_1 {S_1}^{1/2}
 \end{equation}
@@ -166,7 +166,7 @@ where $\hat{\overline{\Gamma}}_f$ is equal to $\hat{\Gamma}_f$ without the last 
 \end{equation}
 which is linear in $A$ and can be solved by least squares.
 
-All that remains is to recover the $B$ and $D$ matrices. Recalling the extended state space model is given by
+All that remains is to recover the $B$ and $D$ matrices. We follow the general procedure outlined in \cite{trnka2007subspace}. Recalling the extended state space model is given by
 \begin{equation*}
 Y_f = \Gamma_f X_k + H_f U_f + G_f E_f
 \end{equation*}

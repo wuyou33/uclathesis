@@ -4,6 +4,63 @@ Results section should follow the methods section
 
 Make sure you interpret the results too, don't just present them!
 
+\section{Identification Results}
+
+
+
+\subsection{Experimental Data Used for Identification}
+
+
+
+
+\subsection{Model Order Selection}
+\begin{figure}[htb!]\label{fig:5_singular_values}
+	\centering
+	\includegraphics{../fig/singular_values_parsim.eps}
+	\caption{A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}
+\end{figure}
+
+
+
+\subsection{Past and Future Horizon Selection}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics{../fig/poles_parsim_all.eps}
+	\caption{Quadrotor test flight profile showing the portion of the test flight data used for system identification.}
+\end{figure}
+
+
+
+
+\subsection{Identified 6DOF Quadcopter Model}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics{../fig/poles_parsim.eps}
+	\caption{Quadrotor test flight profile showing the portion of the test flight data used for system identification.}
+\end{figure}
+
+
+
+
+
+
+
+\section{Time Domain Model Validation}
+Leong\_2008 p. 63 for validation
+
+
+
+
+
+\section{Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}
+
+
+
+
+
+
+
+
 \section{Identified Model Overview}
 Through application of the Innovation Estimation Method as outlined in Chapter \ref{approach}, we developed an 8th order LTI model of a quadrotor from experimentally gathered closed-loop input-output data. In its state space form, the model is given by
 \begin{subequations}\label{eq:2_lti}
@@ -58,24 +115,12 @@ D = \begin{bmatrix}
 \end{equation*}
 \normalsize % INCREASE FONT SIZE
 The resulting model takes four motor inputs and produces accelerations for three axes ($\ddot x, \ddot y, \ddot z$) and angular rates about the three body axes ($p, q, r$). The model order was selected by partitioning the SVD of the extended observability matrix into two portions: one representing the identified system's dynamics and the remaining portion representing noise. From Figure \ref{fig:5_singular_values}, a model order between 1 and 13 appears to capture the significant system responses. Evaluating model orders in this range revealed that an 8th order model provided the best overall system performance, which is the resulting model presented here. 
-\begin{figure}[htb!]\label{fig:5_singular_values}
-	\centering
-	\includegraphics{../fig/singular_values_parsim.eps}
-	\caption{A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}
-\end{figure}
 
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics{../fig/poles_parsim_all.eps}
-	\caption{Quadrotor test flight profile showing the portion of the test flight data used for system identification.}
-\end{figure}
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics{../fig/poles_parsim.eps}
-	\caption{Quadrotor test flight profile showing the portion of the test flight data used for system identification.}
-\end{figure}
+
+
+
 
 
 Stimulating the system with a step response provides insight into the model performance (Figure \ref{fig:5_step}).
@@ -87,9 +132,6 @@ Stimulating the system with a step response provides insight into the model perf
 
 
 
-\section{Time Domain Model Validation}
-Leong\_2008 p. 63 for validation
 
 
 
-\section{Comparing Performance of PO-MOESP and IEM Algorithms on Closed-Loop Data}

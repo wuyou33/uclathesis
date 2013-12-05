@@ -1,5 +1,5 @@
 \addvspace {10pt}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration. The position vector of the vehicle's center of mass relative to the inertial reference frame is $r$. Vehicle pitch is $\theta $, roll is $\phi $, and yaw is $\psi $. Motor forces $F_1$, $F_2$, $F_3$, and $F_4$ act upwards in the vehicle's body frame and the force of gravity acts downward in the inertial frame.}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration.}}{2}{figure.1.1}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of a LTI system.}}{6}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{9}{figure.2.2}
@@ -14,8 +14,8 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{32}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{34}{figure.4.5}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}}{39}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}}{38}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{39}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{40}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Step response of the 8th order system model.}}{41}{figure.5.4}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Step response of the 8th order system model.}}{43}{figure.5.4}
 \addvspace {10pt}

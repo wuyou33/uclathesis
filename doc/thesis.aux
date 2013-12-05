@@ -37,7 +37,7 @@
 \citation{kivrak2006design}
 \citation{pounds2006modelling}
 \citation{schreier2012modeling}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration. The position vector of the vehicle's center of mass relative to the inertial reference frame is $r$. Vehicle pitch is $\theta $, roll is $\phi $, and yaw is $\psi $. Motor forces $F_1$, $F_2$, $F_3$, and $F_4$ act upwards in the vehicle's body frame and the force of gravity acts downward in the inertial frame.}}{2}{figure.1.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration.}}{2}{figure.1.1}}
 \citation{chamberlain2011system}
 \citation{miller2011open}
 \citation{lee2011attitude}
@@ -101,6 +101,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Determination of the System Matrices}{18}{subsection.3.1.4}}
 \newlabel{sec:3_system_matrices}{{3.1.4}{18}{Determination of the System Matrices\relax }{subsection.3.1.4}{}}
 \newlabel{eq:3_shifted_gamma}{{3.11}{18}{Determination of the System Matrices\relax }{equation.3.1.11}{}}
+\citation{trnka2007subspace}
 \citation{verhaegen1994identification}
 \newlabel{eq:3_extended_state_space_bd}{{3.13}{19}{Determination of the System Matrices\relax }{equation.3.1.13}{}}
 \newlabel{eq:3_extended_state_space_bd_simplified}{{3.14}{19}{Determination of the System Matrices\relax }{equation.3.1.14}{}}
@@ -149,32 +150,39 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{34}{subsection.4.3.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{34}{figure.4.5}}
 \newlabel{fig:test_flight_profile}{{4.5}{34}{Quadrotor test flight profile showing the portion of the test flight data used for system identification}{figure.4.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Past and Future Time Horizon Selection}{35}{subsection.4.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Model Identification}{35}{subsection.4.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Model Verification}{35}{section.4.4}}
-\newlabel{table:iem_overview}{{4.3.3}{36}{Model Identification\relax }{subsection.4.3.3}{}}
+\citation{van2013closed}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Model Identification}{35}{subsection.4.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Past and Future Horizon Selection}{35}{subsection.4.3.3}}
+\newlabel{sec:past_and_future_horizon_selection}{{4.3.3}{35}{Past and Future Horizon Selection\relax }{subsection.4.3.3}{}}
+\newlabel{table:iem_overview}{{4.3.2}{36}{Model Identification\relax }{subsection.4.3.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Overview of the Innovation Estimation Method}}{36}{table.4.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Closed-Loop Subspace Identification of a Quadrotor}{37}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Model Verification}{37}{section.4.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Closed-Loop Subspace Identification of a Quadrotor}{38}{chapter.5}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
-\newlabel{results}{{5}{37}{Closed-Loop Subspace Identification of a Quadrotor\relax }{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Identified Model Overview}{37}{section.5.1}}
-\newlabel{eq:2_lti}{{5.1}{37}{Identified Model Overview\relax }{equation.5.1.1}{}}
-\newlabel{fig:5_singular_values}{{5.1}{39}{Identified Model Overview\relax }{equation.5.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}}{39}{figure.5.1}}
+\newlabel{results}{{5}{38}{Closed-Loop Subspace Identification of a Quadrotor\relax }{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Identification Results}{38}{section.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Experimental Data Used for Identification}{38}{subsection.5.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Model Order Selection}{38}{subsection.5.1.2}}
+\newlabel{fig:5_singular_values}{{5.1.2}{38}{Model Order Selection\relax }{subsection.5.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}}{38}{figure.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Past and Future Horizon Selection}{39}{subsection.5.1.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{39}{figure.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Identified 6DOF Quadcopter Model}{39}{subsection.5.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Time Domain Model Validation}{39}{section.5.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{40}{figure.5.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Time Domain Model Validation}{40}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Comparing Performance of PO-MOESP and IEM Algorithms on Closed-Loop Data}{40}{section.5.3}}
-\newlabel{fig:5_step}{{5.1}{41}{Identified Model Overview\relax }{figure.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Step response of the 8th order system model.}}{41}{figure.5.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{42}{chapter.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}{40}{section.5.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Identified Model Overview}{40}{section.5.4}}
+\newlabel{eq:2_lti}{{5.1}{40}{Identified Model Overview\relax }{equation.5.4.1}{}}
+\newlabel{fig:5_step}{{5.4}{43}{Identified Model Overview\relax }{equation.5.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Step response of the 8th order system model.}}{43}{figure.5.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{44}{chapter.6}}
 \@writefile{lof}{\addvspace {10pt}}
 \@writefile{lot}{\addvspace {10pt}}
 \bibstyle{plain}
 \bibdata{references}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.1}Conclusions}{43}{subsection.6.0.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Future Work}{43}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Conclusions}{45}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Future Work}{45}{section.6.2}}
 \bibcite{batmazdesign}{1}
 \bibcite{bitcraze}{2}
 \bibcite{bramwell2001bramwell}{3}
@@ -190,7 +198,7 @@
 \bibcite{kis2011sensor}{13}
 \bibcite{kivrak2006design}{14}
 \bibcite{larimore1990canonical}{15}
-\@writefile{toc}{\contentsline {chapter}{References}{44}{chapter*.4}}
+\@writefile{toc}{\contentsline {chapter}{References}{46}{chapter*.4}}
 \bibcite{lee2011attitude}{16}
 \bibcite{mellinger2010control}{17}
 \bibcite{michael2010grasp}{18}
@@ -201,11 +209,13 @@
 \bibcite{sarris2001survey}{23}
 \bibcite{schreier2012modeling}{24}
 \bibcite{soderstrom1983instrumental}{25}
-\bibcite{valavanis2007advances}{26}
-\bibcite{van1994n4sid}{27}
-\bibcite{van1995unifying}{28}
-\bibcite{verhaegen1994identification}{29}
-\bibcite{verhaegen1992subspace}{30}
-\bibcite{verhaegen2007filtering}{31}
-\bibcite{viberg1995subspace}{32}
-\bibcite{wilson2005understanding}{33}
+\bibcite{trnka2007subspace}{26}
+\bibcite{valavanis2007advances}{27}
+\bibcite{van2013closed}{28}
+\bibcite{van1994n4sid}{29}
+\bibcite{van1995unifying}{30}
+\bibcite{verhaegen1994identification}{31}
+\bibcite{verhaegen1992subspace}{32}
+\bibcite{verhaegen2007filtering}{33}
+\bibcite{viberg1995subspace}{34}
+\bibcite{wilson2005understanding}{35}
