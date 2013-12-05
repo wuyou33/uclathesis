@@ -53,7 +53,7 @@ Z = accumarray([yr xr], 1, [bins bins]);
 h = figure(1);
 imagesc(xi, yi, Z)
 %contourf(Z)
-colormap(flipud(ch))
+colormap(flipud(gray))
 hold on
 axis([-1.1 1.1 -1.1 1.1])
 axis square
