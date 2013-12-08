@@ -56,7 +56,7 @@ Yaw Rate & $+50^\circ/\mbox{sec}$ & $-50^\circ/\mbox{sec}$\\
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/test_prbs.eps}
-	\caption[A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.]{A sample PRBS signal used for identification showing scaled inputs for vehicle pitch $= \pm 10^\circ$, roll $= \pm 10^\circ$, and yaw rate $= \pm 50^\circ/\mbox{sec}$.}
+	\caption[A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.]{A sample PRBS signal used for identification showing scaled inputs for vehicle pitch $= \pm 25^\circ$, roll $= \pm 25^\circ$, and yaw rate $= \pm 50^\circ/\mbox{sec}$.}
 \end{figure}
 
 Because the Python API requires system input sequences to be formatted as \{pitch, roll, yaw rate, thrust\}, we also experimentally determined a thrust input which results in vehicle hover. The general flight test sequence is then: vehicle power on and sensor calibration, take off and hover, free flight under PRBS input, landing and vehicle power off. Input signals are sent to the vehicle at 100 Hz. It is worth nothing that the PRBS input does not drive the vehicle directly, instead it acts as a reference input to the controller which in turn commands the vehicle motors. This choice ensures that the vehicle is operating under feedback control and the input-output data gathered is in fact closed-loop data.
@@ -101,7 +101,7 @@ We identify a model of the unknown system by applying the general procedure outl
 
 \begin{table}[!htb]\label{table:iem_overview}
 \centering
-\caption{Overview of the Innovation Estimation Method}\vspace{0.5em}
+\caption{Closed-Loop Subspace Identification Algorithm Using Innovation Estimation}%\vspace{0.5em}
 \fbox{
 \begin{minipage}{5.5in}
 \begin{enumerate}
@@ -111,7 +111,7 @@ We identify a model of the unknown system by applying the general procedure outl
 Y_{fi} = \Gamma_{fi}L_p Z_p^T + H_{fi}^- U_{i-1} + G_{fi}^- E_{i-1} + E_{fi}
 \end{equation*}
 
-\item Estimate the unknown coefficient matrices row-wise through least squares of
+\item Estimate the unknown coefficient matrices row-wise through least squares
 \begin{equation*}
 \begin{bmatrix}\hat{\Gamma}_{fi}\hat{L}_p & \hat{H}_{fi}^- & \hat{G}_{fi}^-\end{bmatrix} = Y_{fi}
 \begin{bmatrix}Z_p\\ U_{i-1}\\ \hat{E}_{i-1}\end{bmatrix}^\dagger

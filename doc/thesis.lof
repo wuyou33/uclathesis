@@ -1,21 +1,25 @@
 \addvspace {10pt}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration.}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration.}}{2}{figure.caption.4}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of a LTI system.}}{6}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.}}{9}{figure.2.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of a LTI system.\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.\relax }}{9}{figure.caption.6}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach}}{13}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.}}{13}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A block diagram of an LTI system operating under feedback control.}}{21}{figure.3.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Subspace identification approach\relax }}{13}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.\relax }}{13}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A block diagram of an LTI system operating under feedback control.\relax }}{21}{figure.caption.9}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor}}{28}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie stabilization and control system block diagram.}}{29}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).}}{31}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{32}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{34}{figure.4.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor\relax }}{28}{figure.caption.10}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie stabilization and control system block diagram.}}{29}{figure.caption.11}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).\relax }}{31}{figure.caption.12}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{32}{figure.caption.14}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.\relax }}{34}{figure.caption.16}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}}{38}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{39}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.}}{40}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Step response of the 8th order system model.}}{43}{figure.5.4}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.\relax }}{38}{figure.caption.18}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pole distribution of 8th order models generated for 756 combinations of past and future horizons. Darker shading indicates higher pole concentrations.\relax }}{40}{figure.caption.19}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Poles of final 8th order model.\relax }}{40}{figure.caption.20}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulated (dashed) response of identified model to PRBS input sequence compared with measured system response (solid).\relax }}{42}{figure.caption.21}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Simulated (dashed) response of identified model to pitch input compared with measured system response (solid).\relax }}{43}{figure.caption.22}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Simulated (dashed) response of identified model to roll input compared with measured system response (solid).\relax }}{44}{figure.caption.23}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{45}{figure.caption.24}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{47}{figure.caption.25}
 \addvspace {10pt}

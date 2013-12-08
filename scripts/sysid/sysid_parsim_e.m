@@ -10,8 +10,8 @@ Ts = 1/50;
 [file, path] = uigetfile('*.mat','Select input-output data file', '/Users/akee/School/UCLA/01 thesis/uclathesis/data/');
 load(strcat(path, file));
 
-L = 30;     % Prediction horizon
-J = 35;     % Past input used in predictor
+L = 18;     % Prediction horizon
+J = 61;     % Past input used in predictor
 g = 0;
 Y = y;
 U = u;

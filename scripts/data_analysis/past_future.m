@@ -30,3 +30,7 @@ hold on
 plot(61, 17, 'k.')
 set(hc, 'EdgeColor','none');
 
+close all
+surf(J,L,Z)
+axis equal
+colormap(CubeHelix(256,0.5,-1.5,1.2,1.0))

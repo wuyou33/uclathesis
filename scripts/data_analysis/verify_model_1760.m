@@ -5,7 +5,7 @@ clc
 ts = 1/50;
 
 model = '1760';
-shift = [-0.5 0.4 1.5 1500 -1100 -190];
+shift = [-0.4 0.3 1.5 1500 -1100 -190];
 front_trim = 1;
 
 % Load model
@@ -52,6 +52,10 @@ roll_sim = detrend(roll_sim);
 yaw_sim = detrend(yaw_sim);
 
 
+[Len dim] = size(u_ver);
+X = 1:Len;
+t = X.*ts;
+
 figure(1)
 subplot(3,1,1)
 plot(pitch_sim, 'b-')
@@ -73,55 +77,31 @@ plot(yaw_ver, 'b--')
 
 figure(2)
 subplot(6,1,1)
-plot(y_ver(:,1), 'b--')
+plot(t, y_ver(:,1), 'b--')
 hold on
-plot(y_sim(:,1), 'g-')
+plot(t, y_sim(:,1), 'g-')
 
 subplot(6,1,2)
-plot(y_ver(:,2), 'b--')
+plot(t, y_ver(:,2), 'b--')
 hold on
-plot(y_sim(:,2), 'g-')
+plot(t, y_sim(:,2), 'g-')
 
 subplot(6,1,3)
-plot(y_ver(:,3), 'b--')
+plot(t, y_ver(:,3), 'b--')
 hold on
-plot(y_sim(:,3), 'g-')
+plot(t, y_sim(:,3), 'g-')
 
 subplot(6,1,4)
-plot(y_ver(:,4), 'b--')
+plot(t, y_ver(:,4), 'b--')
 hold on
-plot(y_sim(:,4), 'g-')
+plot(t, y_sim(:,4), 'g-')
 
 subplot(6,1,5)
-plot(y_ver(:,5), 'b--')
+plot(t, y_ver(:,5), 'b--')
 hold on
-plot(y_sim(:,5), 'g-')
+plot(t, y_sim(:,5), 'g-')
 
 subplot(6,1,6)
-plot(y_ver(:,6), 'b--')
+plot(t, y_ver(:,6), 'b--')
 hold on
-plot(y_sim(:,6), 'g-')
-
-figure(3)
-subplot(6,1,1)
-plot(err(:,1), 'b-')
-
-
-subplot(6,1,2)
-plot(err(:,2), 'b-')
-
-
-subplot(6,1,3)
-plot(err(:,3), 'b-')
-
-
-subplot(6,1,4)
-plot(err(:,4), 'b-')
-
-
-subplot(6,1,5)
-plot(err(:,5), 'b-')
-
-
-subplot(6,1,6)
-plot(err(:,6), 'b-')
+plot(t, y_sim(:,6), 'g-')

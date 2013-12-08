@@ -4,21 +4,17 @@ clear all
 close all
 clc
 
+fig_name = 'poles_all.eps';
+    
 sys_order = 8;
 bins = 45;
-
-ch = CubeHelix(256,0.5,-1.5,1.2,1.0);
 
 for L = 10:1:45
     for J = 50:1:70
         
-    model_path = '/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/20131017212836_63_39500/';
+    model_path = '/Users/akee/School/UCLA/01 thesis/uclathesis/data/models/20131017212836_63_39500/all/';
     model_file = strcat('parsim_',num2str(L), num2str(J), '_8.mat');
     load(strcat(model_path, model_file))
-       
-
-    fig_dir = '/Users/akee/School/UCLA/01 thesis/uclathesis/fig/';
-    fig_name = 'poles_parsim_all.eps';
 
 lam = eig(sys.a);
 for i = 1:sys_order
@@ -50,9 +46,10 @@ yr = interp1(yi,1:numel(yi),y,'nearest');
 
 Z = accumarray([yr xr], 1, [bins bins]);
 
+
+
 h = figure(1);
 imagesc(xi, yi, Z)
-%contourf(Z)
 colormap(flipud(gray))
 hold on
 axis([-1.1 1.1 -1.1 1.1])
@@ -82,13 +79,9 @@ set([Xlabel, Ylabel], ...
     'FontSize'    , 9);
 
 
-%figure(2)
-%surf(Z)
-%colormap(flipud(ch))
+fig_dir = '/Users/akee/School/UCLA/01 thesis/uclathesis/fig/';
 
-
-
-set(gcf,'PaperUnits','inches','PaperPosition',[0 0 6.5 4])
+set(gcf,'PaperUnits','inches','PaperPosition',[0 0 6.5 3.5])
 out_file = strcat(fig_dir, fig_name);
 print(h, '-depsc2', out_file, '-r100')
 close(gcf);
