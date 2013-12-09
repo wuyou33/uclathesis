@@ -14,7 +14,7 @@ The onboard stabilization and control system implements an outer-loop attitude c
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/crazyflie_control_system_block_diagram.pdf}
-	\caption[Crazyflie stabilization and control system block diagram.]{Crazyflie stabilization and control system block diagram where $m = \begin{bmatrix}m_1 & m_2 & m_3 & m_4\end{bmatrix}^T$ is a vector of motor commands, $\ddot{r} = \begin{bmatrix}\ddot{x}&\ddot{y}&\ddot{z}\end{bmatrix}^T$ is a vector of vehicle accelerations, and $\dot\Theta = \begin{bmatrix}\dot{p}&\dot{q}&\dot{r}\end{bmatrix}^T$ is a vector of vehicle angular velocities.}
+	\caption[Crazyflie stabilization and control system block diagram.]{Crazyflie stabilization and control system block diagram where $m = \begin{bmatrix}m_1 & m_2 & m_3 & m_4\end{bmatrix}^T$ is a vector of motor commands, $\ddot r = \begin{bmatrix}\ddot{x}&\ddot{y}&\ddot{z}\end{bmatrix}^T$ is a vector of vehicle accelerations, and $\dot\Theta = \begin{bmatrix}p & q & r\end{bmatrix}^T$ is a vector of vehicle angular velocities.}
 	\label{fig:control_system_block_diagram}
 \end{figure}
 
@@ -33,7 +33,7 @@ Considering the above factors, we chose to use the pseudo-random binary sequence
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/general_prbs.eps}
-	\caption{A general Pseudo-Random Binary Sequence (PRBS).}
+	\caption{A general Pseudo-Random Binary Sequence.}
 	\label{fig:general_prbs}
 \end{figure}
 
@@ -59,15 +59,15 @@ Yaw Rate & $+50^\circ/\mbox{sec}$ & $-50^\circ/\mbox{sec}$\\
 	\caption[A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.]{A sample PRBS signal used for identification showing scaled inputs for vehicle pitch $= \pm 25^\circ$, roll $= \pm 25^\circ$, and yaw rate $= \pm 50^\circ/\mbox{sec}$.}
 \end{figure}
 
-Because the Python API requires system input sequences to be formatted as \{pitch, roll, yaw rate, thrust\}, we also experimentally determined a thrust input which results in vehicle hover. The general flight test sequence is then: vehicle power on and sensor calibration, take off and hover, free flight under PRBS input, landing and vehicle power off. Input signals are sent to the vehicle at 100 Hz. It is worth nothing that the PRBS input does not drive the vehicle directly, instead it acts as a reference input to the controller which in turn commands the vehicle motors. This choice ensures that the vehicle is operating under feedback control and the input-output data gathered is in fact closed-loop data.
+Because the Python API requires system input sequences to be formatted as \{pitch, roll, yaw rate, thrust\}, we also experimentally determined a thrust input which results in vehicle hover. The general flight test sequence is then: vehicle power on and sensor calibration, take off and hover to an elevation where the vehicle is no longer experiencing ground effect, free flight under PRBS input, landing and vehicle power off. Input signals are sent to the vehicle at 100 Hz. It is worth nothing that the PRBS input does not drive the vehicle directly, instead it acts as a reference input to the controller which in turn commands the vehicle motors. This choice ensures that the vehicle is operating under feedback control and the input-output data gathered is in fact closed-loop data.
 
 \subsection{Data Collection}
-System identification requires a rich set of input-output data to identify a suitable model. The Nyquist sampling theorem requires us to sample data at a rate higher than the Nyquist frequency in order to ensure we are able to adequately reconstruct the system input and output signals from logged data. CITE!!!!!!! In the case where the full system dynamics are unknown, it is not trivial to exactly identify the Nyquist frequency. Instead, we sample data at a sufficiently fast rate to identify all system dynamics we are interested in modeling. 
+System identification requires a rich set of input-output data to identify a suitable model. The Nyquist sampling theorem requires us to sample data at a rate higher than the Nyquist frequency in order to ensure we are able to adequately reconstruct the system input and output signals from logged data \cite{franklin1998digital}. In the case where the full system dynamics are unknown, it is not trivial to exactly identify the Nyquist frequency. Instead, we sample data at a sufficiently fast rate to identify all system dynamics we are interested in modeling. 
 
-The PC client logging framework provides a means to log system parameters including motor inputs and accelerometer and gyroscope measurements. The Crazyflie PC client communicates with the vehicle and receives logged telemetry data using a custom protocol called the Crazy Real Time Protocol (CRTP). CRTP packets are able to carry a maximum of 31 bytes of data and radio bandwidth is user configurable to either 250 kbps, 1 Mbps, or 2 Mbps. The CRTP protocol is configured to give highest priority to user inputs and as a result, may drop non-essential packets if bandwidth is constrained. In order to maximize data logging ability and minimize dropped log packets, we configure the radio to operate at 2 Mbps. Because the log packets are limited to 31 bytes, we split the logged variables into three separate packets as follows: one log packet contains motor input commands for each of the four motors, one log packet contains $x$, $y$, and $z$ acceleration measurements, and one log packet contains pitch, roll, and yaw rate measurements from the gyroscope. As a result of the packet size limitation and resulting need to transmit logged variables in three separate packets, the fastest we are able to reliably log data is 50 Hz.
+The PC client logging framework provides a means to log system parameters including motor inputs and onboard sensor measurements. The Crazyflie PC client communicates with the vehicle and receives logged telemetry data using a custom protocol called the Crazy Real Time Protocol (CRTP). CRTP packets are able to carry a maximum of 31 bytes of data and radio bandwidth is user configurable to either 250 kbps, 1 Mbps, or 2 Mbps. The CRTP protocol is configured to give highest priority to user inputs and as a result, may drop non-essential packets if bandwidth is constrained. In order to maximize data logging ability and minimize dropped log packets, we configure the radio to operate at 2 Mbps. Because the log packets are limited to 31 bytes, we split the logged variables into three separate packets as follows: one log packet contains motor input commands for each of the four motors, one log packet contains $x$, $y$, and $z$ acceleration measurements, and one log packet contains pitch, roll, and yaw rate measurements from the gyroscope. As a result of the packet size limitation and resulting need to transmit logged variables in three separate packets, the fastest we are able to reliably log data is 50 Hz.
 \begin{table}[!htb]
 \centering
-\caption{Logging configuration.}\vspace{1em}
+\caption{Logging configuration.}
 \begin{tabular}{p{7em}p{17em}c}
 \toprule
 Quantity & Value & Logging Frequency\\
@@ -79,9 +79,10 @@ Gyroscope \hspace{2em}measurements & Measurements of pitch, roll, and yaw rates 
 \end{tabular}
 \end{table}
 
+A suitable test flight location minimizes the introduction of additional disturbances during data collection. In order to avoid the introduction of disturbances from air turbulence and wind gusts, we perform all test flights indoors. Performing all flights on the same day and with a fully charged quadrotor battery further adds to the consistency of the data collected. Test flight length limitations arise from physical room size constraints and battery capacity. The vehicle tends to drift under PRBS inputs, forcing the termination of a test flight any time the vehicle approaches a physical obstacle or wall. 
 
 \section{Data Analysis}
-Prior to building a model from the sampled data, the raw data is conditioned to provide a more consistent estimate of system dynamics. Following data conditioning, we perform model identification offline using a finite number of sampled data points.
+Prior to building a model from the sampled data, the raw data is conditioned to provide a more consistent estimate of system dynamics. Following data preprocessing, we perform model identification offline using a finite number of sampled data points.
 
 
 \subsection{Data Preprocessing}
@@ -97,9 +98,9 @@ After extracting the usable segment of the collected data, it must be time norma
 
 
 \subsection{Model Identification}
-We identify a model of the unknown system by applying the general procedure outlined in Table \ref{table:iem_overview}. A \matlab script processes the data offline and presents results when the algorithm is complete. Before identifying a model, selection of system order and past and future horizons are made. The system order is determined from a plot of the singular values of the extended observability matrix and past and future horizon values are selected as described in Section \ref{sec:past_and_future_horizon_selection}.
+We identify a model of the unknown system by applying the general procedure outlined in Table \ref{iem_overview}. A \matlab script processes the data offline and presents results when the algorithm is complete. Before identifying a model, selection of system order and past and future horizons are made. The system order is determined from a plot of the singular values of the extended observability matrix and past and future horizon values are selected as described in Section \ref{sec:past_and_future_horizon_selection}.
 
-\begin{table}[!htb]\label{table:iem_overview}
+\begin{table}[!htb]
 \centering
 \caption{Closed-Loop Subspace Identification Algorithm Using Innovation Estimation}%\vspace{0.5em}
 \fbox{
@@ -143,17 +144,35 @@ and form the matrix $\hat{\Gamma}_f \hat{L}_p$
 \end{equation*}
 \end{enumerate}
 \end{minipage}}
+\label{iem_overview}
 \end{table}
 
 
-\subsection{Past and Future Horizon Selection}\label{sec:past_and_future_horizon_selection}
-For SIMs with some form of pre-estimation (such as the pre-estimation of the innovation sequence in the IEM algorithm), past and future time horizons for the estimation step are selected when working with a finite number of data samples. The main purpose of the past horizon is to ensure that $A_K^p \approx 0$ in Eq. (\ref{eq:3_extended_state_space_row_state}). Care must be taken when selecting the past horizon to avoid over-fitting \cite{van2013closed}. The past and future horizons have a significant impact on the resulting identified model's stability and performance and limited guidance exists to help with their precise selection.
-
-We experimentally determine past and future horizon values by identifying a number of system models with varying the past and future horizons, first in coarse increments and later in finer increments. By evaluating the set of models identified over a range of coarsely spaced horizons, we are able to narrow the time horizon window and evaluate a smaller set of models identified  over a range of finely spaced horizons, eventually settling on the best model.
+\subsection{Past and Future Horizon Selection for Innovation Estimation}\label{sec:past_and_future_horizon_selection}
+For SIMs with some form of pre-estimation (such as the pre-estimation of the innovation sequence in the IEM algorithm), past and future time horizons for the estimation step are selected when working with a finite number of data samples. The main purpose of the past horizon is to ensure that $A_K^p \approx 0$ in Eq. (\ref{eq:3_extended_state_space_row_state}). Care must be taken when selecting the past horizon to avoid over-fitting \cite{van2013closed}. The past and future horizons have a significant impact on the resulting identified model's stability and performance and limited guidance exists to help with their precise selection. 
 
 
 \section{Model Verification}
-Following identification, we verify the system model by simulating system response to an input sequence and comparing its output with data captured from the physical system using the same input sequence. In order to verify the correctness of the identified model and evaluate its overall performance, additional test flights using input sequences not used during identification are conducted. We capture additional input-output data individually exciting the pitch, roll, and yaw dynamics, as well as input-output data showing the coupled dynamics of the system and present a comparison of the real system with the identified model in Chapter \ref{results}.
+Following identification, we verify the system model by simulating system response to an input sequence and comparing its output with data captured from the physical system using the same input sequence. In order to verify the correctness of the identified model and evaluate its overall performance with respect to the physical system, we simulate model performance with flight test data not used during model identification. Additional flight test data captured while the vehicle undergoes individual excitation of its pitch, roll, and yaw dynamics allows us to evaluate thee model's performance against additional system dynamics.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

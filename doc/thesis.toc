@@ -32,18 +32,17 @@
 \contentsline {section}{\numberline {4.3}Data Analysis}{34}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Data Preprocessing}{34}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Model Identification}{35}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Past and Future Horizon Selection}{35}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Past and Future Horizon Selection for Innovation Estimation}{35}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}Model Verification}{36}{section.4.4}
 \contentsline {chapter}{\numberline {5}Closed-Loop Subspace Identification of a Quadrotor}{38}{chapter.5}
 \contentsline {section}{\numberline {5.1}Identification Results}{38}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Experimental Data Used for Identification}{38}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Model Order Selection}{38}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Past and Future Horizon Selection}{39}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.2}Model Order Selection}{39}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Past and Future Horizon for Innovation Estimation}{39}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Identified 6DOF Quadcopter Model}{41}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}Time Domain Model Validation}{41}{section.5.2}
-\contentsline {section}{\numberline {5.3}Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}{46}{section.5.3}
-\contentsline {section}{\numberline {5.4}Identified Model Overview}{48}{section.5.4}
+\contentsline {section}{\numberline {5.2}Time Domain Model Validation}{43}{section.5.2}
+\contentsline {section}{\numberline {5.3}Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}{48}{section.5.3}
 \contentsline {chapter}{\numberline {6}Conclusions and Future Work}{50}{chapter.6}
 \contentsline {section}{\numberline {6.1}Conclusions}{51}{section.6.1}
 \contentsline {section}{\numberline {6.2}Future Work}{51}{section.6.2}
-\contentsline {chapter}{References}{52}{chapter*.26}
+\contentsline {chapter}{References}{52}{chapter*.27}

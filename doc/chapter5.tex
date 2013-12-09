@@ -1,47 +1,113 @@
 \chapter{Closed-Loop Subspace Identification of a Quadrotor}\label{results}
-
-Results section should follow the methods section
-
-Make sure you interpret the results too, don't just present them!
-
 \section{Identification Results}
-
-
+Using closed-loop input-output data captured from test flights of a quadrotor operating under PRBS inputs, we developed an LTI system model using subspace identification techniques with innovation estimation following the procedure outlined in Chapter \ref{approach}.
 
 \subsection{Experimental Data Used for Identification}
-
-
+We conducted many test flights and ultimately identified 18 data sequences of high enough quality to use for model identification and verification. Of these sequences, nine were collected with the vehicle operating under PRBS inputs and nine were collected with the vehicle operating under individual DOF excitation inputs (three each for pitch, roll, and yaw). While we considered concatenating multiple data sequences together into a longer single input-output sequence, models identified with an individual sequence proved to adequately capture desired system dynamics.
 
 
 \subsection{Model Order Selection}
-\begin{figure}[htb!]\label{fig:5_singular_values}
+System order selection occurs as a part of the model identification procedure. A plot of the singular values of the extended observability matrix, shown in Figure \ref{singular_values} is intended to provide a visual means to select the best system order. 
+\begin{figure}[b!]
 	\centering
 	\includegraphics{../fig/singular_values_parsim.eps}
-	\caption{A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.}
+	\caption{A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final eighth order model.}
+	\label{singular_values}
 \end{figure}
+From the figure, we see a significant drop in the magnitude of the singular values after the second, but selecting a system order of two did not adequately model the system dynamics. As a result, we tested a number of models with orders ranging from 3 to 12 and ultimately selected an 8th order model because it consistently produced reliable results from multiple PRBS data sets.
 
+\subsection{Past and Future Horizon for Innovation Estimation}
+Estimation of the innovation sequence requires the definition of past and future estimation horizons. We experimentally determined past and future horizon values by identifying a number of system models by varying the past and future horizons, first in coarse increments and later in finer increments. By evaluating the performance of a set of models identified over a range of coarsely spaced horizons, we were able to narrow the time horizon window and evaluate a smaller set of models identified  over a range of finely spaced horizons, eventually settling on the best model. For the final system model, we used a past estimation horizon of 60 and a future estimation horizon of 17. 
 
+By plotting the poles of all evaluated models (Figure \ref{fig:poles_all}), we see the most common pole locations. The poles of the final system model, plotted in Figure \ref{fig:poles_1760} show the model is stable and only one pole has an oscillatory response (the pole is located in the left half of the real plane). This is in contrast to the full set of models, which most commonly have three poles exhibiting an oscillatory response. The single oscillatory pole in the final system model is also faster than each of the three poles common to the set of all models, which increases the overall responsiveness of the final model. 
 
-\subsection{Past and Future Horizon Selection}
-
-blah
-
-\newpage
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/poles_all.eps}
 	\caption{Pole distribution of 8th order models generated for 756 combinations of past and future horizons. Darker shading indicates higher pole concentrations.}
+	\label{fig:poles_all}
 \end{figure}
+
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/poles_1760.eps}
 	\caption{Poles of final 8th order model.}
-\end{figure}\clearpage
+	\label{fig:poles_1760}
+\end{figure}
 
 
 
 \subsection{Identified 6DOF Quadcopter Model}
-blah 
+The final 8th order quadrotor LTI model identified using innovation estimation, given in its state space form is 
+\begin{subequations}\label{eq:2_lti}
+\begin{equation*}x(k+1) = Ax(k) + Bu(k)\end{equation*}
+\begin{equation*}y(k) = Cx(k) + Du(k)\end{equation*}
+\end{subequations}
+with inputs 
+
+The system matrices of the model are given in their exact form in Table XXX
+
+\begin{table}[!htb]
+\centering
+\caption{Identified System Matrices, 8th order LTI Quadrotor Model}%\vspace{0.5em}
+\fbox{
+\begin{minipage}{5.5in}
+
+\footnotesize % DECREASE FONT SIZE
+\begin{equation*}
+A = \begin{bmatrix}
+0.8521&-0.0304&-0.2107&0.3639&0.0859&-0.2501&0.0172&-0.0448\\
+-0.0794&0.7874&0.1238&0.2699&0.4075&0.0408&-0.3177&-0.0088\\
+0.1025&-0.0053&0.5120&-0.4573&0.3561&-0.5139&0.0986&-0.1669\\
+-0.0379&0.0325&-0.5483&-0.3013&0.4049&-0.0075&0.1634&0.3805\\
+0.0042&-0.0926&0.0224&0.1017&0.5170&0.3392&0.5775&-0.2288\\
+0.1567&-0.0832&0.5616&0.2255&-0.0186&0.3945&0.2078&0.4095\\
+0.0077&0.0579&0.0469&0.0398&-0.0686&-0.2426&-0.0026&0.2523\\
+-0.0622&0.0535&-0.0811&0.0428&0.1020&-0.0254&0.0795&0.4353
+\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+B = \begin{bmatrix}
+-0.0025&-0.0037&-0.0112&-0.0017\\
+0.0022&0.0027&0.0039&0.0045\\
+-0.0038&-0.0018&0.0101&-0.0024\\
+0.0098&0.0090&-0.0020&0.0037\\
+-0.0011&0.0063&-0.0035&0.0027\\
+0.0077&0.0107&0.0038&0.0054\\
+-0.0009&-0.0085&-0.0032&-0.0058\\
+-0.0013&-0.0042&-0.0072&-0.0047
+\end{bmatrix}
+\end{equation*}   
+\begin{equation*}
+C = \begin{bmatrix}
+-0.0001&0&-0.0001&0.0001&-0.0001&0.0002&0.0003&-0.0003\\
+0&0&0.0001&-0.0001&0.0002&-0.0001&-0.0002&0.0003\\
+0.0001&-0.0001&0&0&-0.0002&0.0003&0.0000&-0.0004\\
+-0.0252&-0.5396&0.0367&0.0661&0.4731&0.1647&-0.6491&0.0088\\
+-0.4569&-0.2298&-0.0069&0.6147&0.1088&-0.5000&0.1831&0.0206\\
+-0.0116&0.0591&0.0035&0.0091&0.0085&-0.0450&0.0297&-0.0022
+\end{bmatrix}
+\end{equation*} 
+\begin{equation*}
+D = \begin{bmatrix}
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0
+\end{bmatrix}
+\end{equation*}
+\normalsize % INCREASE FONT SIZE
+
+\end{minipage}}
+\label{identified_system_matrices}
+\end{table}
+
+
+The resulting model takes four motor inputs and produces accelerations for three axes ($\ddot x, \ddot y, \ddot z$) and angular rates about the three body axes ($p, q, r$). The model order was selected by partitioning the SVD of the extended observability matrix into two portions: one representing the identified system's dynamics and the remaining portion representing noise. From Figure \ref{fig:5_singular_values}, a model order between 1 and 13 appears to capture the significant system responses. Evaluating model orders in this range revealed that an 8th order model provided the best overall system performance, which is the resulting model presented here. 
+
+
 
 %Stimulating the system with a step response provides insight into the model performance (Figure \ref{fig:5_step}).
 %\begin{figure}[htb!]\label{fig:5_step}
@@ -99,69 +165,6 @@ blah blah blah fgiurwhfklweh kfhwkl fiuhw kweih wh iwh uiweg owig iwn iwug qw gg
 	\includegraphics{../fig/sim_1760_moesp.eps}
 	\caption{Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).}
 \end{figure}\clearpage
-
-
-
-
-
-\section{Identified Model Overview}
-Through application of the Innovation Estimation Method as outlined in Chapter \ref{approach}, we developed an 8th order LTI model of a quadrotor from experimentally gathered closed-loop input-output data. In its state space form, the model is given by
-\begin{subequations}\label{eq:2_lti}
-\begin{equation*}x(k+1) = Ax(k) + Bu(k)\end{equation*}
-\begin{equation*}y(k) = Cx(k) + Du(k)\end{equation*}
-\end{subequations}
-with
-\footnotesize % DECREASE FONT SIZE
-\begin{equation*}
-A = \begin{bmatrix}
-0.8119&0.1408&-0.4270&0.3362&0.0193&-0.0159&0.0471&0.0798\\
-0.0168&0.2216&0.6307&0.6795&-0.0599&-0.1555&-0.1142&-0.0120\\
-0.0366&0.7002&0.1693&-0.2331&0.5229&0.1084&0.3362&0.0415\\
--0.1893&-0.1149&-0.2148&0.1636&0.6510&0.0198&-0.4611&-0.1186\\
--0.0453&0.0245&0.0303&0.1571&-0.1532&0.8764&0.0014&-0.1361\\
-0.0630&-0.1064&0.1144&0.0451&-0.0730&-0.1346&0.2610&-0.5882\\
-0.0218&-0.1402&-0.0459&0.1871&0.2132&0.2603&0.0161&-0.2477\\
--0.0439&0.0445&0.0417&0.0807&-0.0606&0.1664&-0.2713&0.5972
-\end{bmatrix};
-\end{equation*}
-\begin{equation*}
-B = \begin{bmatrix}
-   -0.0025&0.0017&-0.0017&0.0019\\
-   -0.0007&-0.0011&0.0028&0.0008\\
-   -0.0043&-0.0005&0.0047&-0.0013\\
-   -0.0029&0.0027&-0.0017&-0.0026\\
-    0.0015&-0.0003&0.0021&-0.0001\\
-   -0.0003&-0.0004&0.0002&0.0009\\
-    0.0007&0.0020&-0.0003&0.0005\\
-    0.0007&0.0006&0.0028&-0.0023
-\end{bmatrix};
-\end{equation*}   
-\begin{equation*}
-C = \begin{bmatrix}
--0.0001&0.0001&-0.0000&0.0002&-0.0001&0.0000&0.0000&-0.0000\\
-0.0002&-0.0000&0.0001&-0.0002&0.0003&-0.0000&-0.0001&0.0001\\
--0.0000&-0.0000&-0.0002&0.0008&0.0003&-0.0003&0.0008&0.0003\\
--0.3177&-0.2832&-0.2047&0.4147&0.2051&-0.0510&0.6507&0.3091\\
--0.4332&0.5501&-0.5182&0.2348&-0.3507&-0.1015&-0.0689&-0.1618\\
--0.0043&-0.0518&-0.0137&0.0233&-0.0054&0.0017&-0.0157&0.0218
-\end{bmatrix};
-\end{equation*} 
-\begin{equation*}
-D = \begin{bmatrix}
-0&0&0&0\\
-0&0&0&0\\
-0&0&0&0\\
-0&0&0&0\\
-0&0&0&0\\
-0&0&0&0
-\end{bmatrix}
-\end{equation*}
-\normalsize % INCREASE FONT SIZE
-The resulting model takes four motor inputs and produces accelerations for three axes ($\ddot x, \ddot y, \ddot z$) and angular rates about the three body axes ($p, q, r$). The model order was selected by partitioning the SVD of the extended observability matrix into two portions: one representing the identified system's dynamics and the remaining portion representing noise. From Figure \ref{fig:5_singular_values}, a model order between 1 and 13 appears to capture the significant system responses. Evaluating model orders in this range revealed that an 8th order model provided the best overall system performance, which is the resulting model presented here. 
-
-
-
-
 
 
 

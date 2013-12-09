@@ -10,16 +10,16 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Bitcraze Crazyflie Quadrotor\relax }}{28}{figure.caption.10}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Crazyflie stabilization and control system block diagram.}}{29}{figure.caption.11}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence (PRBS).\relax }}{31}{figure.caption.12}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A general Pseudo-Random Binary Sequence.\relax }}{31}{figure.caption.12}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces A sample PRBS signal used for identification showing scaled inputs for vehicle pitch, roll, and yaw rate.}}{32}{figure.caption.14}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.\relax }}{34}{figure.caption.16}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.\relax }}{35}{figure.caption.16}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final 8th order model.\relax }}{38}{figure.caption.18}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final eighth order model.\relax }}{39}{figure.caption.18}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Pole distribution of 8th order models generated for 756 combinations of past and future horizons. Darker shading indicates higher pole concentrations.\relax }}{40}{figure.caption.19}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Poles of final 8th order model.\relax }}{40}{figure.caption.20}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulated (dashed) response of identified model to PRBS input sequence compared with measured system response (solid).\relax }}{42}{figure.caption.21}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Simulated (dashed) response of identified model to pitch input compared with measured system response (solid).\relax }}{43}{figure.caption.22}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Simulated (dashed) response of identified model to roll input compared with measured system response (solid).\relax }}{44}{figure.caption.23}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{45}{figure.caption.24}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{47}{figure.caption.25}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Poles of final 8th order model.\relax }}{41}{figure.caption.20}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Simulated (dashed) response of identified model to PRBS input sequence compared with measured system response (solid).\relax }}{44}{figure.caption.22}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Simulated (dashed) response of identified model to pitch input compared with measured system response (solid).\relax }}{45}{figure.caption.23}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Simulated (dashed) response of identified model to roll input compared with measured system response (solid).\relax }}{46}{figure.caption.24}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{47}{figure.caption.25}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{49}{figure.caption.26}
 \addvspace {10pt}
