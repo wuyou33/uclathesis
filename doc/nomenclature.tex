@@ -1,46 +1,69 @@
 \nomenclature{
 
-\begin{longtable}{lll}
-$\mathbb{R}$ 		&& Set of all reals\\
-$\mathbb{Z}$ 		&& Set of all integers\\
-$A$					&& System matrix\\
-$B$					&& Input matrix\\
-$C$					&& Output matrix\\
-$D$					&& Feedforward matrix\\
-$u$					&& System input vector\\
-$y$					&& System output vector\\
-$e$					&& System innovation vector\\
-$x$					&& System state vector\\
-$v$					&& Process noise vector\\
-$w$					&& Measurement noise vector\\
-$n$					&& Number of system states\\
-$m$					&& Number of system inputs\\
-$l$					&& Number of system outputs\\
-$l$					&& Number of system outputs\\
-$\sigma$			&& Singular value\\
-$K$					&& Kalman filter gain\\
-$U_k$				&& Block Hankel matrix of system inputs\\
-$U_p$				&& Block Hankel matrix of past system inputs\\
-$U_f$				&& Block Hankel matrix of future system inputs\\
-$Y_k$				&& Block Hankel matrix of system outputs\\
-$Y_p$				&& Block Hankel matrix of past system outputs\\
-$Y_f$				&& Block Hankel matrix of future system outputs\\
-$X_k$				&& Block Hankel matrix of system states\\
-$E_k$				&& Block Hankel matrix of system innovation\\
-$E_f$				&& Block Hankel matrix of future system innovation\\
-$\Gamma_k$			&& Extended observability matrix\\
-$\hat{\Gamma}_f$	&& Estimate of extended observability matrix over future horizon\\
-$G_f$				&& Toeplitz matrix of future Markov parameters of stochastic subsystem\\
-$H_f$				&& Toeplitz matrix of future Markov parameters of deterministic subsystem\\
-$f$					&& Future time horizon\\
-$p$					&& Past time horizon\\
-$\Pi_{U_f}^\perp$ 	&& Orthogonal projection onto the column space of $U_f$\\
-$I$					&& Identity matrix\\
-$Z$					&& Instrumental variable matrix\\
-$Z_p$				&& Instrumental variable matrix constructed of past input-output data\\
-$\phi$				&& Roll\\
-$\theta$			&& Pitch\\
-$\dot\psi$				&& Yaw rate\\
+\begin{longtable}{p{7em}p{26em}}
+$F_1$, $F_2$, $F_3$, $F_4$	& Quadrotor motor forces\\
+$r$							& Vehicle position vector\\
+$m$							& Vehicle mass\\
+$g$							& Gravity\\
+$\mathbb{R}$ 		& Set of all reals\\
+$\mathbb{Z}$ 		& Set of all integers\\
+$x$					& System state vector\\
+$A$					& System matrix\\
+$B$					& Input matrix\\
+$C$					& Output matrix\\
+$D$					& Feedforward matrix\\
+$u$					& System input vector\\
+$y$					& System output vector\\
+$e$					& System innovation vector\\
+$n$					& Number of system states\\
+$m$					& Number of system inputs\\
+$l$					& Number of system outputs\\
+$t$					& Time\\
+$v$					& Process noise vector\\
+$w$					& Measurement noise vector\\
+$K$					& Kalman filter gain\\
+$U$					& Left singular vectors\\
+$V$					& Right singular vectors\\
+$k$					&  \\
+$f$					& Future horizon\\
+$p$					& Past horizon\\
+$U_p$				& Block Hankel matrix of past system inputs\\
+$U_f$				& Block Hankel matrix of future system inputs\\
+$U_{fi}$			& $i^{\mbox{th}}$ row of the block Hankel matrix of future system inputs\\
+$Y_p$				& Block Hankel matrix of past system outputs\\
+$Y_f$				& Block Hankel matrix of future system outputs\\
+$Y_{fi}$			& $i^{\mbox{th}}$ row of the block Hankel matrix of future system outputs\\
+$X_k$				& Block Hankel matrix of future system states\\
+$X_{k-p}$			& Block Hankel matrix of past system states\\
+$E_p$				& Block Hankel matrix of past system innovation\\
+$E_f$				& Block Hankel matrix of future system innovation\\
+$E_{fi}$			& $i^{\mbox{th}}$ row of the block Hankel matrix of future system innovation\\
+$G_f$				& Toeplitz matrix of future Markov parameters of stochastic subsystem\\
+$G_{fi}$			& $i^{\mbox{th}}$ row of the Toeplitz matrix of future Markov parameters of stochastic subsystem\\
+$H_f$				& Toeplitz matrix of future Markov parameters of deterministic subsystem\\
+$H_{fi}$			& $i^{\mbox{th}}$ row of the Toeplitz matrix of future Markov parameters of deterministic subsystem\\
+$I$					& Identity matrix\\
+$Z_i$				& Instrumental variable matrix\\
+$Z_p$				& Instrumental variable matrix constructed of past input-output data\\
+$u_1$, $u_2$, $u_3$, $u_4$	& Quadrotor motor commands\\
+$p$					& Vehicle pitch rate \\
+$q$					& Vehicle roll rate \\
+$r$					& Vehicle yaw rate \\
+$\ddot x$			& Vehicle x-acceleration \\
+$\ddot y$			& Vehicle y-acceleration \\
+$\ddot z$			& Vehicle z-acceleration \\
+$\ddot r$			& Vector of vehicle accelerations\\
+
+$\theta$					& Pitch angle\\
+$\phi$						& Roll angle\\
+$\psi$						& Yaw angle\\
+$\dot \Theta$		& Vector of vehicle angular rates \\
+$\hat{\Gamma}_f$	& Estimate of extended observability matrix for future horizon\\
+$\Sigma$			& Diagonal matrix of singular values\\
+$\sigma$			& Singular value\\
+$\Gamma_k$			& Extended observability matrix\\
+$\Gamma_{fi}$		& $i^{\mbox{th}}$ row of the extended observability matrix for future horizon\\
+
 \end{longtable}
 
 }

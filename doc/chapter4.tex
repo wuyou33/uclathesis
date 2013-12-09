@@ -14,7 +14,7 @@ The onboard stabilization and control system implements an outer-loop attitude c
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/crazyflie_control_system_block_diagram.pdf}
-	\caption[Crazyflie stabilization and control system block diagram.]{Crazyflie stabilization and control system block diagram where $m = \begin{bmatrix}m_1 & m_2 & m_3 & m_4\end{bmatrix}^T$ is a vector of motor commands, $\ddot r = \begin{bmatrix}\ddot{x}&\ddot{y}&\ddot{z}\end{bmatrix}^T$ is a vector of vehicle accelerations, and $\dot\Theta = \begin{bmatrix}p & q & r\end{bmatrix}^T$ is a vector of vehicle angular velocities.}
+	\caption[Crazyflie stabilization and control system block diagram.]{Crazyflie stabilization and control system block diagram where $m = \begin{bmatrix}u_1 & u_2 & u_3 & u_4\end{bmatrix}^T$ is a vector of motor commands, $\ddot r = \begin{bmatrix}\ddot{x}&\ddot{y}&\ddot{z}\end{bmatrix}^T$ is a vector of vehicle accelerations, and $\dot\Theta = \begin{bmatrix}p & q & r\end{bmatrix}^T$ is a vector of vehicle angular velocities.}
 	\label{fig:control_system_block_diagram}
 \end{figure}
 

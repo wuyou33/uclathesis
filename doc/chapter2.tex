@@ -18,11 +18,11 @@ where $x(k) \in \mathbb{R}^n$ is a vector of the states of the system, $u(k) \in
 	\caption{A block diagram of the state space representation of a LTI system.}
 \end{figure}
 
-For any state space representation of a system, the state sequence is not unique. That is, there are different state space representations resulting in the same input-output behavior of the system. These differing states can be related by a similarity transform $T$ where $T$ is a real, nonsingular matrix:
+For any state space representation of a system, the state sequence is not unique. That is, there are different state space representations resulting in the same input-output behavior of the system. These differing states can be related by a similarity transform $T$ where $T$ is a real, nonsingular matrix
 \begin{equation*}
 \tilde{x}(k) = T^{-1}x(k)
 \end{equation*}
-The state space representation of the system corresponding to the transformed state $\tilde{x}$ is given by
+where the tilde in $\tilde x$ indicates that it is ``similar'' to the original state sequence $x$. The state space representation of the system corresponding to the transformed state $\tilde{x}$ is given by
 \begin{subequations}
 \begin{equation*}\tilde{x}(k+1) = \tilde{A}\tilde{x}(k) + \tilde{B}u(k)\end{equation*}
 \begin{equation*}y(k) = \tilde{C}\tilde{x}(k) + \tilde{D}u(k)\end{equation*}
@@ -115,7 +115,7 @@ Any matrix $A \in \mathbb{R}^{m\times n}$ can be decomposed by a singular value 
 \begin{equation*}
 A = U\Sigma V^T
 \end{equation*}
-where $U \in \mathbb{R}^{m\times m}$ and $V \in \mathbb{R}^{n\times n}$ are orthogonal matrices and $\Sigma \in \mathbb{R}^{m\times n}$ is diagonal matrix of the singular values $\sigma_i$ of $A$ ordered such that
+where $U \in \mathbb{R}^{m\times m}$ and $V \in \mathbb{R}^{n\times n}$ are orthogonal matrices and $\Sigma \in \mathbb{R}^{m\times n}$ is diagonal matrix of the singular values $\sigma_i$ of $A$, ordered such that
 \begin{equation*}
 \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r > 0
 \end{equation*}
