@@ -41,8 +41,12 @@
 \contentsline {subsection}{\numberline {5.1.3}Past and Future Horizon for Innovation Estimation}{39}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Identified 6DOF Quadcopter Model}{41}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Time Domain Model Validation}{43}{section.5.2}
-\contentsline {section}{\numberline {5.3}Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}{48}{section.5.3}
-\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{50}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusions}{51}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Work}{51}{section.6.2}
-\contentsline {chapter}{References}{52}{chapter*.27}
+\contentsline {subsection}{\numberline {5.2.1}Evaluation of Full 6DOF LTI Model Dynamics}{43}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Evaluation of LTI Model Pitch Dynamics}{44}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Evaluation of LTI Model Roll Dynamics}{44}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Evaluation of LTI Model Yaw Dynamics}{44}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}{49}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusions and Future Work}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusions}{52}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Work}{52}{section.6.2}
+\contentsline {chapter}{References}{53}{chapter*.27}

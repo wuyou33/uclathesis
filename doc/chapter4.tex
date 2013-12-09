@@ -10,7 +10,7 @@ Because the design and construction of a quadrotor is beyond the scope of  this 
 
 Vehicle pitch, roll, yaw, and thrust inputs are set in one of two ways. First, a USB gamepad connected to a computer running the Crazyflie PC client provides a method for direct user control of the vehicle. Second, the PC client exposes a Python API, making it possible to programmatically send the vehicle control set-points. The vehicle receives control inputs and transmits telemetry data wirelessly over a 2.4 GHz radio connection to a USB radio dongle connected to the Crazyflie PC client running on a laptop computer.
 
-The onboard stabilization and control system implements an outer-loop attitude controller and an inner-loop rate controller, as shown in Figure \ref{fig:control_system_block_diagram}. Reference pitch and roll commands ($\theta$ and $\phi$, respectively) are fed to the attitude controller (outputting desired rates) and reference yaw rate ($\dot\psi$) is fed directly to the rate controller. The inner-loop rate control operates at 500 Hz and the outer-loop attitude control operates at 250 Hz.
+The onboard stabilization and control system implements an outer-loop attitude controller and an inner-loop rate controller, as shown in Figure \ref{fig:control_system_block_diagram}. Reference pitch and roll commands ($\theta$ and $\phi$, respectively) are fed to the attitude controller (outputting desired rates) and the reference yaw rate ($\dot\psi$) is fed directly to the rate controller. The inner-loop rate control operates at 500 Hz and the outer-loop attitude control operates at 250 Hz.
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/crazyflie_control_system_block_diagram.pdf}

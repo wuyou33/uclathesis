@@ -36,23 +36,19 @@ By plotting the poles of all evaluated models (Figure \ref{fig:poles_all}), we s
 \end{figure}
 
 
-
 \subsection{Identified 6DOF Quadcopter Model}
 The final 8th order quadrotor LTI model identified using innovation estimation, given in its state space form is 
 \begin{subequations}\label{eq:2_lti}
 \begin{equation*}x(k+1) = Ax(k) + Bu(k)\end{equation*}
 \begin{equation*}y(k) = Cx(k) + Du(k)\end{equation*}
 \end{subequations}
-with inputs 
-
-The system matrices of the model are given in their exact form in Table XXX
+where system input $u = \begin{bmatrix}u_1 & u_2 & u_3 & u_4\end{bmatrix}^T$ is a vector of motor commands and system output $y = \begin{bmatrix}\ddot x & \ddot y & \ddot z & p & q & r\end{bmatrix}^T$ is a vector of accelerometer and gyroscope measurements. The system matrices of the model appear fully in Table \ref{identified_system_matrices}.
 
 \begin{table}[!htb]
 \centering
 \caption{Identified System Matrices, 8th order LTI Quadrotor Model}%\vspace{0.5em}
 \fbox{
 \begin{minipage}{5.5in}
-
 \footnotesize % DECREASE FONT SIZE
 \begin{equation*}
 A = \begin{bmatrix}
@@ -99,13 +95,9 @@ D = \begin{bmatrix}
 \end{bmatrix}
 \end{equation*}
 \normalsize % INCREASE FONT SIZE
-
 \end{minipage}}
 \label{identified_system_matrices}
 \end{table}
-
-
-The resulting model takes four motor inputs and produces accelerations for three axes ($\ddot x, \ddot y, \ddot z$) and angular rates about the three body axes ($p, q, r$). The model order was selected by partitioning the SVD of the extended observability matrix into two portions: one representing the identified system's dynamics and the remaining portion representing noise. From Figure \ref{fig:5_singular_values}, a model order between 1 and 13 appears to capture the significant system responses. Evaluating model orders in this range revealed that an 8th order model provided the best overall system performance, which is the resulting model presented here. 
 
 
 
@@ -121,16 +113,35 @@ The resulting model takes four motor inputs and produces accelerations for three
 
 
 
-
+\newpage
 \section{Time Domain Model Validation}
-Leong\_2008 p. 63 for validation
+Comparing system response predicted by the identified model with measured system response originating from the same input sequence provides a straightforward way to validate the identified model in the time domain. We compared the identified model's time domain response with the measured response of the physical system using four different input sequences: PRBS input, pure pitch input, pure roll input, and pure yaw input. 
 
+By evaluating the identified model's ability to represent the decoupled dynamics of the physical system, we are able to draw conclusions about the ability of a PRBS input sequence to identify individual dynamical modes of a system. During the pure pitch, roll, and yaw input sequences, the non-excited degrees of freedom were not fixed and thus the vehicle was free to move in all six degrees of freedom.
+
+\subsection{Evaluation of Full 6DOF LTI Model Dynamics}
+Figure \ref{sim_1760_20131017212626_31_38500} shows the comparison of system response between the identified model and the physical system. In general, the identified model provides a satisfactory estimate of the physical system dynamics. The pitch and roll rates are accurately predicted and the magnitudes of the $x$, $y$, and $z$ accelerations are correctly predicted. 
+
+While the system acceleration predictions are accurate with respect to the magnitude of acceleration, it is not surprising that the predictions do not more closely follow the measured response. This is due to the fact that the accelerometers are very susceptible to measuring vehicle vibrations caused by slightly unbalanced motors and propellers. Because these vibrations occur at a much higher frequency than the Nyquist frequency, they are not captured by the identified model and thus not reflected in the system response.
+
+Also worth noting is the fact that the yaw dynamics are not accurately captured. BJKHBJKHGFJHG
+
+
+\subsection{Evaluation of LTI Model Pitch Dynamics}
+Figure \ref{sim_1760_pitch} shows the comparison of system response between the identified model and the physical system excited by pure pitch inputs. The simulated pitch rate aligns with the measured value showing that the model accurately represented isolated pitch dynamics of the system.
+
+
+\subsection{Evaluation of LTI Model Roll Dynamics}
+
+
+\subsection{Evaluation of LTI Model Yaw Dynamics}
 
 \newpage
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/sim_1760_20131017212626_31_38500.eps}
-	\caption{Simulated (dashed) response of identified model to PRBS input sequence compared with measured system response (solid).}
+	\caption{Simulated response (dashed) of identified 8th order LTI system model compared with measured system response (solid). Both systems were stimulated with an identical PRBS input sequence.}
+	\label{sim_1760_20131017212626_31_38500}
 \end{figure}\clearpage
 
 \newpage
@@ -138,6 +149,7 @@ Leong\_2008 p. 63 for validation
 	\centering
 	\includegraphics{../fig/sim_1760_pitch.eps}
 	\caption{Simulated (dashed) response of identified model to pitch input compared with measured system response (solid).}
+	\label{sim_1760_pitch}
 \end{figure}\clearpage
 
 \newpage
@@ -145,6 +157,7 @@ Leong\_2008 p. 63 for validation
 	\centering
 	\includegraphics{../fig/sim_1760_roll.eps}
 	\caption{Simulated (dashed) response of identified model to roll input compared with measured system response (solid).}
+	\label{sim_1760_roll}
 \end{figure}\clearpage
 
 \newpage
@@ -152,6 +165,7 @@ Leong\_2008 p. 63 for validation
 	\centering
 	\includegraphics{../fig/sim_1760_yaw.eps}
 	\caption{Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).}
+	\label{sim_1760_yaw}
 \end{figure}\clearpage
 
 
@@ -163,7 +177,7 @@ blah blah blah fgiurwhfklweh kfhwkl fiuhw kweih wh iwh uiweg owig iwn iwug qw gg
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/sim_1760_moesp.eps}
-	\caption{Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).}
+	\caption{Simulated (dashed) response of identified model to yaw input compared with measured system response (solid). IEM results are plotted in light gray (solid) for reference.}
 \end{figure}\clearpage
 
 

@@ -8,6 +8,7 @@ model = '1760';
 shift = [-0.4 0.3 1.5 1500 -130 -190]; % -1180
 moesp_shift = [0 -0.25 1 -1000 0 -900];
 front_trim = 1;
+gray = [0.6,0.6,0.6];
 
 fig_dir = '/Users/akee/School/UCLA/01 thesis/uclathesis/fig/';
 fig_name = 'sim_1760_moesp.eps';
@@ -80,8 +81,8 @@ h = figure(1);
 subplot(6,1,4)
 plot(t, y_ver(:,1), 'k-')
 hold on
-plot(t, y_parsim(:,1), 'k--')
-plot(t, y_moesp(:,1), 'k-.')
+plot(t, y_parsim(:,1), '-', 'Color', gray)
+plot(t, y_moesp(:,1), 'k--')
 axis([0.5 3 -0.5 0.5])
 y1 = ylabel('acc x');
 set( gca,...
@@ -98,8 +99,8 @@ set( gca,...
 subplot(6,1,5)
 plot(t, y_ver(:,2), 'k-')
 hold on
-plot(t, y_parsim(:,2), 'k--')
-plot(t, y_moesp(:,2), 'k-.')
+plot(t, y_parsim(:,2), '-', 'Color', gray)
+plot(t, y_moesp(:,2), 'k--')
 axis([0.5 3 -0.5 1])
 y2 = ylabel('acc y');
 set( gca,...
@@ -116,8 +117,8 @@ set( gca,...
 subplot(6,1,6)
 plot(t, y_ver(:,3), 'k-')
 hold on
-plot(t, y_parsim(:,3), 'k--')
-plot(t, y_moesp(:,3), 'k-.')
+plot(t, y_parsim(:,3), '-', 'Color', gray)
+plot(t, y_moesp(:,3), 'k--')
 axis([0.5 3 -1 2])
 y3 = ylabel({'acc z'; ' '});
 x = xlabel('Time (sec.)');
@@ -135,8 +136,8 @@ set( gca,...
 subplot(6,1,1)
 plot(t, y_ver(:,4), 'k-')
 hold on
-plot(t, y_parsim(:,4), 'k--')
-plot(t, y_moesp(:,4), 'k-.')
+plot(t, y_parsim(:,4), '-', 'Color', gray)
+plot(t, y_moesp(:,4), 'k--')
 axis([0.5 3 -1000 9000])
 y4 = ylabel('gyro x');
 set( gca,...
@@ -154,8 +155,8 @@ set( gca,...
 subplot(6,1,2)
 plot(t, y_ver(:,5), 'k-')
 hold on
-plot(t, y_parsim(:,5), 'k--')
-plot(t, y_moesp(:,5), 'k-.')
+plot(t, y_parsim(:,5), '-', 'Color', gray)
+plot(t, y_moesp(:,5), 'k--')
 axis([0.5 3 -1000 10000])
 y5 = ylabel('gyro y');
 set( gca,...
@@ -172,8 +173,8 @@ set( gca,...
 subplot(6,1,3)
 plot(t, y_ver(:,6), 'k-')
 hold on
-plot(t, y_parsim(:,6), 'k--')
-plot(t, y_moesp(:,6), 'k-.')
+plot(t, y_parsim(:,6), '-', 'Color', gray)
+plot(t, y_moesp(:,6), 'k--')
 axis([0.5 3 -100 1600])
 y6 = ylabel('gyro z');
 set( gca,...

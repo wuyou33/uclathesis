@@ -17,7 +17,7 @@ First, we consider the identification of a combined deterministic-stochastic LTI
 	\includegraphics{../fig/open_loop_block_diagram.pdf}
 	\caption{A block diagram of an LTI system operating in open loop.}
 \end{figure}
-We present an overview of the PO-MOESP subspace identification procedure, where ``PO'' indicates that both past input and output data is used when eliminating the influence of noise on the identified system, further described in Sec. \ref{sec:estimation_of_the_extended_observability_matrix}. Before detailing the identification procedure, we introduce the following assumptions:\\
+We present an overview of the PO-MOESP subspace identification procedure, where ``PO'' stands for past output, indicating that both past input and output data is used when eliminating the influence of noise on the identified system, further described in Sec. \ref{sec:estimation_of_the_extended_observability_matrix}. Before detailing the identification procedure, we introduce the following assumptions:\\
 \textbf{Assumption 1}: The matrix $A - KC$ is stable (i.e. its eigenvalues lie strictly within the unit circle).\\
 \textbf{Assumption 2}: The pair $(A,C)$ is observable and $(A, [B \quad K])$ is controllable.\\
 \textbf{Assumption 3}: The innovation sequence $e(k)$ can be modeled as zero-mean white-noise.\\
