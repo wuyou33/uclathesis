@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {5.1.1}Experimental Data Used for Identification}{38}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Model Order Selection}{39}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Past and Future Horizon for Innovation Estimation}{39}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Identified 6DOF Quadcopter Model}{41}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.4}Identified 6DOF Quadcopter Model}{40}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Time Domain Model Validation}{43}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Evaluation of Full 6DOF LTI Model Dynamics}{43}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Evaluation of LTI Model Pitch Dynamics}{44}{subsection.5.2.2}
