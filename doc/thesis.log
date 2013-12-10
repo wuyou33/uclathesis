@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  9 DEC 2013 21:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.5.19)  10 DEC 2013 00:03
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -824,11 +824,11 @@ CHAPTER 6.
 [52
 
 
-]) (./thesis.bbl [53] [54] [55
+]) (./thesis.bbl [53] [54
 
-] [56])
+] [55])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 21.
- [57]
+ [56]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 21.
@@ -842,13 +842,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
  ) 
 Here is how much of TeX's memory you used:
- 7570 strings out of 493610
- 115127 string characters out of 3142404
- 219406 words of memory out of 3000000
+ 7569 strings out of 493610
+ 115120 string characters out of 3142404
+ 219407 words of memory out of 3000000
  10495 multiletter control sequences out of 15000+200000
  12451 words of font info for 48 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 44i,14n,40p,1587b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,14n,40p,1426b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
@@ -863,10 +863,10 @@ exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texli
 ve/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (68 pages, 1388045 bytes).
+Output written on thesis.pdf (67 pages, 1387266 bytes).
 PDF statistics:
- 1018 PDF objects out of 1200 (max. 8388607)
- 872 compressed objects within 9 object streams
- 245 named destinations out of 1000 (max. 500000)
+ 1014 PDF objects out of 1200 (max. 8388607)
+ 869 compressed objects within 9 object streams
+ 244 named destinations out of 1000 (max. 500000)
  280 words of extra memory for PDF output out of 10000 (max. 10000000)
 
