@@ -69,8 +69,9 @@
          \vfill
          \textbf{\@titlesize \@title} \\
          \vskip 48pt plus0pt minus18pt
-         \normalsize A \@thesisname\
-	 submitted in partial satisfaction \\
+%         \normalsize A \@thesisname\
+%	 submitted in partial satisfaction \\
+Submitted in partial satisfaction\\
          of the requirements for the degree \\
          \@degreename\if@department\ in \@department \fi\\
          \vskip 24pt plus0pt minus6pt
@@ -486,7 +487,8 @@
       \setcounter{page}{2}
       \par\pagestyle{plain}
       \begin{center}
-         \textsc{\large Abstract of the \@Thesisname}\\[12pt]
+%         \textsc{\large Abstract of the \@Thesisname}\\[12pt]
+\textsc{\large Abstract}\\[12pt]
          \textbf{\@titlesize \@title}\\[12pt]
          \normalsize \normalfont by\\[12pt]
          \textbf{\large \@author} \\

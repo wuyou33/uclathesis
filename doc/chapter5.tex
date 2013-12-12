@@ -3,7 +3,7 @@
 Using closed-loop input-output data captured from test flights of a quadrotor operating under PRBS inputs, we developed an LTI system model using subspace identification techniques with innovation estimation following the procedure outlined in Chapter \ref{approach}.
 
 \subsection{Experimental Data Used for Identification}
-We conducted many test flights and ultimately identified 18 data sequences of high enough quality to use for model identification and verification. Of these sequences, nine were collected with the vehicle operating under PRBS inputs and nine were collected with the vehicle operating under individual degree of freedom  excitation inputs (three each for pitch, roll, and yaw). While we considered concatenating multiple data sequences together into a longer single input-output sequence, models identified with an individual sequence proved to adequately capture desired system dynamics.
+After conducting test flights we ultimately identified 18 data sequences of high enough quality to use for model identification and verification. Of these sequences, nine were collected with the vehicle operating under PRBS inputs and nine were collected with the vehicle operating under individual degree of freedom  excitation inputs (three each for pitch, roll, and yaw). While we considered concatenating multiple data sequences together into a longer single input-output sequence, models identified with an individual sequence proved to adequately capture desired system dynamics.
 
 
 \subsection{Model Order Selection}
@@ -15,12 +15,20 @@ System order selection occurs as a part of the model identification procedure. A
 	\label{singular_values}
 \end{figure}
 
-From the figure, we see a significant drop in the magnitude of the singular values after the second singular value, but selecting a system order of two did not adequately model the system dynamics. As a result, we tested a number of models with orders ranging from 3 to 12 and ultimately selected an 8th order model for its consistent modeling of system dynamics from multiple PRBS data sets.
+From the figure, we see a significant drop in the magnitude of the singular values after the second value, but selecting a system order of two did not adequately model the system dynamics. As a result, we tested a number of models with orders ranging from 3 to 12 and ultimately selected an 8th order model for its consistent representation of system dynamics from multiple PRBS data sets.
 
 \subsection{Past and Future Horizon for Innovation Estimation}
-Estimation of the innovation sequence requires the definition of past and future estimation horizons. Following the procedure outlined in Section \ref{sec:past_and_future_horizon_selection}, we settled on a past estimation horizon of 60 and a future estimation horizon of 17. 
+Estimation of the innovation sequence requires the definition of past and future estimation horizons. Following the procedure outlined in Section \ref{sec:past_and_future_horizon_selection}, we used a past estimation horizon of 60 and a future estimation horizon of 17. 
 
-By plotting the poles of all evaluated models (Figure \ref{fig:poles_all}), we see the most common pole locations. The poles of the final system model, plotted in Figure \ref{fig:poles_1760} show the model is stable and only one pole has an oscillatory response (the pole is located in the left half of the real plane). This is in contrast to the full set of models, which most commonly have three poles exhibiting an oscillatory response. The single oscillatory pole in the final system model is also faster than each of the three poles common to the set of all models, increasing the overall responsiveness of the final model. 
+In the process of identifying the best estimation horizons, we developed and evaluated 756 system models with varying past and future estimation horizons. By plotting the poles of all evaluated models (Figure \ref{fig:poles_all}), we see the most common pole locations. The poles of the final system model plotted in Figure \ref{fig:poles_1760} show the model is stable and only one pole has an oscillatory response (the pole is located in the left half of the real plane). This is in contrast to the full set of models, which most commonly have three poles exhibiting an oscillatory response. The single oscillatory pole in the final system model is also faster than each of the three poles common to the set of all models, increasing the overall responsiveness of the final model. 
+
+\subsection{Identified 6DOF Quadcopter Model}
+The final 8th order quadrotor LTI model developed using subspace identification with innovation estimation, given in its state space form is 
+\begin{subequations}\label{eq:2_lti}
+\begin{equation*}x(k+1) = Ax(k) + Bu(k)\end{equation*}
+\begin{equation*}y(k) = Cx(k) + Du(k)\end{equation*}
+\end{subequations}
+where system input $u = \begin{bmatrix}u_1 & u_2 & u_3 & u_4\end{bmatrix}^T$ is a vector of motor commands and system output $y = \begin{bmatrix}\ddot x & \ddot y & \ddot z & p & q & r\end{bmatrix}^T$ is a vector of accelerometer and gyroscope measurements. The system matrices of the model appear fully in Table \ref{identified_system_matrices}.
 
 \begin{figure}[htb!]
 	\centering
@@ -37,13 +45,7 @@ By plotting the poles of all evaluated models (Figure \ref{fig:poles_all}), we s
 \end{figure}
 
 
-\subsection{Identified 6DOF Quadcopter Model}
-The final 8th order quadrotor LTI model identified using innovation estimation, given in its state space form is 
-\begin{subequations}\label{eq:2_lti}
-\begin{equation*}x(k+1) = Ax(k) + Bu(k)\end{equation*}
-\begin{equation*}y(k) = Cx(k) + Du(k)\end{equation*}
-\end{subequations}
-where system input $u = \begin{bmatrix}u_1 & u_2 & u_3 & u_4\end{bmatrix}^T$ is a vector of motor commands and system output $y = \begin{bmatrix}\ddot x & \ddot y & \ddot z & p & q & r\end{bmatrix}^T$ is a vector of accelerometer and gyroscope measurements. The system matrices of the model appear fully in Table \ref{identified_system_matrices}.
+
 
 \begin{table}[!htb]
 \centering
@@ -118,14 +120,12 @@ D = \begin{bmatrix}
 \section{Time Domain Model Validation}
 Comparing system response predicted by the identified model with measured system response originating from the same input sequence provides a straightforward way to validate the identified model in the time domain. We compared the identified model's time domain response with the measured response of the physical system using four different input sequences: PRBS input, pure pitch input, pure roll input, and pure yaw input. 
 
-Because the IEM deals with the coupling between system input and past noise present in a closed-loop system by pre-estimating the noise sequence from the input-output data used for identification, some true system dynamics are inevitably ``estimated out'' of the model during this procedure. This is evident in the fact that some of the faster system modes are not perfectly represented by the model.
-
-By also evaluating the identified model's ability to represent the decoupled dynamics of the physical system, we are able to draw conclusions about the ability of a PRBS input sequence to identify individual dynamical modes of a system. 
+Because the IEM attempts to eliminate the coupling between system input and past noise present in a closed-loop system by pre-estimating the noise sequence from the input-output data used for identification, some true system dynamics are inevitably ``estimated out'' of the model during this procedure. This is evident by the fact that some of the faster system modes are not perfectly represented by the identified model. By also evaluating the identified model's ability to represent the decoupled dynamics of the physical system, we are able to draw conclusions about the ability of a PRBS input sequence to identify individual dynamical modes of a system with coupled dynamics. 
 
 \subsection{Evaluation of Full 6DOF LTI Model Dynamics}
 Figure \ref{sim_1760_20131017212626_31_38500} shows the comparison of system response between the identified model and the physical system. In general, the identified model provides a satisfactory estimate of the physical system dynamics. The pitch and roll rates are accurately predicted and the magnitudes of the $x$, $y$, and $z$ accelerations are correctly predicted. 
 
-While the system acceleration predictions are accurate with respect to the magnitude of acceleration, it is not surprising that the predictions do not more closely follow the measured response. This is due to the fact that the accelerometers are very susceptible to measuring vehicle vibrations caused by slightly unbalanced motors and propellers. Because these vibrations occur at a much higher frequency than the Nyquist frequency, they are not captured by the identified model and thus not reflected in the system response.
+While the system acceleration predictions are accurate with respect to the magnitude of acceleration, it is not surprising that the predictions do not more closely follow the measured response. This is due to the fact that the onboard accelerometers are susceptible to measuring vehicle vibrations caused by slightly unbalanced motors and propellers. Because these vibrations occur at a much higher frequency than the sampling frequency, they are not captured in the identified model and thus not reflected in the system response.
 
 Inspecting the yaw rate response, we see that the model does not accurately capture the yaw dynamics of the physical system. We observed this deficiency in all verification tests when comparing simulated model response with the measured response of the physical system. We hypothesize that this failure to successfully identify the yaw dynamics is in part due to the way a quadrotor's yaw mode is excited. While the pitch and roll modes of a quadrotor are excited by changing the rotor speed of only two opposing rotors, excitation of the yaw mode requires speed changes to all four rotors. It is possible that a higher order system model would capture these dynamics, although we tested models up to 12th order without success. This problem is not isolated; others (\cite{lee2011attitude} and \cite{mettler2000system}) have experienced similar difficulties identifying yaw dynamics in rotorcraft through system identification.
 
@@ -134,11 +134,11 @@ Figure \ref{sim_1760_pitch} shows the comparison of system response between the 
 
 
 \subsection{Evaluation of LTI Model Roll Dynamics}
-Figure \ref{sim_1760_roll} shows the comparison of system response between the identified model and the physical system excited by pure roll inputs. The simulated roll rate generally tracks with the measured value. In several places, the measured roll rate is clipped while the predicted value is not clipped (in particular between 1.5 and 2 seconds). This is likely due to nonlinearities in the physical system not captured by the linear model.
+Figure \ref{sim_1760_roll} shows the comparison of system response between the identified model and the physical system excited by pure roll inputs. The simulated roll rate generally tracks with the measured value. In places the measured roll rate is clipped while the predicted value is not clipped (in particular between 1.5 and 2 seconds). This is likely due to nonlinearities in the physical system not captured by the linear model.
 
 
 \subsection{Evaluation of LTI Model Yaw Dynamics}
-Figure \ref{sim_1760_yaw} shows the comparison of system response between the identified model and the physical system excited by pure yaw inputs. The identified model does not accurately capture the isolated yaw dynamics of the physical system. This is expected, as the model also failed to adequately represent the yaw dynamics of the full 6DOF system operating under PRBS input. Inspection of the pitch and roll rate responses in Figure \ref{sim_1760_yaw} reveals a coupling between yaw input and simulated pitch and roll rate. Both yaw inputs beginning at 1.7 seconds and 2.2 seconds result in responses in simulated pitch and roll rates, an effect is not seen in the physical system. The yaw dynamics are not completely missed however. From Figure \label{sim_1760_20131017212626_31_38500} we see that after 2 seconds, the simulated response somewhat tracks with the measured output for small angle changes.
+Figure \ref{sim_1760_yaw} shows the comparison of system response between the identified model and the physical system excited by pure yaw inputs. The identified model does not accurately capture the isolated yaw dynamics of the physical system. This is expected, as the model also failed to adequately represent the yaw dynamics of the full 6DOF system operating under PRBS input. Inspection of the pitch and roll rate responses in Figure \ref{sim_1760_yaw} reveals a coupling between yaw input and simulated pitch and roll rate. Yaw inputs observed beginning at 1.7 seconds and 2.2 seconds result in responses in simulated pitch and roll rates, an effect not seen in the physical system. The yaw dynamics are not fully missed however. From Figure \ref{sim_1760_20131017212626_31_38500} we see that after 2 seconds, the simulated response somewhat tracks with the measured output for small angle changes.
 
 
 
@@ -181,9 +181,9 @@ Figure \ref{sim_1760_yaw} shows the comparison of system response between the id
 
 \newpage
 \section{Comparing Identified Model Performance From PO-MOESP and IEM Algorithms With Closed-Loop Data}
-In addition to evaluating the performance of a model identified using a closed loop subspace identification method (IEM), we analyzed the performance of a model identified from the same closed-loop data using a traditional subspace identification method which makes no attempt to correct for the presence of closed-loop data (PO-MOESP). Because we used the same input-output data to develop both models, the only differences between the two models are due to the identification algorithms used. 
+In addition to evaluating the performance of a model identified using a closed-loop subspace identification method (IEM), we analyzed the performance of a model identified from the same closed-loop data using a traditional subspace identification method which makes no attempt to correct for the presence of closed-loop data (PO-MOESP). Because we used the same input-output data to develop both models, the only differences between the two models are due to the identification algorithms used. 
 
-Unlike IEM, the PO-MOESP algorithm assumes no correlation between system input an past noise (an invalid assumption in this case), with the effect of violating this assumption easily seen in Figure \ref{sim_1760_moesp.eps}. Because PO-MOESP makes no attempt to deal with the coupling between the input and noise terms however, the model identified using PO-MOESP does not suffer from the issue of having true system dynamics pre-estimated out. The result is that although the magnitudes of estimated system responses are incorrect, the model identified using PO-MOESP tracks the true system better than the IEM model in some cases. Despite this fact, the IEM model provides a more correct representation of the overall dynamics of the physical system in the presence of closed-loop data.
+Unlike IEM, the PO-MOESP algorithm assumes no correlation between system input and past noise (an invalid assumption in this case), with the effect of violating this assumption easily seen in Figure \ref{sim_1760_moesp.eps}. Because PO-MOESP makes no attempt to deal with the coupling between the input and noise terms however, the identified model does not suffer from the issue of having true system dynamics pre-estimated out. The result is that although the magnitudes of estimated system responses are incorrect, the model identified using PO-MOESP tracks the true system better than the IEM model in some cases. Despite this fact, the IEM model provides a more correct representation of the overall dynamics of the physical system in the presence of closed-loop data.
 
 \newpage
 \begin{figure}[htb!]

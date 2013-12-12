@@ -1,5 +1,5 @@
 \chapter{Preliminaries}
-The work presented in this document borrows many conepts, techniques, and results from linear algebra and linear systems theory. Because these topics are later presented without discussion, we present an overview of them here. This overview is not intended to provide a comprehensive discussion of these topics, rather it serves to introduce the reader to the general topics as they are used in this document.
+The work presented in this document borrows many conepts, techniques, and results from linear algebra and linear systems theory. Because these topics are later presented without discussion, we present an overview of them here. This overview is not intended to provide a comprehensive discussion of these topics, instead it serves to introduce the reader to the general topics as they are used in this document.
 
 \section{Vector and Matrix Notation}
 We define $\mathbb{R}$ be the set of reals, $\mathbb{R}^n$ the set of $n$-dimensional real vectors, and $\mathbb{R}^{m\times n}$ the set of real matrices. We denote vectors by lower case letters $\{a$, $b$, $c$, $\dots\}$ and matrices by upper case letters $\{A$, $B$, $C$, $\dots\}$. Transpositions of vectors and matrices are denoted by $a^T$ and $A^T$, respectively. The inverse of a square matrix $A$ is denoted $A^{-1}$ and its Moore-Penrose psedudoinverse is denoted by $A^\dagger$.
@@ -15,14 +15,14 @@ where $x(k) \in \mathbb{R}^n$ is a vector of the states of the system, $u(k) \in
 \begin{figure}[htb!]
 	\centering
 	\includegraphics{../fig/lti_block_diagram.pdf}
-	\caption{A block diagram of the state space representation of a LTI system.}
+	\caption{Block diagram of the state space representation of a LTI system.}
 \end{figure}
 
 For any state space representation of a system, the state sequence is not unique. That is, there are different state space representations resulting in the same input-output behavior of the system. These differing states can be related by a similarity transform $T$ where $T$ is a real, nonsingular matrix
 \begin{equation*}
 \tilde{x}(k) = T^{-1}x(k)
 \end{equation*}
-where the tilde in $\tilde x$ indicates that it is ``similar'' to the original state sequence $x$. The state space representation of the system corresponding to the transformed state $\tilde{x}$ is given by
+and the tilde in $\tilde x$ indicates that it is ``similar'' to the original state sequence $x$. The state space representation of the system corresponding to a transformed state $\tilde{x}$ is given by
 \begin{subequations}
 \begin{equation*}\tilde{x}(k+1) = \tilde{A}\tilde{x}(k) + \tilde{B}u(k)\end{equation*}
 \begin{equation*}y(k) = \tilde{C}\tilde{x}(k) + \tilde{D}u(k)\end{equation*}
@@ -39,11 +39,11 @@ where
 The LTI system given by $A$, $B$, $C$, $D$ is said to be \textit{stable} if all the eigenvalues of $A$ lie strictly within the unit circle on the complex plane. The system response of a stable LTI system asymptotically converges to a steady state value.
 
 \subsection{Observability and Controllability}
-The LTI system given by $A$, $B$, $C$, $D$ or equivalently the pair $(A,C)$ is said to be \textit{observable} if for any finite time $t_1 > 0$, the initial state $x(0) = x_0$ can be uniquely determined from measurements of the input $u$ and output $y$ over the interval $[0, t_1], t_1>0$.
+The LTI system given by $A$, $B$, $C$, $D$ or equivalently the pair $(A,C)$ is said to be \textit{observable} if for any finite time $t_1 > 0$, the initial state $x(0) = x_0$ can be uniquely determined from measurements of the input $u$ and output $y$ over the interval $[0, t_1], \ t_1>0$.
 
-The LTI system given by $A$, $B$, $C$, $D$ or equivalently the pair $(A,B)$ is said to be \textit{controllable} if for any final state $x_1$ there exists an input sequence $u_k$ defined on the interval $[0, t_1], t_1>0$ that transfers the state from $x(0) = x_0$ to $x_1$ in finite time.
+The LTI system given by $A$, $B$, $C$, $D$ or equivalently the pair $(A,B)$ is said to be \textit{controllable} if for any final state $x_1$ there exists an input sequence $u$ defined on the interval $[0, t_1], \ t_1>0$ that transfers the state from $x(0) = x_0$ to $x_1$ in finite time.
 
-LTI systems $A$, $B$, $C$, $D$ in state space form which are both observable and controllable are said to be \textit{minimal}, meaning that the matrix $A$ has the smallest possible dimension.
+LTI systems in state space form which are both observable and controllable are said to be \textit{minimal}, meaning that the matrix $A$ has the smallest possible dimension.
 
 \subsection{Combined Deterministic-Stochastic LTI Systems}
 Section \ref{sec:linear_time_invariant_systems} considered the case of a purely deterministic LTI system; that is, a system operating in a noise-free environment. In practice, this rarely happens so we now consider the case of the combined deterministic-stochastic LTI system operating in the presence of process and measurement noise. We append Eq. \ref{eq:2_lti_state_space} as follows:
@@ -53,7 +53,7 @@ Section \ref{sec:linear_time_invariant_systems} considered the case of a purely 
 \end{subequations}
 where $w(k)\in\mathbb{R}^1$ is the process noise and $v(k)\in\mathbb{R}^1$ is the measurement noise. As is commonly done, we assume $w(k)$ and $v(k)$ are zero-mean white-noise sequences. 
 
-If the system is observable, we can design a Kalman filter to estimate the system state \cite{kalman1960new}
+If the system is observable, as shown in \cite{kalman1960new} we can design a Kalman filter to estimate the system state given by
 \begin{equation*}
 \hat{x}(k+1) = A\hat{x}(k) + Bu(k) + K\big(y(k) - C\hat{x}(k) - Du(k)\big)
 \end{equation*}
@@ -70,7 +70,7 @@ to be the innovation sequence, we can rewrite the combined deterministic-stochas
 \section{Linear Algebra Tools}
 
 \subsection{Fundamental Matrix Subspaces}
-We require two of the fundamental matrix subspaces: \textit{column space} and \textit{row space}. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank of $A$. The row space of a matrix $B \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $B$.
+We require two fundamental matrix subspaces: \textit{column space} and \textit{row space}. The column space of a matrix $A \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the column vectors of $A$, sometimes called the range of $A$. The dimension of the column space is called the rank of $A$. The row space of a matrix $B \in \mathbb{R}^{m\times n}$ is the set of all linear combinations of the row vectors of $B$.
 
 
 \subsection{Orthogonal Projections}
@@ -111,7 +111,7 @@ A\Pi_B^\perp = L_{22}Q_2
 \end{equation*}
 
 \subsection{Singular Value Decomposition}
-Any matrix $A \in \mathbb{R}^{m\times n}$ can be decomposed by a singular value decomposition (SVD) given by
+Any matrix $A \in \mathbb{R}^{m\times n}$ can be factorized by a singular value decomposition (SVD) given by
 \begin{equation*}
 A = U\Sigma V^T
 \end{equation*}
@@ -131,7 +131,7 @@ U_1 & U_2
 V_1^T \\ \hline V_2^T
 \end{array}\right]
 \end{equation*}
-a well known property of the SVD is that the vectors $U_1$ corresponding to the $r$ non-zero singular values of $A$ span the range of $A$. That is,
+a well known property of the partitioned result is that the column vectors $U_1$ corresponding to the $r$ non-zero singular values of $A$ span the range of $A$. That is,
 \begin{equation*}
 \mbox{range}(U_1) = \mbox{range}(A)
 \end{equation*}
@@ -150,7 +150,7 @@ Hankel matrices can be constructed by setting the $(i,j)^{\mbox{th}}$ element of
 \begin{equation*}
 A_{i,j} = A_{i-1, j+1}
 \end{equation*}
-If each entry in the matrix is also a matrix, the resulting matrix is called a block Hankel matrix:
+If each entry in the matrix is also a matrix, the resulting matrix is called a block Hankel matrix.
 
 
 \subsection{Toeplitz Matrices}

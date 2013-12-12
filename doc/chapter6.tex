@@ -1,22 +1,22 @@
 \chapter{Conclusions and Future Work}
-The problem of closed-loop system identification of the dynamics of a quadrotor using the Innovation Estimation Method has been considered. Flight test experiments were conducted to gather the closed-loop input-output data required by the identification algorithm. We evaluated the effect of system order and prediction horizons on model performance before choosing final model parameters. Verification of the selected LTI system model demonstrated its ability to describe   the dynamics present in the physical quadrotor system. In comparison to approaches which individually identify decoupled system modes, we presented identification results for a fully coupled 6DOF LTI system model.
+This research project considered the problem of closed-loop system identification of the dynamics of a quadrotor using the Innovation Estimation Method. We conducted test flight experiments to gather the closed-loop input-output data required by the identification algorithm and evaluated the effect of system order and prediction horizons on model performance before choosing final model parameters. Verification of the selected LTI system model demonstrated its ability to describe   the dynamics present in the physical quadrotor system. In comparison to approaches which individually identify decoupled system modes, we presented identification results for a fully coupled 6DOF LTI system model.
 
 \section{Conclusions}
-As a result of the flight testing, model identification, and validation processes conducted for this research project and described in this document, we present the following conclusions:
+As a result of the flight testing, model identification, and validation procedures conducted for this research project and described in this document, we present the following conclusions:
 \begin{itemize}
-\item The quadrotor model developed using the IEM successfully captures the pitch and roll dynamics of the physical system. The model failed to effectively capture yaw dynamics. While the exact reason is unknown, we assess this effect is likely due to the mechanics of exciting the quadrotor's yaw mode.
+\item The quadrotor model developed using subspace identification with innovation estimation successfully captures the pitch and roll dynamics of the physical system. The model failed to effectively capture yaw dynamics. While the exact reason is unknown, we assess this effect is likely due to the mechanics of exciting the quadrotor's yaw mode.
 \item Pseudo-random binary sequence input signals meeting the persistence of excitation criteria sufficiently excite the physical system's pitch and roll dynamics and models identified from PRBS data correctly capture both coupled and isolated pitch and roll dynamics. 
 \item The IEM effectively eliminates the coupling between system input and past noise, providing an approach to identifying a system model in the presence of closed-loop data.
 \end{itemize}
 
 
 \section{Future Work}
-Based on the results presented, we suggest the following possibilities to extend the scope of this research:
+Based on the results presented, we suggest the following possibilities to extend the scope of this research project:
 \begin{itemize}
 \item Investigate approaches to successfully identify the yaw dynamics of the physical system. Such approaches may consider modified input sequences, higher-order modeling, or alternate system identification techniques. 
 \item Investigate theoretical methods which may help to optimize the selection of the past and future innovation estimation horizons.
 \item Expand the system model to represent dynamics outside of vehicle hover conditions.
-\item Repeat the data collection and model generation for data gathered externally using a motion capture system and compare the resulting model with the model presented here.
+\item Compare a Crazyflie model identified from data gathered externally using a motion capture system with the model presented in this document to examine the influence of vehicle vibrations and accelerometer drift on the resulting system model.
 \end{itemize}
 
 

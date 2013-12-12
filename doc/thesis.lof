@@ -1,7 +1,7 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration.}}{2}{figure.caption.4}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A block diagram of the state space representation of a LTI system.\relax }}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Block diagram of the state space representation of a LTI system.\relax }}{6}{figure.caption.5}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.\relax }}{9}{figure.caption.6}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces General subspace identification approach\relax }}{13}{figure.caption.7}
@@ -15,7 +15,7 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Quadrotor test flight profile showing the portion of the test flight data used for system identification.\relax }}{35}{figure.caption.16}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces A plot of the singular values of the extended observability matrix, used to determine the model order. The vertical dotted line shows the partitioning location between system response and noise in the final eighth order model.\relax }}{39}{figure.caption.18}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Pole distribution of 8th order models generated for 756 combinations of past and future horizons. Darker shading indicates higher pole concentrations.\relax }}{40}{figure.caption.19}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Pole distribution of 8th order models generated for 756 combinations of past and future horizons. Darker shading indicates higher pole concentrations.\relax }}{41}{figure.caption.19}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Poles of final 8th order model.\relax }}{41}{figure.caption.20}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Simulated response (dashed) of identified 8th order LTI system model compared with measured system response (solid). Both systems were stimulated with an identical PRBS input sequence.\relax }}{46}{figure.caption.22}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Simulated (dashed) response of identified model to pitch input compared with measured system response (solid).\relax }}{47}{figure.caption.23}
