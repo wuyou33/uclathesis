@@ -2,7 +2,7 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces A quadrotor arranged in the cross configuration.}}{2}{figure.caption.4}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Block diagram of the state space representation of a LTI system.\relax }}{6}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Orthogonal projections of $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Two orthogonal projections: $A$ onto $B$ and $A$ onto the orthogonal compliment of $B$.\relax }}{9}{figure.caption.6}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces General subspace identification approach\relax }}{13}{figure.caption.7}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces A block diagram of an LTI system operating in open loop.\relax }}{13}{figure.caption.8}
@@ -21,5 +21,5 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Simulated (dashed) response of identified model to pitch input compared with measured system response (solid).\relax }}{47}{figure.caption.23}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Simulated (dashed) response of identified model to roll input compared with measured system response (solid).\relax }}{48}{figure.caption.24}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid).\relax }}{49}{figure.caption.25}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Simulated (dashed) response of identified model to yaw input compared with measured system response (solid). IEM results are plotted in light gray (solid) for reference.\relax }}{51}{figure.caption.26}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Simulated (dashed) response of PO-MOESP identified model to PRBS input compared with measured system response (solid). IEM results are plotted in light gray (solid) for reference.\relax }}{51}{figure.caption.26}
 \addvspace {10pt}
